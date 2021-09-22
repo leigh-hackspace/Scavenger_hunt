@@ -1,0 +1,14 @@
+<h1>Ghosts</h1>
+
+<table>
+<tr><th>ID</th><th>Name</th><th>Description</th><th>Ghost UUID</th></tr>
+	<% @ghosts.each do |ghost| %>
+		<tr>    
+			<td><%= ghost.id %></td>
+			<td><%= ghost.title %></td>
+			<td><%= ghost.body %></td>
+			<td><%= ghost.ghost_uuid %></td>
+
+		</tr>
+	<% end %>
+</table>

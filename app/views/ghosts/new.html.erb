@@ -1,0 +1,14 @@
+<h1>New Ghost<h1>
+<%= from_with model: @ghost do |form| %>
+  <div>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body %><br />
+    <%= form.text_field :body %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+  <% end %>

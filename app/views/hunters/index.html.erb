@@ -1,0 +1,12 @@
+<h1>Hunters index</h1>
+<p>Hunters will be listed here</p>
+
+<table>
+  <tr><th>Hunter ID</th><th>Name</th></tr>
+  <% @hunters.each do |hunt| %>
+    <tr>
+       <td><%= hunt.id %></td>
+       <td><%= hunt.hunter_name %></td>
+    </tr>
+  <% end %>
+</table>
