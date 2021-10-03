@@ -1,14 +1,14 @@
 <h1>Ghosts</h1>
 
 <table>
-<tr><th>ID</th><th>Name</th><th>Description</th><th>Ghost UUID</th></tr>
+<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th></tr>
 	<% @ghosts.each do |ghost| %>
 		<tr>    
 			<td><%= ghost.id %></td>
 			<td><%= image_tag "ghosts/"+ghost.ghost_uuid+".png", class: "ghost-image" %></td>
 			<td><%= ghost.title %></td>
 			<td><%= ghost.body %></td>
-			<td><%= ghost.ghost_uuid %></td>
+			<td><a href="./<%= ghost.ghost_uuid %>">view ghost</a></td>
 
 		</tr>
 	<% end %>
