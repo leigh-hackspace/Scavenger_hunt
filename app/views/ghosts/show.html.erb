@@ -1,2 +1,12 @@
-<h1><%= @ghost.title %></h1>
-<p> <%= @ghost.body %></p>
+<h2 class="ghost-capture-title">Congratulations you found a ghost ! </h2>
+    <div class="page-container">
+        <div class="ghost-container-outer">
+            <div class="ghost-container-inner">
+                <h1><%= @ghost.title %></h1>
+                <p> <%= @ghost.body %></p>
+                <p> <%= @ghost.ghost_uuid %> </p>
+                <%= image_tag "ghosts/"+@ghost.ghost_uuid+".png", class: "ghost-image" %>
+            </div>
+        </div>
+</div>
+<h2 class="ghost-capture-title">Click the button to Capture me !</h2>
