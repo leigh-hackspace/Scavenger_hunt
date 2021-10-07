@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 	get "/ghosts", to: "ghosts#index"
 	get "/h4d3s", to: "ghosts#admin_page"
-
+	post "/h4d3s", to: "ghosts#create"
 
 	## ghostbusters show all available ghosts
 	get "/ghosts/egon", to: "ghosts#all"

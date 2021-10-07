@@ -12,7 +12,7 @@ class GhostsController < ApplicationController
   end
 
   def create
-	@ghost = Ghost.new(title: "new ghost", body: "spooky")
+	@ghost = Ghost.new(ghost_params)
 	@ghost.ghost_uuid = SecureRandom.uuid
 
 	if @ghost.save
@@ -20,5 +20,9 @@ class GhostsController < ApplicationController
         else
           render :new
         end
+  end
+
+  def ghost_params
+    params.require(:ghosts).permit(:title, :body)
   end
 end
