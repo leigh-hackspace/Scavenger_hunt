@@ -4,7 +4,7 @@ class HuntersController < ApplicationController
   end
   
   def show
-    @hunter = Hunter.find(params[:hunter_uuid])
+    @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
   end
 
   def new
@@ -12,11 +12,17 @@ class HuntersController < ApplicationController
   end
 
   def create
-    @hunter = Hunter.new(name: "")
+    @hunter = Hunter.new(hunter_params)
+    @hunter.hunter_uuid = SecureRandom.uuid
+    
     if @hunter.save
       redirect_to @hunter
     else
       render :new
     end
+  end
+
+  def hunter_params
+    params.require(:hunters).permit(:hunter_name)
   end
 end

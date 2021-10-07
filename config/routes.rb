@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	get "/ghosts", to: "ghosts#index"
 	get "/h4d3s", to: "ghosts#admin_page"
 
+
 	## ghostbusters show all available ghosts
 	get "/ghosts/egon", to: "ghosts#all"
 	get "/ghosts/peter", to: "ghosts#all"
@@ -14,6 +15,14 @@ Rails.application.routes.draw do
 
 	get "/ghosts/:ghost_uuid", to: "ghosts#show"
 
+	get "/hunters/register", to: "hunters#register"
+
+	post "hunters/register", to: "hunters#create"
+	post "/hunters/register/:hunter_name", to: "hunters#create"
+
+	get "hunters/:hunter_uuid", to: "hunters#show"
 	get "/hunters", to: "hunters#welcome"
+	
+	get "hunters/all", to: "hunters#index"
 
 end
