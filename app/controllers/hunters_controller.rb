@@ -16,7 +16,8 @@ class HuntersController < ApplicationController
     @hunter.hunter_uuid = SecureRandom.uuid
     
     if @hunter.save
-      redirect_to @hunter
+      session[:hunter_uuid]
+      redirect_to root_path
     else
       render :new
     end

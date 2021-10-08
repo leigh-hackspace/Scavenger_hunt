@@ -20,9 +20,11 @@ Rails.application.routes.draw do
 	post "hunters/register", to: "hunters#create"
 	post "/hunters/register/:hunter_name", to: "hunters#create"
 
+
+	get "hunters/all", to: "hunters#index"
 	get "hunters/:hunter_uuid", to: "hunters#show"
 	get "/hunters", to: "hunters#welcome"
 	
-	get "hunters/all", to: "hunters#index"
+	
 
 end
