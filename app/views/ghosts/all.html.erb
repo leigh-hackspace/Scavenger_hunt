@@ -8,7 +8,7 @@
 			<td><%= image_tag "ghosts/"+ghost.ghost_uuid+".png", class: "ghost-image" %></td> 
 			<td><%= ghost.title %></td>
 			<td><%= ghost.body %></td>
-			<td><a href="./<%= ghost.ghost_uuid %>">view ghost</a></td>
+			<td><a href="./ghosts/<%= ghost.ghost_uuid %>">view ghost</a></td>
 
 		</tr>
 	<% end %>
