@@ -17,6 +17,7 @@ Spooky hunt is a Capture the Flag (CTF) game where players have to scan QR codes
 
 # Installation
 Install ruby - we recommend using [rbenv](https://github.com/rbenv/rbenv)
+
 Clone The Repo then run 
 ```
 bundle install
