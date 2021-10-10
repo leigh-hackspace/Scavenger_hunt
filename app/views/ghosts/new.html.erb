@@ -1,13 +1,16 @@
 <h1>New Ghost<h1>
-<%= from_with model: @ghost do |form| %>
+<%= simple_form_for @ghost do |form| %>
   <div>
     <%= form.label :title %><br />
     <%= form.text_field :title %>
-  </div>
+  </div><br />
   <div>
     <%= form.label :body %><br />
     <%= form.text_field :body %>
-  </div>
+  </div><br />
+  <div>
+     <%= form.input :image, as: :file, label: 'Image of Ghost'%> 
+  </div><br />
   <div>
     <%= form.submit %>
   </div>

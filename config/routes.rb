@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 	resources :ghosts, param: :ghost_uuid
 
 	get "/ghosts", to: "ghosts#index"
-	get "/h4d3s", to: "ghosts#admin_page"
+	get "/h4d3s", to: "ghosts#new"
 	post "/h4d3s", to: "ghosts#create"
 
 	## ghostbusters show all available ghosts
