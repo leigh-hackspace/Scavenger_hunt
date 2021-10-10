@@ -56,3 +56,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form', '~> 5.1'
 gem "image_processing",">=1.2"
+gem "rqrcode", "~> 2.0"
+gem 'chunky_png', '~> 1.3', '>= 1.3.5'
