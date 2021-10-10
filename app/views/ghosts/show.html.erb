@@ -4,7 +4,7 @@
             <div class="ghost-container-inner">
                 <h1><%= @ghost.title %></h1>
                 <p> <%= @ghost.body %> </p>
-                <%= image_tag "ghosts/"+@ghost.ghost_uuid+".png", class: "ghost-image" %>
+                <%= image_tag @ghost.image, class: "ghost-image" %>
                 <p>click here to capture me </p>
             </div>
         </div>

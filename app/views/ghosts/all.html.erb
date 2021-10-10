@@ -5,7 +5,7 @@
 	<% @ghosts.each do |ghost| %>
 		<tr>    
 			<td><%= ghost.id %></td>
-			<td><%= image_tag "ghosts/"+ghost.ghost_uuid+".png", class: "ghost-image" %></td> 
+			<td><%= image_tag @ghost.image, class: "ghost-image" %></td> 
 			<td><%= ghost.title %></td>
 			<td><%= ghost.body %></td>
 			<td><a href="./ghosts/<%= ghost.ghost_uuid %>">view ghost</a></td>
