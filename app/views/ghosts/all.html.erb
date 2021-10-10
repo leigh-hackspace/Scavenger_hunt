@@ -1,7 +1,7 @@
 <h1>Ghosts</h1>
 
 <table>
-<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th></tr>
+<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th><th>QR Code</th></tr>
 	<% @ghosts.each do |ghost| %>
 		<tr>    
 			<td><%= ghost.id %></td>
@@ -9,7 +9,7 @@
 			<td><%= ghost.title %></td>
 			<td><%= ghost.body %></td>
 			<td><a href="./ghosts/<%= ghost.ghost_uuid %>">view ghost</a></td>
-
+			<td><%=render inline: RQRCode::QRCode.new(root_url + ghost_path(ghost.ghost_uuid)).as_svg(module_size: 3)%></td>
 		</tr>
 	<% end %>
 </table>
