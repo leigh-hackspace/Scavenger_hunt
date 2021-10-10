@@ -1,5 +1,5 @@
 class HuntersController < ApplicationController
-  def index
+  def all
     @hunters = Hunter.all
   end
   
@@ -16,13 +16,13 @@ class HuntersController < ApplicationController
     @hunter.hunter_uuid = SecureRandom.uuid
     
     if @hunter.save
-      redirect_to @hunter
+      redirect_to hunter_path(@hunter.hunter_uuid)
     else
       render :new
     end
   end
 
   def hunter_params
-    params.require(:hunters).permit(:hunter_name)
+    params.require(:hunter).permit(:hunter_name, :hunter_uuid)
   end
 end
