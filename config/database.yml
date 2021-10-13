@@ -8,7 +8,10 @@ default: &default
 #  adapter: sqlite3
   adapter: postgresql
   encoding: unicode
+<<<<<<< HEAD
 #  username: spooky
+=======
+>>>>>>> postgres
   database: spookydb
   password: <%= ENV['SPOOKY_DB_PASS'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -30,5 +33,10 @@ production:
   <<: *default
 #   database: db/test.sqlite3
   database: spookydb
+<<<<<<< HEAD
   username: spooky
   #password: <%= ENV['SPOOKY_DB_PASS'] %>
+=======
+#  username: spooky
+  #password: <
+>>>>>>> postgres
