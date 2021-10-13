@@ -5,13 +5,18 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+#  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: spookydb
+  password: <%= ENV['SPOOKY_DB_PASS'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: spookydb
+#  database: db/test.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,4 +27,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+#   database: db/test.sqlite3
+  database: spookydb
+#  username: spooky
+  #password: <
