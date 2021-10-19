@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
 	resources :hunters, param: :hunter_uuid
 	resources :ghosts, param: :ghost_uuid
+	resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
+
+	##sessions
+	get '/login', to: 'sessions#login'
+	get '/register', to: 'sessions#new'
+        post '/login', to: 'sessions#create'
+        post '/login', to: 'sessions#destroy'
+	get  '/login', to: 'sessions#destroy'
 
 	get "/ghosts", to: "ghosts#index"
 	get "/h4d3s", to: "ghosts#new"
