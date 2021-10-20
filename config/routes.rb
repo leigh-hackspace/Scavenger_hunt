@@ -10,10 +10,12 @@ Rails.application.routes.draw do
 	get '/login', to: 'sessions#login'
 	get '/register', to: 'sessions#new'
         post '/login', to: 'sessions#create'
-        post '/login', to: 'sessions#destroy'
-	get  '/login', to: 'sessions#destroy'
+        post '/logout', to: 'sessions#destroy'
+	get  '/logout', to: 'sessions#destroy'
 
 	get "/ghosts", to: "ghosts#index"
+
+
 	get "/h4d3s", to: "ghosts#new"
 	post "/h4d3s", to: "ghosts#create"
 
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
 	get "/winston", to: "ghosts#all"
 	get "/pacman", to: "ghosts#all"
 
-	#get "/ghosts/:ghost_uuid", to: "ghosts#show"
 	get "/hunters", to: "hunters#welcome"
+	post "/hunt", to: "ghosts#capture"
+
 end
