@@ -8,6 +8,7 @@ default: &default
 #  adapter: sqlite3
   adapter: postgresql
   encoding: unicode
+#  username: spooky
   database: spookydb
   password: <%= ENV['SPOOKY_DB_PASS'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
