@@ -5,7 +5,7 @@
                 	<h1><%= @ghost.title %></h1>
 	                <p> <%= @ghost.body %> </p>
         	        <%= image_tag @ghost.image, class: "ghost-image" %>
-                	<%= button_to "Click here to capture", root_url + 'hunt?' + {param1: @ghost.ghost_uuid, param2: session[:hunter_uuid]}.to_param, method: :post %>
+                	<%= button_to "Click here to capture", root_url + 'hunt?' + {ghost_uuid: @ghost.ghost_uuid, hunter_uuid: session[:hunter_uuid]}.to_param, method: :post %>
 	            </div>
         	</div>
 </div>
