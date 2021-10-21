@@ -1,5 +1,6 @@
 class Hunter < ApplicationRecord
   before_save :generate_hunter_uuid
+  attr_accessor :score
 
   private
 
