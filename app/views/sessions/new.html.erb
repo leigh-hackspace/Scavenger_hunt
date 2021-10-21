@@ -1,7 +1,7 @@
 <h1>New User Page</h1>
 
-<%= simple_form_for @user do |f| %>
-  <%= f.input :username, label: 'Please enter a username' %>
+<%= simple_form_for @hunter do |f| %>
+  <%= f.input :hunter_name, label: 'Please enter a username' %>
   <%= f.input :password, label: 'Password' %>
   <%= f.submit "Create Account" %>
 <% end %>

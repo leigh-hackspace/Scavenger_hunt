@@ -1,21 +1,21 @@
 class SessionsController < ApplicationController
   def new
-	@user = User.new
+    @hunter = Hunter.new
   end
 
   def create
-    @user = User.find_by(username: params[:username])
-    if !!@user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      session[:user_name] = @user.username
-      session[:hunter_uuid] = "uuid"
-      redirect_to root_path, notice: "Logged in"
+    @hunter = Hunter.find_by(hunter_name: params[:hunter_name])
+    if !!@hunter && @hunter.authenticate(params[:password])
+      session[:hunter_id] = @hunter.id
+      session[:hunter_name] = @hunter.hunter_name
+      session[:hunter_uuid] = @hunter.hunter_uuid
+      redirect_to hunter_path(@hunter.hunter_uuid), notice: "Logged in"
     else
       message = "Oops something went wrong! Are your credentials correct?"
       redirect_to login_path, notice: message
     end
   
-   end
+  end
 
   def destroy
     reset_session
