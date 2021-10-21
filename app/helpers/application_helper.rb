@@ -1,9 +1,9 @@
 module ApplicationHelper
   def logged_in?
-    !!session[:user_id]
+    !!session[:hunter_uuid]
   end
 
   def current_user
-    @current_user ||= user.find_by_id(session[:user_id]) if !!session[:user_id]
+    @current_user ||= hunter.find_by_hunter_uuid(session[:hunter_uuid]) if !!session[:hunter_uuid]
   end
 end
