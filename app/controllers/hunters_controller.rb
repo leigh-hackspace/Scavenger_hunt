@@ -16,6 +16,8 @@ class HuntersController < ApplicationController
     @hunter.hunter_uuid = SecureRandom.uuid
     
     if @hunter.save
+      session[:hunter_name] = @hunter.hunter_name
+      session[:hunter_uuid] = @hunter.hunter_uuid
       redirect_to hunter_path(@hunter.hunter_uuid)
     else
       render :new
@@ -23,6 +25,6 @@ class HuntersController < ApplicationController
   end
 
   def hunter_params
-    params.require(:hunter).permit(:hunter_name, :hunter_uuid)
+    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password)
   end
 end
