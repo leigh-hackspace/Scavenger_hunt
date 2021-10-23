@@ -1,8 +1,7 @@
 class Hunter < ApplicationRecord
   before_save :generate_hunter_uuid
   has_secure_password
-  has_many :captures
-  has_many :ghosts, through: :captures
+  has_and_belongs_to_many :ghosts
 
   
   private
