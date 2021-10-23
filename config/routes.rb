@@ -27,5 +27,7 @@ Rails.application.routes.draw do
 
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"
+	get "/scoreboard", to: "hunters#scoreboard"
+	post "/hunt", to: "ghosts#capture"
 
 end

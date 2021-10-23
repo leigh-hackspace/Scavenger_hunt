@@ -17,6 +17,8 @@ default: &default
 development:
   <<: *default
   database: spookydb
+  username: spookyuser
+  password: spookypass
 #  database: db/test.sqlite3
 
 # Warning: The database defined as "test" will be erased and
@@ -30,5 +32,6 @@ production:
   <<: *default
 #   database: db/test.sqlite3
   database: spookydb
-  username: spooky
+  username: spookyuser
+  password: spookypass
   #password: <%= ENV['SPOOKY_DB_PASS'] %>
