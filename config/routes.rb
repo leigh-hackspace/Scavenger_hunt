@@ -4,13 +4,12 @@ Rails.application.routes.draw do
 
 	resources :hunters, param: :hunter_uuid
 	resources :ghosts, param: :ghost_uuid
-	resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
 
 	##sessions
 	get '/login', to: 'sessions#login'
 	get '/register', to: 'sessions#new'
-        post '/login', to: 'sessions#create'
-        post '/logout', to: 'sessions#destroy'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
 	get  '/logout', to: 'sessions#destroy'
 
 	get "/ghosts", to: "ghosts#index"
@@ -27,6 +26,6 @@ Rails.application.routes.draw do
 	get "/pacman", to: "ghosts#all"
 
 	get "/hunters", to: "hunters#welcome"
-	post "/hunt", to: "ghosts#capture"
+	post "/hunt", to: "hunters#capture"
 
 end

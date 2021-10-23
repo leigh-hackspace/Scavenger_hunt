@@ -24,7 +24,14 @@ class HuntersController < ApplicationController
     end
   end
 
+  def capture
+    @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
+    @ghost = Ghost.find_by_ghost_uuid(params[:ghost_uuid])
+    @capture = @hunter.captures.new()
+
+  end
+
   def hunter_params
-    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password)
+    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password, :ghost_uuid)
   end
 end
