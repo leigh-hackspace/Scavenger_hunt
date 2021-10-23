@@ -27,7 +27,8 @@ class HuntersController < ApplicationController
   def capture
     @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
     @ghost = Ghost.find_by_ghost_uuid(params[:ghost_uuid])
-    @hunter.ghosts << @ghost
+    @hunter.ghosts << @ghost unless @hunter.ghosts.include?@ghost
+    redirect_to hunter_path(@hunter.hunter_uuid)
   end
 
   def hunter_params
