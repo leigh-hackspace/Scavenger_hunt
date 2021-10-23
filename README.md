@@ -25,4 +25,21 @@ gem install rails -v 6.1.4.1
 
 ```
 
+
+setting up postgress database
+
+---
+
+```
+
+sudo -u postgres psql
+
+postgres=# create database mydb;
+
+postgres=# create user myuser with encrypted password 'mypass';
+
+postgres=# grant all privileges on database mydb to myuser;
+
+```
+
 Once `bundle install` has finished, run `rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
