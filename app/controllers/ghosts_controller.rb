@@ -22,9 +22,6 @@ class GhostsController < ApplicationController
     end
   end
 
-  def capture
-	puts "foo"	    
-  end
 
   def ghost_params
     params.require(:ghost).permit(:title, :body, :image)
