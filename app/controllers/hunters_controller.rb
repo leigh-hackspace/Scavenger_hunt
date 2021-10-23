@@ -3,11 +3,6 @@ class HuntersController < ApplicationController
     @hunters = Hunter.all
   end
   
-  def scoreboard
-    @hunters = Hunter.all
-  end
-
-
   def show
     @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
   end

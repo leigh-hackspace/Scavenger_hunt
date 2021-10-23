@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 	##sessions
 	get '/login', to: 'sessions#login'
 	get '/register', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  post '/logout', to: 'sessions#destroy'
+  	post '/login', to: 'sessions#create'
+  	post '/logout', to: 'sessions#destroy'
 	get  '/logout', to: 'sessions#destroy'
 
 	get "/ghosts", to: "ghosts#index"
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"
+	
 	get "/scoreboard", to: "hunters#scoreboard"
 	post "/hunt", to: "ghosts#capture"
 
