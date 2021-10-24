@@ -6,17 +6,18 @@
       <% if @hunter.ghosts.count == 0%>
         <h2>Looks like you haven't captured any ghosts</h2>
       <% else %>
-        <h2> Well done! you have captured the following ghosts </h2>
+        <h3> Well done! you have captured the following ghosts </h3>
         <table>
-          <th>Ghost name</th><th>points</th>
+          <th>Ghost name</th><th>picture</th><th>points</th>
           <% @hunter.ghosts.each do |g|%>  
             <tr>
-              <td><%= g.title%></td>
+              <td><%= g.title %></td>
+              <td><%= image_tag g.image, class: 'ghost-image'%></td>
               <td>10</td>
             </tr>
         <% end %>
       <% end %>
-        </table>
+      </table>
         <h2>total points <%= score(@hunter) %></h2>
     </div>
   </div>
