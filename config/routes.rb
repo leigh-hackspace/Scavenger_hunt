@@ -28,7 +28,8 @@ Rails.application.routes.draw do
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"
 	
-	get "/scoreboard", to: "hunters#scoreboard"
+	resources :scoreboard, only: :index
+
 	post "/hunt", to: "ghosts#capture"
 
 end

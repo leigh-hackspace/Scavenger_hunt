@@ -1,8 +1,7 @@
 class ScoreboardController < ApplicationController
 
-    def index
-            @hunters = Hunter.all
-    end
-        
+  def index
+   @hunters = Hunter.all
+  end
 
 end
