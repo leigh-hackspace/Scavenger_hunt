@@ -28,6 +28,7 @@ class HuntersController < ApplicationController
     @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
     @ghost = Ghost.find_by_ghost_uuid(params[:ghost_uuid])
     @hunter.ghosts << @ghost unless @hunter.ghosts.include?@ghost
+    tweet_capture(@hunter.hunter_name, @ghost.title)
     redirect_to hunter_path(@hunter.hunter_uuid)
   end
 

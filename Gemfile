@@ -60,3 +60,4 @@ gem "rqrcode", "~> 2.0"
 gem 'chunky_png', '~> 1.3', '>= 1.3.5'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 gem "aws-sdk-s3", require: false
+gem 'twitter', '~> 7.0'
