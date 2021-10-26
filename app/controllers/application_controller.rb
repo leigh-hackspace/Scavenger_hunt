@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     response.set_header('X-Clacks-Overhead', 'GNU Terry Pratchett') 
   end
 
-  def tweet_capture(hunter_name, ghost_name)
+  def send_tweet(message)
     if ActiveModel::Type::Boolean.new.cast(ENV['SEND_TWEET'])
       client = Twitter::REST::Client.new do |config|
         config.consumer_key        =  ENV['TWITTER_API_KEY']
@@ -15,9 +15,12 @@ class ApplicationController < ActionController::Base
         config.access_token        =  ENV['TWITTER_ACCESS_TOKEN']
         config.access_token_secret =  ENV['TWITTER_ACCESS_TOKEN_SECRET']
       end
-      client.update("Looks like #{hunter_name} has just captured a ghost! 👻#{ghost_name}👻 #spookyhunt2021 ")
+      client.update(message)
     end
+  end
 
+  def tweet_capture(hunter_name, ghost_name)
+    send_tweet("Looks like #{hunter_name} has just captured a ghost! 👻#{ghost_name}👻 #spookyhunt2021")
   end
 
 end
