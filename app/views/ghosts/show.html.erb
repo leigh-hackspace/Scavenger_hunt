@@ -3,9 +3,10 @@
 	        <div class="ghost-container-outer">
         	<div class="ghost-container-inner">
                 	<h1><%= @ghost.title %></h1>
-	                <p> <%= @ghost.body %> </p>
+	                
         	        <%= image_tag @ghost.image, class: 'ghost-image' %>
-                	<%= button_to 'Click here to capture', root_url + 'hunt?' + {ghost_uuid: @ghost.ghost_uuid, hunter_uuid: session[:hunter_uuid]}.to_param, method: :post %>
+                	<%= button_to 'Click here to capture', root_url + 'hunt?' + {ghost_uuid: @ghost.ghost_uuid, hunter_uuid: session[:hunter_uuid]}.to_param, method: :post, class:'ghost_button' %>
 	            </div>
         	</div>
+			<p> <%= @ghost.body %> </p>
 </div>

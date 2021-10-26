@@ -27,12 +27,12 @@ Rails.application.routes.draw do
 
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"
+	
 
+
+	## Scoreboard 
 	resources :scoreboard, only: :index
 
-	get "/scoreboard", to: "hunters#scoreboard"
-
-
-	post "/hunt", to: "ghosts#capture"
+	get "/scoreboard", to: "scoreboard#all"
 
 end

@@ -199,7 +199,7 @@ body {
     background-color: rgb(201, 202, 195) ;
     border: none;
     border-radius: 25px 25px 0px 0px;
-    color: white;
+    color:  rgb(255, 255, 255);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -210,7 +210,27 @@ body {
     min-width: 40px;
 
     @media screen and (max-width: 992px) {
-      font-size: 1rem;
+      font-size: 0.75rem;
+
+    }
+  }
+
+  .ghost_button {
+    background-color: rgb(201, 202, 195) ;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    color:  rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    margin: 4px 2px;
+    cursor: pointer;
+    min-width: 40px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 0.75rem;
 
     }
   }
