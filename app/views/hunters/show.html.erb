@@ -21,7 +21,7 @@
           <h2>total points <%= score(@hunter) %></h2>
           <% end %>
       <% else %>
-        <p> Please log in!</p>
+        <%= link_to('Please log in!', root_path + 'login') %>
       <% end %>
       
     </div>
