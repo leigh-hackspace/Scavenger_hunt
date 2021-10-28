@@ -29,16 +29,21 @@ gem install rails -v 6.1.4.1
 setting up postgress database
 
 ---
-
-```
-
 sudo -u postgres psql
 
-postgres=# create database mydb;
+postgres=# create database {database};
 
-postgres=# create user myuser with encrypted password 'mypass';
+postgres=# create user {username} with encrypted password '{chosen password}';
 
-postgres=# grant all privileges on database mydb to myuser;
+postgres=# grant all privileges on database {database} to {username};
+
+then \q to exit postgres
+
+you will also need to set the password as an environment variable
+
+echo "export SPOOKY_DB_PASS={chosen password}" >> ~/.bashrc
+
+source ~/.bashrc
 
 ```
 
