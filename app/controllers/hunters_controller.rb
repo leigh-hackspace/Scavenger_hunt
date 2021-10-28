@@ -26,7 +26,7 @@ class HuntersController < ApplicationController
 
   def capture
     @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
-    if session[:hunter_session_id] == generate_session_id(@hunter)
+    if session[:hunter_session_id] == @hunter.generate_session_id
       @ghost = Ghost.find_by_ghost_uuid(params[:ghost_uuid])
       @hunter.ghosts << @ghost unless @hunter.ghosts.include?@ghost
       tweet_capture(@hunter.hunter_name, @ghost.title)
