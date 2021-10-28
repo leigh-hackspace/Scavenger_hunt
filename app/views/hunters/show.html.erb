@@ -2,23 +2,28 @@
   <h2 class="Hunter-title">Welcome Hunter! </h2>
   <div class="hunter-container-outer">
     <div class="hunter-container-inner">
-      <h1><%= @hunter.hunter_name %></h1>
-      <% if @hunter.ghosts.count == 0%>
-        <h2>Looks like you haven't captured any ghosts</h2>
+      <% if session[:hunter_session_id] == generate_session_id(@hunter) %>
+        <h1><%= @hunter.hunter_name %></h1>
+        <% if @hunter.ghosts.count == 0 %>
+          <h2>Looks like you haven&apos;t captured any ghosts</h2>
+        <% else %>
+          <h3> Well done! you have captured the following ghosts </h3>
+          <table>
+            <th>Ghost name</th><th>picture</th><th>points</th>
+            <% @hunter.ghosts.each do |g|%>  
+              <tr>
+                <td><%= g.title %></td>
+                <td><%= image_tag g.image, class: 'ghost-image'%></td>
+                <td>10</td>
+              </tr>
+            <% end %>
+          </table>
+          <h2>total points <%= score(@hunter) %></h2>
+          <% end %>
       <% else %>
-        <h3> Well done! you have captured the following ghosts </h3>
-        <table>
-          <th>Ghost name</th><th>picture</th><th>points</th>
-          <% @hunter.ghosts.each do |g|%>  
-            <tr>
-              <td><%= g.title %></td>
-              <td><%= image_tag g.image, class: 'ghost-image'%></td>
-              <td>10</td>
-            </tr>
-        <% end %>
+        <p> Please log in!</p>
       <% end %>
-      </table>
-        <h2>total points <%= score(@hunter) %></h2>
+      
     </div>
   </div>
 </div>
