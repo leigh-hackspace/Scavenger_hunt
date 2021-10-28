@@ -12,4 +12,7 @@
 			<td><%=render inline: RQRCode::QRCode.new(root_url + ghost_path(ghost.ghost_uuid)).as_svg(module_size: 3,color: "E49948")%></td>
 		</tr>
 	<% end %>
+	
 </table>
+<p>Welcome page:</p>
+<%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 5,color: "E49948")%>
