@@ -10,7 +10,7 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
-Gemfile.lock
+#Gemfile.lock #needs to be in if you're pushing to heroku
 
 # Ignore all logfiles and tempfiles.
 /log/*
