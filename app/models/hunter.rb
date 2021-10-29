@@ -8,6 +8,9 @@ class Hunter < ApplicationRecord
     Digest::MD5.hexdigest "#{self.hunter_uuid}+ #{self.hunter_name}"
   end
 
+  def score
+    self.ghosts.count * 10
+  end
   private
 
   def generate_hunter_uuid
