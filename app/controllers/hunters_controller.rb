@@ -21,6 +21,7 @@ class HuntersController < ApplicationController
       if @hunter.save
         session[:hunter_name] = @hunter.hunter_name
         session[:hunter_uuid] = @hunter.hunter_uuid
+        session[:hunter_session_id] = @hunter.generate_session_id
         redirect_to hunter_path(@hunter.hunter_uuid)
       else
         render :new
