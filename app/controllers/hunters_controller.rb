@@ -13,15 +13,22 @@ class HuntersController < ApplicationController
 
   def create
     @hunter = Hunter.new(hunter_params)
-    @hunter.hunter_uuid = SecureRandom.uuid
     
-    if @hunter.save
-      session[:hunter_name] = @hunter.hunter_name
-      session[:hunter_uuid] = @hunter.hunter_uuid
-      redirect_to hunter_path(@hunter.hunter_uuid)
+  
+    
+    if doesnt_exist(hunter_params[:hunter_name]) 
+    
+      if @hunter.save
+        session[:hunter_name] = @hunter.hunter_name
+        session[:hunter_uuid] = @hunter.hunter_uuid
+        redirect_to hunter_path(@hunter.hunter_uuid)
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_path + 'register', message: 'User already exists!'
     end
+
   end
 
   def capture
@@ -39,4 +46,15 @@ class HuntersController < ApplicationController
   def hunter_params
     params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password, :ghost_uuid)
   end
+
+  def doesnt_exist(hunter_name)
+    h = Hunter.find_by_hunter_name(hunter_name)
+    if h
+      return false
+    else
+      return true
+    end
+  end 
+
+
 end
