@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 	get "/raymond", to: "ghosts#all"
 	get "/winston", to: "ghosts#all"
 	get "/pacman", to: "ghosts#all"
+	get "/wrong", to: "ghosts#wrong"
 
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"
