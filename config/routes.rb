@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 	resources :ghosts, param: :ghost_uuid
 
 	##sessions
-	get '/login', to: 'sessions#login'
-	get '/register', to: 'sessions#new'
-  	post '/login', to: 'sessions#create'
-  	post '/logout', to: 'sessions#destroy'
-	get  '/logout', to: 'sessions#destroy'
+	get "login", to: "sessions#login"
+	get "register", to: "sessions#new", as: "register"
+  	post "/login", to: "sessions#create"
+  	post "/logout", to: "sessions#destroy"
+	get  "/logout", to: "sessions#destroy"
 
 	get "/ghosts", to: "ghosts#index"
 
@@ -34,6 +34,6 @@ Rails.application.routes.draw do
 	## Scoreboard 
 	resources :scoreboard, only: :index
 
-	get "/scoreboard", to: "scoreboard#all"
+	get "/scoreboard", to: "scoreboard#all", as: 'scoreboard'
 
 end
