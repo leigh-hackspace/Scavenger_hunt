@@ -108,6 +108,7 @@
     }
 
   @media screen and (max-width: 992px) {
+    display: grid;
       display: block;
       text-align: center;
       color: rgb(255,255,255);
@@ -121,7 +122,6 @@
       display: inline-block;
       border:  none;
       border-radius: 25px 25px 0px 0px;
-
   }
 
 #grass {
@@ -133,7 +133,7 @@
 body {
     background-color: rgb(37, 37, 37);
     color: rgba(228,153, 72,1);
-    font-family: 'Inter', cursive;
+    font-family: 'Inter', sans-serrif;
     font-size: 18px;
     line-height: 1.25rem;
     max-width: 80%;
@@ -236,7 +236,7 @@ body {
 
     @media screen and (max-width: 992px) {
       font-size: 0.75rem;
-      padding: 10px 15px;
+      padding: 10px 15px;ull
     }
   }
 
