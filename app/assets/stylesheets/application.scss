@@ -105,14 +105,14 @@
 .nav-bar {
 
   @media screen and (max-width: 992px) {
-
+    display: grid;
   }
 }
 
 body {
     background-color: rgb(37, 37, 37);
     color: rgba(228,153, 72,1);
-    font-family: 'Creepster', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     line-height: 1.25rem;
     max-width: 80%;
