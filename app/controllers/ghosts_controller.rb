@@ -1,6 +1,7 @@
 class GhostsController < ApplicationController
   def all
 	  @ghosts = Ghost.all
+    @ghosts = @ghosts.sort_by {|g| g.id}
   end
 
   def show
