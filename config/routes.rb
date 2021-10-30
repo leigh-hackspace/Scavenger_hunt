@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 	get "/ghosts", to: "ghosts#index"
 
 
-	get "/h4d3s", to: "ghosts#new"
-	post "/h4d3s", to: "ghosts#create"
+#	get "/h4d3s", to: "ghosts#new"
+#	post "/h4d3s", to: "ghosts#create"
 
 	## ghostbusters show all available ghosts
 	get "/egon", to: "ghosts#all"
