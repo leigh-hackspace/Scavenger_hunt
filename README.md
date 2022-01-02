@@ -1,17 +1,9 @@
 # README
-Spooky hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "ghosts" using phone cameras which will capture the ghosts, these ghosts will be placed around a dark area and will have IR LEDs which most phone cameras can also pick up but that can't be seen with the naked eye (as far as im aware...) this will allow the player to 'scan for ghosts' so spooky!
-
+Scavanger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture these objects, theQR codes  will be hidden and players will have to find and scan them! 
 
 # ToDo List
 
-- [ ] Spooky Styles
-- [ ] Leader board
-    - [ ] Add Ghost capture
-- [ ] Login Panel
-    - [ ] Register hunter with email address and password
-- [ ] Admin Panel
-    - [ ] Put all ghost creation functionality behind this
-- [ ] Test Scanning of QR codes on different phones
+- [ ] Refactor to make it more generic (remove references to ghosts, spooky etc.)
     
 
 
