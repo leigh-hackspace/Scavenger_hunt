@@ -12,19 +12,19 @@ Rails.application.routes.draw do
   	post "/logout", to: "sessions#destroy"
 	get  "/logout", to: "sessions#destroy"
 
-	get "/ghosts", to: "ghosts#index"
+	get "/items", to: "items#index"
 
 
 #	get "/h4d3s", to: "ghosts#new"
 #	post "/h4d3s", to: "ghosts#create"
 
 	## ghostbusters show all available ghosts
-	get "/egon", to: "ghosts#all"
-	get "/peter", to: "ghosts#all"
-	get "/raymond", to: "ghosts#all"
-	get "/winston", to: "ghosts#all"
-	get "/pacman", to: "ghosts#all"
-	get "/wrong", to: "ghosts#wrong"
+	get "/egon", to: "items#all"
+	get "/peter", to: "items#all"
+	get "/raymond", to: "items#all"
+	get "/winston", to: "items#all"
+	get "/pacman", to: "items#all"
+	get "/wrong", to: "items#wrong"
 
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"

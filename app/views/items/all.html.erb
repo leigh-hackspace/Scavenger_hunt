@@ -1,6 +1,28 @@
-<h1 id="center">Items</h1>
+<h1>Ghosts</h1>
 
-<h2 id="center"> Someone&apos;s nosey!
-<br>
-<hr id="grass">
-<br>    
+<table>
+<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th><th>QR Code</th></tr>
+	<% @items.each do |item| %>
+		<tr>    
+			<td><%= item.id %></td>
+			<td><%= image_tag item.image, class: "item-image" %></td> 
+			<td><%= item.title %></td>
+			<td><%= item.body %></td>
+			<td><a href=<%= item_path(item.item_uuid) %>>view item</a></td>
+			<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "E49948")%></td>
+		</tr>
+	<% end %>
+	
+</table>
+<p>Welcome page:</p>
+<%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "E49948")%>
+<p>wrong ghost!:</p>
+<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
+<br />
+<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
+<br />
+<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
+<br />
+<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
+<br />
+<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
