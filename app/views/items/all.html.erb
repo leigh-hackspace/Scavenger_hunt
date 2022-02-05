@@ -2,14 +2,14 @@
 
 <table>
 <tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th><th>QR Code</th></tr>
-	<% @ghosts.each do |ghost| %>
+	<% @items.each do |item| %>
 		<tr>    
-			<td><%= ghost.id %></td>
-			<td><%= image_tag ghost.image, class: "ghost-image" %></td> 
-			<td><%= ghost.title %></td>
-			<td><%= ghost.body %></td>
-			<td><a href=<%= ghost_path(ghost.ghost_uuid) %>>view ghost</a></td>
-			<td><%=render inline: RQRCode::QRCode.new(root_url + ghost_path(ghost.ghost_uuid)).as_svg(module_size: 3,color: "E49948")%></td>
+			<td><%= item.id %></td>
+			<td><%= image_tag item.image, class: "item-image" %></td> 
+			<td><%= item.title %></td>
+			<td><%= item.body %></td>
+			<td><a href=<%= item_path(item.item_uuid) %>>view item</a></td>
+			<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "E49948")%></td>
 		</tr>
 	<% end %>
 	

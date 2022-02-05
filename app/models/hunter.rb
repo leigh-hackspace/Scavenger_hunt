@@ -1,7 +1,7 @@
 class Hunter < ApplicationRecord
   before_save :generate_hunter_uuid
   has_secure_password
-  has_and_belongs_to_many :ghosts
+  has_and_belongs_to_many :items
 
   
   def generate_session_id
@@ -9,7 +9,7 @@ class Hunter < ApplicationRecord
   end
 
   def score
-    self.ghosts.count * 10
+    self.items.count * 10
   end
   private
 

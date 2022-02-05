@@ -1,5 +1,5 @@
-<h1>New Ghost<h1>
-<%= simple_form_for @ghost do |form| %>
+<h1>New Item<h1>
+<%= simple_form_for @item do |form| %>
   <div>
     <%= form.label :title %><br />
     <%= form.text_field :title %>
@@ -9,7 +9,7 @@
     <%= form.text_field :body %>
   </div><br />
   <div>
-     <%= form.input :image, as: :file, label: 'Image of Ghost'%> 
+     <%= form.input :image, as: :file, label: 'Image of Item'%> 
   </div><br />
   <div>
     <%= form.submit %>

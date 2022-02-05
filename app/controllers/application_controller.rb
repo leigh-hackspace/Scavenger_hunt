@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def tweet_capture(hunter_name, ghost_name)
-    send_tweet("Looks like #{hunter_name} has just captured a ghost! 👻#{ghost_name}👻 #spookyhunt2021")
+  def tweet_capture(hunter_name, hunted_name)
+    send_tweet("Looks like #{hunter_name} has just found an item! 🔎#{hunted_name}🔍️  ##{ENV['HUNT_TITLE']}")
   end
 
 end

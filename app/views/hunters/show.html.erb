@@ -4,17 +4,17 @@
     <div class="hunter-container-inner">
       <% if session[:hunter_session_id] == @hunter.generate_session_id %>
         <h1><%= @hunter.hunter_name %></h1>
-        <% if @hunter.ghosts.count == 0 %>
-          <h2>Looks like you haven&apos;t captured any ghosts</h2>
+        <% if @hunter.items.count == 0 %>
+          <h2>Looks like you haven&apos;t captured any items</h2>
           <h3>Head for the shed!</h3>
         <% else %>
-          <h3> Well done! you have captured the following ghosts </h3>
+          <h3> Well done! you have captured the following items </h3>
           <table>
-            <th>Ghost name</th><th>picture</th><th>points</th>
-            <% @hunter.ghosts.each do |g|%>  
+            <th>Item name</th><th>picture</th><th>points</th>
+            <% @hunter.item.each do |i|%>  
               <tr>
-                <td><%= g.title %></td>
-                <td><%= image_tag g.image, class: 'ghost-image'%></td>
+                <td><%= i.title %></td>
+                <td><%= image_tag i.image, class: 'item-image'%></td>
                 <td>10</td>
               </tr>
             <% end %>
