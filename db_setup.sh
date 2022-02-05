@@ -9,17 +9,17 @@ echo "Username: " $dbUser
 echo "Password: " $dbPass
 
 
-#echo "## Scavenger Hunt Config" >> ~/.bashrc
-#echo "" >> ~/.bashrc
-#echo "export SCAVENGER_DB_NAME='$dbName'" >> ~/.bashrc
-#echo "export SCAVENGER_DB_USER='$dbUser'" >> ~/.bashrc
-#echo "export SCAVENGER_DB_PASS='$dbPass'" >> ~/.bashrc
+echo "## Scavenger Hunt Config" >> ~/.bashrc
+echo "" >> ~/.bashrc
+echo "export SCAVENGER_DB_NAME='$dbName'" >> ~/.bashrc
+echo "export SCAVENGER_DB_USER='$dbUser'" >> ~/.bashrc
+echo "export SCAVENGER_DB_PASS='$dbPass'" >> ~/.bashrc
 
-#source ~/.bashrc
+source ~/.bashrc
 
-#echo $SCAVENGER_DB_NAME
-#echo $SCAVENGER_DB_USER
-#echo $SCAVENGER_DB_PASS
+echo $SCAVENGER_DB_NAME
+echo $SCAVENGER_DB_USER
+echo $SCAVENGER_DB_PASS
 
 set -e
 

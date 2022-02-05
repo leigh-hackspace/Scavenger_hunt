@@ -1,42 +1,31 @@
 # README
+
 Scavanger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture these objects, theQR codes  will be hidden and players will have to find and scan them! 
 
-# ToDo List
+### ToDo List
 
 - [ ] Refactor to make it more generic (remove references to ghosts, spooky etc.)
     
-
 
 # Installation
 Install Ruby (we recommend using [rbenv](https://github.com/rbenv/rbenv))
 
 Clone The Repo then run 
 ```
+./db_setup.sh
 bundle install
 gem install rails -v 6.1.4.1
 
 ```
 
-
-setting up postgress database
-
+## Setting up postgress database
 ---
-sudo -u postgres psql
 
+Running the db_setup.sh file will create the database with the desired config
 
-
-postgres=# create user {username} with encrypted password '{chosen password}';
-postgres=# create database {database} OWNER {username};
-postgres=# grant all privileges on database {database} to {username};
-
-then \q to exit postgres
-
-you will also need to set the password as an environment variable
-
-echo "export SCAVENGER_DB_USER={chosen username}" >> ~/.bashrc
-echo "export SCAVENGER_DB_PASS={chosen password}" >> ~/.bashrc
 
 ## Configuring S3 Storage
+---
 
   echo "export AWS_ACCESS_KEY={accesskey}" >> ~/.bashrc
   echo "export AWS_SECRET_KEY={secretkey}" >> ~/.bashrc
