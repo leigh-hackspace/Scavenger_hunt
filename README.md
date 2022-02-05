@@ -23,17 +23,18 @@ setting up postgress database
 ---
 sudo -u postgres psql
 
-postgres=# create database {database};
+
 
 postgres=# create user {username} with encrypted password '{chosen password}';
-
+postgres=# create database {database} OWNER {username};
 postgres=# grant all privileges on database {database} to {username};
 
 then \q to exit postgres
 
 you will also need to set the password as an environment variable
 
-echo "export SPOOKY_DB_PASS={chosen password}" >> ~/.bashrc
+echo "export SCAVENGER_DB_USER={chosen username}" >> ~/.bashrc
+echo "export SCAVENGER_DB_PASS={chosen password}" >> ~/.bashrc
 
 source ~/.bashrc
 
