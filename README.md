@@ -12,6 +12,7 @@ Install Ruby (we recommend using [rbenv](https://github.com/rbenv/rbenv))
 
 Clone The Repo then run 
 ```
+./db_setup.sh
 bundle install
 gem install rails -v 6.1.4.1
 
@@ -21,22 +22,7 @@ gem install rails -v 6.1.4.1
 setting up postgress database
 
 ---
-sudo -u postgres psql
-
-
-
-postgres=# create user {username} with encrypted password '{chosen password}';
-postgres=# create database {database} OWNER {username};
-postgres=# grant all privileges on database {database} to {username};
-
-then \q to exit postgres
-
-you will also need to set the password as an environment variable
-
-echo "export SCAVENGER_DB_USER={chosen username}" >> ~/.bashrc
-echo "export SCAVENGER_DB_PASS={chosen password}" >> ~/.bashrc
-
-source ~/.bashrc
+Running the db_setup.sh will set up the postgress database and ask you for your desired config 
 
 ```
 
