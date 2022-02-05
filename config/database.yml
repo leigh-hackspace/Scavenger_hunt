@@ -5,35 +5,29 @@
 #   gem 'sqlite3'
 #
 default: &default
-#  adapter: sqlite3
   adapter: postgresql
   encoding: unicode
-  database: <%= ENV['SCAVENGER_DB'] %>
-  #username: <%= ENV['SCAVENGER_DB_USER'] %>
-  #password: <%= ENV['SCAVENGER_DB_PASS'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  pool: 5
+  #database:
+  database: <%= ENV['SCAVENGER_DB_NAME'] %>
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
+  password: <%= ENV['SCAVENGER_DB_PASS'] %>
   timeout: 5000
 
 development:
   <<: *default
-  database: <%= ENV['SCAVENGER_DB'] %>
+  database: <%= ENV['SCAVENGER_DB_NAME'] %>
   username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
-
-#  database: db/test.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: <%= ENV['TEST_SCAVENGER_DB'] %>
-  username: <%= ENV['SCAVENGER_DB_USER'] %>
-  password: <%= ENV['SCAVENGER_DB_PASS'] %>
-  
-production:
-  <<: *default
-#   database: db/test.sqlite3
-  database: <%= ENV['SCAVENGER_DB'] %>
-  username: <%= ENV['SCAVENGER_DB_USER'] %>
-  password: <%= ENV['SCAVENGER_DB_PASS'] %>
+#test:
+#  <<: *default
+#  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
+
+#production:
+#  <<: *default
+#  database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>

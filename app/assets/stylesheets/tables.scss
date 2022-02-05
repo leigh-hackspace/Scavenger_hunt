@@ -1,0 +1,26 @@
+// Place all the styles related to the scoreboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.scores-table{
+    width: 80%;
+    color: white;
+    text-transform: uppercase;
+
+
+.scores-table tr:nth-child(even) {
+    background-color: blue;
+    //$primary-1;
+    }
+
+.scores-table tr:nth-child(odd) {
+    background-color: green;
+    //$primary-2;
+    }
+
+.scores-table th, td {
+    text-align: center;
+    padding: 8px;
+    }
+}
+

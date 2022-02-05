@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   resources :hunters, param: :hunter_uuid
   resources :items, param: :item_uuid
 
-  # #sessions
+  ##sessions
   get 'login', to: 'sessions#login'
   get 'register', to: 'sessions#new', as: 'register'
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
 
-  get '/items', to: 'items#index'
+  get '/items', to: 'items#index', as: 'home'
 
   get "/admin", to: "items#new"
   post "/admin", to: "items#create"
@@ -25,16 +25,14 @@ Rails.application.routes.draw do
   get '/peter', to: 'items#all'
   get '/roger', to: 'items#all'
   
-  get '/showall', to: 'items#all'  
-  get '/clues', to: 'items#clues'
+  get '/showall', to: 'items#all'
+  get '/clues', to: 'items#clues', as: 'clues'
 
   get '/wrong', to: 'items#wrong'
-
   get '/hunters', to: 'hunters#welcome'
   post '/hunt', to: 'hunters#capture'
 
-  ## Scoreboard
-  resources :scoreboard, only: :index
-
+	## Scoreboard
+	resources :scoreboard, only: :index
   get '/scoreboard', to: 'scoreboard#all', as: 'scoreboard'
 end

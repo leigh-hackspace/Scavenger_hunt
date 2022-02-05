@@ -1,5 +1,7 @@
-<%= simple_form_for @hunter do |h| %>
-    <%= h.input :hunter_name , label: 'Please enter a hunter name:' %>
-    <br>
-    <%= h.button :submit, "Save Hunter", class:'grave_button'  %>
-<% end %>
+<div class="page-container">
+  <%= simple_form_for @hunter do |h| %>
+  <%= h.input :hunter_name , label: 'Please enter a hunter name:' %>
+  <br>
+  <%= h.button :submit, "Save Hunter", class:'grave_button'  %>
+  <% end %>
+</div>

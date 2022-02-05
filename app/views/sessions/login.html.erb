@@ -1,4 +1,4 @@
-<div>
+<div class="page-container">
   <% if session[:hunter_uuid].present? %>
     <script type="text/javascript">
       window.location.replace("<%=root_url + hunter_path(session[:hunter_uuid])%>")
