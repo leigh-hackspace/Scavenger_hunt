@@ -36,6 +36,13 @@ you will also need to set the password as an environment variable
 echo "export SCAVENGER_DB_USER={chosen username}" >> ~/.bashrc
 echo "export SCAVENGER_DB_PASS={chosen password}" >> ~/.bashrc
 
+## Configuring S3 Storage
+
+  echo "export AWS_ACCESS_KEY={accesskey}" >> ~/.bashrc
+  echo "export AWS_SECRET_KEY={secretkey}" >> ~/.bashrc
+  echo "export AWS_REGION={region}" >> ~/.bashrc
+  echo "export AWS_BUCKET={bucket_name}" >> ~/.bashrc
+
 source ~/.bashrc
 
 ```
