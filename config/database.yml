@@ -8,16 +8,16 @@ default: &default
 #  adapter: sqlite3
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV['SCAVENGER_DB_USER'] %>
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  password: <%= ENV['SCAVENGER_DB_PASS'] %>
+  database: <%= ENV['SCAVENGER_DB'] %>
+  #username: <%= ENV['SCAVENGER_DB_USER'] %>
+  #password: <%= ENV['SCAVENGER_DB_PASS'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER']%>
+  database: <%= ENV['SCAVENGER_DB'] %>
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
 
 #  database: db/test.sqlite3
@@ -27,13 +27,13 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER']%>
+  database: <%= ENV['SCAVENGER_DB'] %>
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
   
 production:
   <<: *default
 #   database: db/test.sqlite3
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER']%>
+  database: <%= ENV['SCAVENGER_DB'] %>
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
