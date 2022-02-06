@@ -24,8 +24,8 @@ echo $SCAVENGER_DB_PASS
 set -e
 
 sudo su postgres <<EOF
-createdb  $dbName;
-psql -c "CREATE USER $dbUser WITH PASSWORD '$dbPass';"
+createdb  $dbName owner $dbUser;
+psql -c "CREATE USER $dbUser WITH ENCRYPTED PASSWORD '$dbPass';"
 psql -c "grant all privileges on database $dbName to $dbUser;"
 echo "Postgres User '$dbUser' and database '$dbName' created."
 EOF
