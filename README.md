@@ -23,6 +23,9 @@ gem install rails -v 6.1.4.1
 
 Running the db_setup.sh file will create the database with the desired config
 
+## Running rspec tests
+`bundle exec rspec`
+
 
 ## Configuring S3 Storage
 ---
