@@ -27,7 +27,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['SCAVENGER_DB'] %>
+  database: <%= ENV['TEST_SCAVENGER_DB'] %>
   username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
   
