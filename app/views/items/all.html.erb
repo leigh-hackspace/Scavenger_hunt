@@ -1,4 +1,4 @@
-<h1>Ghosts</h1>
+<h1>Items</h1>
 
 <table>
 <tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th><th>QR Code</th></tr>
@@ -16,7 +16,7 @@
 </table>
 <p>Welcome page:</p>
 <%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "E49948")%>
-<p>wrong ghost!:</p>
+<p>wrong Item!:</p>
 <%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
 <br />
 <%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
