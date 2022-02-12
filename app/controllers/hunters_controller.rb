@@ -45,7 +45,7 @@ class HuntersController < ApplicationController
   end
 
   def hunter_params
-    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password, :ghost_uuid)
+    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password, :item_uuid)
   end
 
   def doesnt_exist(hunter_name)

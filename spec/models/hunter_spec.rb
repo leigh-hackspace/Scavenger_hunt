@@ -1,7 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Hunter, type: :model do
-  it "generates unique hunter uuid" do
-    expect {self.generate_hunter_uuid}.not_to match self.generate_hunter_uuid
+  it("should generate unique uuid") do
+    expect(
+      Hunter.create(hunter_name:"test", password:"password1")
+    ).not_to match(Hunter.create(hunter_name:"test2", password:"password1"))
+  end
+
+  it("should generate a session id") do
+    expect(
+      Hunter.create(hunter_name:"test", password:"password1")
+  ).not_to match(Hunter.create(hunter_name:"test2", password:"password1"))
   end
 end
