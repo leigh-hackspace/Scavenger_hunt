@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require navbar
  */
 
 /* CSS - Cascading Style Sheet */
@@ -121,7 +122,6 @@
 }
 
 .container {
-  background-color: rgb(107, 107, 107);
   padding: 25px 0;
 
   @media screen and (max-width: 992px) {
@@ -164,33 +164,9 @@
   width: 95%;
 }
 
-.nav-bar {
-  text-align: center;
-
-  @media screen and (max-width: 992px) {
-    display: block;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    cursor: crosshair;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    width: fit-content;
-    border: none;
-    border-radius: 25px 25px 0px 0px;
-  }
-
-}
-
-#grass {
-  width: 80%;
-  background-image: "/assets/grass.png";
-  color: green;
-}
 
 body {
-  background-color: rgb(37, 37, 37);
-  color: rgba(228, 153, 72, 1);
+  background-image:url('tartan.png');
   font-family: "Inter", sans-serrif;
   font-size: 18px;
   line-height: 1.25rem;
@@ -249,71 +225,21 @@ body {
   text-align: center;
 }
 
-.ghost-container-outer {
+.item-container-outer {
   background-color: #bbee09;
   border-radius: 15px 50px;
   padding: 25px 10px;
   box-shadow: 12px 8px #703799;
 }
 
-.ghost-container-inner {
+.item-container-inner {
   color: red;
 }
 
-.ghost-image {
+.item-image {
   height: 125px;
   width: 125px;
 }
-
-.nav {
-  display: block;
-}
-
-.grave_button {
-  background-color: rgb(201, 202, 195);
-  border-radius: 25px 25px 0px 0px;
-  color: #4c4c4c;
-  padding: 10px 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0.75rem;
-  margin: 4px 2px;
-  cursor: pointer;
-  min-width: 40px;
-  text-transform: uppercase;
-  border: 1px solid;
-  box-shadow: 5px -1px;
-
-  @media screen and (max-width: 992px) {
-    font-size: 0.75rem;
-    padding: 10px 7px;
-  }
-}
-
-.grave_button:hover {
-  background-color: grey;
-}
-
-.ghost_button {
-  background-color: rgb(201, 202, 195);
-  border: none;
-  border-radius: 15px 15px 15px 15px;
-  color: rgb(255, 255, 255);
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 2rem;
-  margin: 4px 2px;
-  cursor: pointer;
-  min-width: 40px;
-
-  @media screen and (max-width: 992px) {
-    font-size: 0.75rem;
-  }
-}
-
 
 .scoreboard {
   text-align:center;

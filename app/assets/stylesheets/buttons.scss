@@ -1,0 +1,99 @@
+/* Egg hunt*/
+
+.egg-button {
+  display: table-cell;
+  margin: 10px;
+  padding: 16px;
+  width: 136px;
+  height: 75px;
+  -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  outline: 1px solid black;
+  text-decoration: none;
+
+  h3 {
+      padding: 90px 30px;
+      color:white
+   }
+}
+
+.egg-button:hover {
+  outline:white;
+
+}
+   .color-1 {
+      background-color: #21d190;
+      background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
+    }
+
+    .color-1:hover {
+      background-color: blue;
+    }
+
+   .color-2 {
+      background-color: #f6d327;
+      background-image: linear-gradient(315deg, #f6d327 0%, #de4daa 74%);
+    }
+
+    .color-3 {
+      background-color: #f2cf07;
+      background-image: linear-gradient(315deg, #f2cf07 0%, #55d284 74%);
+    }
+
+    .color-4 {
+      background-color: #fff000;
+      background-image: linear-gradient(315deg, #fff000 0%, #ed008c 74%);
+    }
+
+    .color-5 {
+      background-color: #ebf928;
+      background-image: linear-gradient(315deg, #ebf928 0%, #d425b5 74%);
+    }
+
+
+
+/* Spooky Hunt */
+.grave_button {
+  background-color: rgb(201, 202, 195);
+  border-radius: 25px 25px 0px 0px;
+  color: #4c4c4c;
+  padding: 10px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.75rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  min-width: 40px;
+  text-transform: uppercase;
+  border: 1px solid;
+  box-shadow: 5px -1px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 0.75rem;
+    padding: 10px 7px;
+  }
+}
+
+.grave_button:hover {
+  background-color: grey;
+}
+
+.ghost_button {
+  background-color: rgb(201, 202, 195);
+  border: none;
+  border-radius: 15px 15px 15px 15px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  min-width: 40px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 0.75rem;
+  }
+}

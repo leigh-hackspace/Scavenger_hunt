@@ -8,15 +8,15 @@ default: &default
 #  adapter: sqlite3
   adapter: postgresql
   encoding: unicode
-  database: <%= ENV['SCAVENGER_DB'] %>
-  #username: <%= ENV['SCAVENGER_DB_USER'] %>
-  #password: <%= ENV['SCAVENGER_DB_PASS'] %>
+  database: egg_hunt
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
+  password: <%= ENV['SCAVENGER_DB_PASS'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: <%= ENV['SCAVENGER_DB'] %>
+  database: egg_hunt
   username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
 
@@ -30,10 +30,10 @@ test:
   database: <%= ENV['TEST_SCAVENGER_DB'] %>
   username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
-  
+
 production:
   <<: *default
 #   database: db/test.sqlite3
-  database: <%= ENV['SCAVENGER_DB'] %>
+  database: egg_hunt
   username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>

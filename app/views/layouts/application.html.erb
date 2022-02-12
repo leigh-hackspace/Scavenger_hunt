@@ -1,4 +1,4 @@
-g!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Scavenger Hunt!</title>
@@ -12,7 +12,7 @@ g!DOCTYPE html>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -20,12 +20,6 @@ g!DOCTYPE html>
     <div class="mobile-container">
         <%= render 'shared/navbar' %>
         <div class="nav-bar">
-          <%= link_to "Home", root_path,        class: 'grave_button' %>
-          <%= link_to "Login", login_path,      class: 'grave_button' %>
-          <%= link_to "Signup", register_path,  class: 'grave_button' %>
-          <%= link_to "Score", scoreboard_path, class: 'grave_button' %>
-     </div>
-     <hr id="grass">
       <%= yield %>
     </div>
   </div>
