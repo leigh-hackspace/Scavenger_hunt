@@ -28,10 +28,9 @@ Rails.application.routes.draw do
 
 	get "/hunters", to: "hunters#welcome"
 	post "/hunt", to: "hunters#capture"
-	
 
 
-	## Scoreboard 
+	## Scoreboard
 	resources :scoreboard, only: :index
 
 	get "/scoreboard", to: "scoreboard#all", as: 'scoreboard'

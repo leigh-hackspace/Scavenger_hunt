@@ -11,6 +11,11 @@
   outline: 1px solid black;
   text-decoration: none;
 
+  a {
+    outline: red 1px solid;
+    padding: 10px;
+  }
+
   h3 {
       padding: 90px 30px;
       color:white
@@ -18,8 +23,7 @@
 }
 
 .egg-button:hover {
-  outline:white;
-
+  box-shadow: 9px 5px 5px 0px rgba(245,242,114,0.75);
 }
    .color-1 {
       background-color: #21d190;

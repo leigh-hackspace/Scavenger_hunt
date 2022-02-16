@@ -11,14 +11,14 @@ default: &default
   pool: 5
   #database:
   database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER'] %> 
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
   timeout: 5000
 
 development:
   <<: *default
   database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER'] %> 
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
   password: <%= ENV['SCAVENGER_DB_PASS'] %>
 
 # Warning: The database defined as "test" will be erased and

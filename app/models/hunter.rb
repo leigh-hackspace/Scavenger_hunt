@@ -3,7 +3,7 @@ class Hunter < ApplicationRecord
   has_secure_password
   has_and_belongs_to_many :items
 
-  
+
   def generate_session_id
     Digest::MD5.hexdigest "#{self.hunter_uuid}+ #{self.hunter_name}"
   end
