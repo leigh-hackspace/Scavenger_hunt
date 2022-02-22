@@ -1,25 +1,38 @@
-<div class="egg-box">
+<nav class="egg-box">
 
-    <%= link_to root_path do %>
-        <%= image_tag "easter/egg1.png" width%>
+    <div class="egg home">
+      <%= link_to root_path do %>
         <h3>HOME</h3>
-    <% end %>
+      <% end %>
+    </div>
 
-    <%= link_to login_path do %>
-        <%= image_tag "easter/egg2.png" %>
-        <h3>Login</h3>
-    <% end %>
+    <div class="egg clues">
+        <h3>CLUES</h3>
+    </div>
 
-    <%= link_to register_path do %>
-        <%= image_tag "easter/egg3.png" %>
-        <h3>Register</h3>
-    <% end %>
+    <div class="egg scoreboard">
+      <%= link_to scoreboard_path do %>
+        <h3>SCOREBOARD</h3>
+      <% end %>
+    </div>
 
-    <%= link_to scoreboard_path do %>
-        <%= image_tag "easter/egg4.png" %>
-        <h3>HOME</h3>
-    <% end %>
 
-</div>
+    <div class="egg register">
+      <%= link_to register_path do %>
+        <h4>REGISTER</h4>
+      <% end %>
+    </div>
+
+    <div class="egg login">
+      <%= link_to login_path do %>
+        <h4>LOGIN</h4>
+      <% end  %>
+    </div>
+
+    <div class="egg logout">
+        <h4>LOGOUT</h4>
+    </div>
+
+</nav>
 
  <hr class="grass">

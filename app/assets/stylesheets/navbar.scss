@@ -1,38 +1,57 @@
-.nav-bar {
-  text-align: center;
-
-  @media screen and (max-width: 992px) {
-    display: block;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    cursor: crosshair;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    width: fit-content;
-    border: none;
-    border-radius: 25px 25px 0px 0px;
-  }
-
-}
-
-
-/* Easter_navbar */
-
-.grass {
-  height: 5px;
-  background-image:url('grass.png');
-}
-
 .egg-box {
-  display: table;
-  width: 85%;
-  padding: 0 8%;
-
-  @media screen and (max-width: 992px) {
-    display: table;
-    width: 100%;
-    padding: 0;
-
-  }
+  border: 5px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* 
+   flex-start flex-end center space-around 
+     space between space-evenly  */
 }
+
+.egg {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px black;
+
+    a{
+      text-decoration: none;
+      color:white;
+      text-shadow: 1px 1px black;
+      }
+    
+    h3 {
+      font-size: 1.5em;
+      }
+
+    h4 {
+      font-size: 1em;
+      }  
+    }
+
+.home {
+    background-color: blue;
+    margin-right: auto;
+    }
+
+.register {
+  background-color:green;
+  margin-left:auto;
+  }
+
+.login {
+    background-color: yellow;
+    }
+
+.logout {
+    background-color: orange;
+    }
+
+.clues {
+    background-color: aqua;
+    }
+
+.scoreboard {
+    background-color: purple;
+    }
+
