@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# :nodoc:
 module HuntersHelper
   def score(hunter)
     hunter.items.count * 10

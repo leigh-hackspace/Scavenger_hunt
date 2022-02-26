@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# :nodoc:
 class Item < ApplicationRecord
   before_save :generate_item_uuid
   has_one_attached :image
@@ -8,5 +11,4 @@ class Item < ApplicationRecord
   def generate_item_uuid
     self.item_uuid = SecureRandom.uuid
   end
-
 end

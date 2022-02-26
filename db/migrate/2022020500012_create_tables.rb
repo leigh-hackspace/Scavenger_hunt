@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateTables < ActiveRecord::Migration[6.1]
   def change
     create_table :items do |t|
@@ -15,6 +17,5 @@ class CreateTables < ActiveRecord::Migration[6.1]
 
     add_column :hunters, :password_digest, :string
     add_column :hunters, :hunter_uuid, :string
-  
   end
 end
