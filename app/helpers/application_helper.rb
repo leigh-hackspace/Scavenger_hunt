@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# :nodoc:
 module ApplicationHelper
   def hunter_logged_in?
     !!session[:hunter_uuid]

@@ -1,15 +1,18 @@
+# frozen_string_literal: true
+
+# :nodoc:
 class ItemsController < ApplicationController
   def all
-	  @items = Item.all
-    @items = @items.sort_by {|i| i.id}
+    @items = Item.all
+    @items = @items.sort_by(&:id)
   end
 
   def show
-	  @item = Item.find_by_item_uuid(params[:item_uuid])
+    @item = Item.find_by_item_uuid(params[:item_uuid])
   end
 
   def new
-	  @item = Item.new
+    @item = Item.new
   end
 
   def create
@@ -22,7 +25,6 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-
 
   def item_params
     params.require(:item).permit(:title, :body, :image)
