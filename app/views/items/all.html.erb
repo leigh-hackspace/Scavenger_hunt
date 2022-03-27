@@ -1,4 +1,4 @@
-<h1>Items</h1>
+<h1>Items:</h1>
 
 <table>
 <tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Debug Link</th><th>QR Code</th></tr>
@@ -12,17 +12,18 @@
 			<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "E49948")%></td>
 		</tr>
 	<% end %>
-	
 </table>
-<p>Welcome page:</p>
-<%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "E49948")%>
-<p>wrong Item!:</p>
-<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
-<br />
-<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
-<br />
-<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
-<br />
-<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
-<br />
-<%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%>
+
+<table>
+<tr><th>Page</th><th>QR Code</th></tr>
+<tr>
+	<td>Welcome page</td>
+	<td><%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "E49948")%><td>
+</tr>
+<% for i in 0..9 do %>
+	<tr>
+		<td>Wrong Item!</td>
+		<td><%=render inline: RQRCode::QRCode.new(root_url + "wrong").as_svg(module_size: 3,color: "E49948")%></td>
+	</tr>
+<% end %>
+</table>
