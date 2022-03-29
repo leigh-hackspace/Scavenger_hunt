@@ -14,6 +14,10 @@ class Hunter < ApplicationRecord
     items.count * 10
   end
 
+  def check_admin
+    isAdmin?
+  end
+
   private
 
   def generate_hunter_uuid

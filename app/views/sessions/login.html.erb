@@ -1,8 +1,16 @@
 <div>
-  <h2>Log in if you're an existing user</h2>
-  <%= form_tag '/login' do %>
-    Username: <%= text_field_tag :hunter_name %><br />
-    Password: <%= password_field_tag %><br />
-    <%= submit_tag "Log in" %>
-  <% end %>
+  <% unless session[:hunter_uuid].present? %>
+
+    <h2>Log in if you&apos;re an existing user</h2>
+    <%= form_tag '/login' do %>
+      Username: <%= text_field_tag :hunter_name %><br />
+      Password: <%= password_field_tag %><br />
+      <%= submit_tag "Log in" %>
+    <% end %>
+    <% else %>
+    <script type="text/javascript>
+      window.location.href=<%= root_url + hunter_path(session[:hunter_uuid]) %>
+    </script>
+
+<% end %>
 </div>

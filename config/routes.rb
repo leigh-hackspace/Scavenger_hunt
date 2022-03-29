@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'hunters/all', to: 'hunters#all'
 
   resources :hunters, param: :hunter_uuid
-  resources :ghosts, param: :ghost_uuid
+  resources :items, param: :item_uuid
 
   # #sessions
   get 'login', to: 'sessions#login'
@@ -16,15 +16,16 @@ Rails.application.routes.draw do
 
   get '/items', to: 'items#index'
 
-  #	get "/h4d3s", to: "ghosts#new"
-  #	post "/h4d3s", to: "ghosts#create"
+  get "/admin", to: "items#new"
+  post "/admin", to: "items#create"
 
-  ## ghostbusters show all available ghosts
-  get '/egon', to: 'items#all'
+  ##easter eggs
+  get '/bugs', to: 'items#all'
+  get '/lola', to: 'items#all'
   get '/peter', to: 'items#all'
-  get '/raymond', to: 'items#all'
-  get '/winston', to: 'items#all'
-  get '/pacman', to: 'items#all'
+  get '/roger', to: 'items#all'
+  get '/showall', to: 'items#all'  
+
   get '/wrong', to: 'items#wrong'
 
   get '/hunters', to: 'hunters#welcome'

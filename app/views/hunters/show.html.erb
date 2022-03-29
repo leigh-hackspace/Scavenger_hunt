@@ -11,7 +11,7 @@
           <h3> Well done! you have captured the following items </h3>
           <table>
             <th>Item name</th><th>picture</th><th>points</th>
-            <% @hunter.item.each do |i|%>  
+            <% @hunter.items.each do |i|%>  
               <tr>
                 <td><%= i.title %></td>
                 <td><%= image_tag i.image, class: 'item-image'%></td>
@@ -21,6 +21,12 @@
           </table>
           <h2>total points <%= score(@hunter) %></h2>
           <% end %>
+          <% if @hunter.isAdmin?%>
+            <h1>Admin</h1> 
+            <%= link_to 'Add Item', root_url + 'admin' %>
+            <%= link_to 'Show Items', root_url + 'showall' %>
+          <% end %>
+            <%= button_to 'Logout', 'root_url' + 'logout' %>
       <% else %>
         <%= link_to('Please log in!', root_path + 'login') %>
       <% end %>
