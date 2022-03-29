@@ -18,6 +18,7 @@ class HuntersController < ApplicationController
     session[:hunter_name] = hunter.hunter_name
     session[:hunter_uuid] = hunter.hunter_uuid
     session[:hunter_session_id] = hunter.generate_session_id
+    session[:isAdmin] = hunter.isAdmin?
     redirect_to hunter_path(@hunter.hunter_uuid)
   end
 
@@ -37,8 +38,8 @@ class HuntersController < ApplicationController
   def check_valid_session(current_session_id, hunter)
     return unless current_session_id == hunter.generate_session_id
 
-    @item = item.find_by_item_uuid(params[:item_uuid])
-    hunter.item << @item unless @hunter.item.include? @item
+    @item = Item.find_by_item_uuid(params[:item_uuid])
+    hunter.items << @item unless @hunter.items.include? @item
     tweet_capture(@hunter.hunter_name, @item.title)
   end
 

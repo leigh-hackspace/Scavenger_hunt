@@ -1,5 +1,8 @@
-<h1>New Item<h1>
-<%= simple_form_for @item do |form| %>
+<% unless session[:isAdmin] %>
+  <h1> Someone&apos;s nosey! </h1>
+  <% else %>
+  <h1>New Item<h1>
+  <%= simple_form_for @item do |form| %>
   <div>
     <%= form.label :title %><br />
     <%= form.text_field :title %>
@@ -15,3 +18,4 @@
     <%= form.submit %>
   </div>
   <% end %>
+<% end %>
