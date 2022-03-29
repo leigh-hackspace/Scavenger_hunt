@@ -7,6 +7,11 @@ class ItemsController < ApplicationController
     @items = @items.sort_by(&:id)
   end
 
+  def clues
+    @items = Item.all
+    @items = @items.sort_by(&:id)
+  end
+
   def show
     @item = Item.find_by_item_uuid(params[:item_uuid])
   end

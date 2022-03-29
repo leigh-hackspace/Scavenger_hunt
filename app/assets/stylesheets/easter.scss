@@ -164,9 +164,8 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     color: color-primary-3;
   }
   
-  /* Move to Ghosts scss */
-  
-  .ghost-capture-title {
+    
+  .item-capture-title {
     text-align: center;
     line-height: 1.5;
   }
@@ -177,18 +176,18 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     text-align: center;
   }
   
-  .ghost-container-outer {
+  .item-container-outer {
     background-color: #bbee09;
     border-radius: 15px 50px;
     padding: 25px 10px;
     box-shadow: 12px 8px #703799;
   }
   
-  .ghost-container-inner {
+  .item-container-inner {
     color: red;
   }
   
-  .ghost-image {
+  .item-image {
     height: 125px;
     width: 125px;
   }
@@ -197,7 +196,7 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     display: block;
   }
   
-  .grave_button {
+  .nav_bar_button {
     background-color: rgb(201, 202, 195);
     border-radius: 25px 25px 0px 0px;
     color: #4c4c4c;
@@ -219,11 +218,11 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     }
   }
   
-  .grave_button:hover {
+  .nav_bar_button:hover {
     background-color: grey;
   }
   
-  .ghost_button {
+  .item_button {
     background-color: rgb(201, 202, 195);
     border: none;
     border-radius: 15px 15px 15px 15px;

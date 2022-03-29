@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   get '/lola', to: 'items#all'
   get '/peter', to: 'items#all'
   get '/roger', to: 'items#all'
+  
   get '/showall', to: 'items#all'  
+  get '/clues', to: 'items#clues'
 
   get '/wrong', to: 'items#wrong'
 
