@@ -27,5 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
+    message = 'Logged out!'
+    redirect_to login_path, notice: message
   end
 end
