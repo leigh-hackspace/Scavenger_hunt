@@ -1,0 +1,45 @@
+.main-score-grid {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.score-header {
+    grid-column: span 4 / auto;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgb(190, 126, 250);
+    outline: solid 1px black;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.top-score {
+    grid-column: span 2 / auto;
+    text-transform: uppercase;
+    padding-left: 15px;
+    background-color: rgb(193, 172, 212);
+    outline: solid 1px black;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.bottom-score {
+    grid-column: span 2 / auto;
+    text-transform: uppercase;
+    padding-left: 15px;
+    background-color: rgb(193, 172, 212);
+    outline: solid 1px black;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.team-name {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgb(172, 212, 199);
+    outline: 1px solid black;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 15px 15px 15px 15px;
+}

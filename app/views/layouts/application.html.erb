@@ -12,22 +12,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
-  <div class="container">
-    <div class="mobile-container">
-        <div class="nav-bar">
-          <%= link_to "Home", root_path,        class: 'nav_bar_button' %>
-          <%= link_to "Login", login_path,      class: 'nav_bar_button' %>
-          <%= link_to "Signup", register_path,  class: 'nav_bar_button' %>
-          <%= link_to "Score", scoreboard_path, class: 'nav_bar_button' %>
-          <%= link_to "Clues", clues_path, class: 'nav_bar_button' %>
-     </div>
-     <hr id="grass">
-      <%= yield %>
+    <div class="container-grid ">
+      <%= render 'shared/navbar' %>
     </div>
-  </div>
+      <%= yield %>
   </body>
 </html>

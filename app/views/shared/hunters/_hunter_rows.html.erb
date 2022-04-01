@@ -1,0 +1,6 @@
+<% @hunters.each do |hunt| %>
+    <tr>
+        <td><%= hunt.hunter_name %></td>
+        <td><%= score(hunt) %></td>
+    </tr>
+<% end %>
