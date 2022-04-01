@@ -5,6 +5,8 @@ Scavanger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
 ### ToDo List
 
 - [ ] Refactor to make it more generic (remove references to ghosts, spooky etc.)
+- [ ] Create small mobile CSS
+- [ ] Create "theme generator"
     
 
 # Installation
