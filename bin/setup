@@ -2,6 +2,8 @@
 # frozen_string_literal: true
 
 require 'fileutils'
+require 'dotenv'
+Dotenv.load
 
 # path to your application root.
 APP_ROOT = File.expand_path('..', __dir__)
@@ -26,6 +28,17 @@ FileUtils.chdir APP_ROOT do
   # unless File.exist?('config/database.yml')
   #   FileUtils.cp 'config/database.yml.sample', 'config/database.yml'
   # end
+  #
+
+  # Run docker database setup
+  puts "Would you like to spin up a docker postgres container?"
+  puts "If yes, make sure a postgres instance is not already running on port 5432"
+  puts "Y or N"
+  db = gets.chomp.downcase
+  if db = "y"
+    puts "\n== Setup database =="
+    `docker run --rm -d --name  #{ENV['SCAVENGER_DB_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']}  -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres`
+   end
 
   puts "\n== Preparing database =="
   system! 'bin/rails db:prepare'
