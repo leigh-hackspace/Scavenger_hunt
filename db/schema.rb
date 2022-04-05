@@ -43,15 +43,6 @@ ActiveRecord::Schema.define(version: 2022_04_05_151504) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "coupons", force: :cascade do |t|
-    t.string "coupon_code"
-    t.boolean "is_claimed", default: false
-    t.boolean "boolean", default: false
-    t.string "item_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "hunters", force: :cascade do |t|
     t.string "hunter_name"
     t.datetime "created_at", precision: 6, null: false
