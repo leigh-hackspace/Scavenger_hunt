@@ -1,5 +1,5 @@
 <div class="page-container">
-<% unless session[:isAdmin] %>
+<% unless session[:is_admin] %>
   <% redirect_to root_path %>
 <% else %>
   <h1>Coupons</h1>
