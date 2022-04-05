@@ -1,0 +1,14 @@
+<div class="page-container">
+
+<h1>Coupon</h1>
+<% if @hunter.is_admin %>
+  <table>
+    <tr><th>ID</th><th>coupon</th><th>has been claimed</th></tr>
+      <tr>
+        <td><%= @coupon.id %></td>
+        <td><%= @coupon.coupon_code %></td>
+        <td><input type="checkbox" enabled="false" checked="<%= @coupon.is_claimed %>"</td>
+      </tr>
+  </table>
+<% end %>
+</div>

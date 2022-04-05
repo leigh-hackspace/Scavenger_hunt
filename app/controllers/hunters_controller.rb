@@ -18,7 +18,7 @@ class HuntersController < ApplicationController
     session[:hunter_name] = hunter.hunter_name
     session[:hunter_uuid] = hunter.hunter_uuid
     session[:hunter_session_id] = hunter.generate_session_id
-    session[:isAdmin] = hunter.isAdmin?
+    session[:is_admin] = hunter.is_admin?
     redirect_to hunter_path(@hunter.hunter_uuid)
   end
 
