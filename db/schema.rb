@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_27_105218) do
+ActiveRecord::Schema.define(version: 2022_04_05_151504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_105218) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "hunter_uuid"
-    t.boolean "isAdmin", default: false
+    t.boolean "is_admin", default: false
   end
 
   create_table "hunters_items", id: false, force: :cascade do |t|

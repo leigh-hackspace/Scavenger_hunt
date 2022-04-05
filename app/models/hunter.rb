@@ -15,7 +15,7 @@ class Hunter < ApplicationRecord
   end
 
   def check_admin
-    isAdmin?
+    is_admin?
   end
 
   private

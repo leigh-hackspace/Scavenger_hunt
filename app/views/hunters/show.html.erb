@@ -22,7 +22,7 @@
           </table>
           <h2>total points <%= score(@hunter) %></h2>
           <% end %>
-          <% if @hunter.isAdmin?%>
+          <% if @hunter.is_admin? %>
             <h1>Admin</h1> 
             <%= link_to 'Add Item', root_url + 'admin' %>
             <%= link_to 'Show Items', root_url + 'showall' %>
