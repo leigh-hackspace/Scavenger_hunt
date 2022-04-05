@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :hunters, param: :hunter_uuid
   resources :items, param: :item_uuid
 
+  resources :coupons, param: :coupon_id
+
   ##sessions
   get 'login', to: 'sessions#login'
   get 'register', to: 'sessions#new', as: 'register'
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
   get '/hunters', to: 'hunters#welcome'
   post '/hunt', to: 'hunters#capture'
 
+  get '/createcoupons', to: 'coupons#new'
+  get '/showcoupons', to: 'coupons#all'
 	## Scoreboard
 	resources :scoreboard, only: :index
   get '/scoreboard', to: 'scoreboard#all', as: 'scoreboard'

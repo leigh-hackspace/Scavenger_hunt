@@ -6,7 +6,7 @@
         <h1><%= @hunter.hunter_name %></h1>
         <% if @hunter.items.count == 0 %>
           <h2>Looks like you haven&apos;t captured any items</h2>
-          <h3>Head for the shed!</h3>
+          <h3>Check the clues page!</h3>
         <% else %>
           <h3> Well done! you have captured the following items </h3>
           <table>
@@ -19,6 +19,9 @@
                 <td>10</td>
               </tr>
             <% end %>
+            <% if @hunter.coupon.present? %>
+              <h3><%= @hunter.coupon.code %></h3>
+            <% end %>  
           </table>
           <h2>total points <%= score(@hunter) %></h2>
           <% end %>
@@ -26,9 +29,10 @@
             <h1>Admin</h1> 
             <%= link_to 'Add Item', root_url + 'admin' %>
             <%= link_to 'Show Items', root_url + 'showall' %>
+            <%= link_to 'Show Coupons', root_url + 'showcoupons' %>
           <% end %>
       <% else %>
-        <%= link_to('Please log in!', root_path + 'login') %>
+        <%= link_to 'Please log in!', root_path + 'login' %>
       <% end %>
     </div>
   </div>

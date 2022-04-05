@@ -5,6 +5,7 @@ class Hunter < ApplicationRecord
   before_save :generate_hunter_uuid
   has_secure_password
   has_and_belongs_to_many :items
+  has_many :coupons
 
   def generate_session_id
     Digest::MD5.hexdigest "#{hunter_uuid}+ #{hunter_name}"

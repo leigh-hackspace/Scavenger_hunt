@@ -10,24 +10,13 @@ default: &default
   host: localhost
   pool: 5
   #database:
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER'] %>
-  password: <%= ENV['SCAVENGER_DB_PASS'] %>
+  database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>
+  username: <%= ENV['PROD_SCAVENGER_DB_USER'] %>
+  password: <%= ENV['PROD_SCAVENGER_DB_PASS'] %>
   timeout: 5000
 
 development:
   <<: *default
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['SCAVENGER_DB_USER'] %>
-  password: <%= ENV['SCAVENGER_DB_PASS'] %>
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-#test:
-#  <<: *default
-#  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
-
-#production:
-#  <<: *default
-#  database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>
+  database: <%= ENV['DEV_SCAVENGER_DB_NAME'] %>
+  username: <%= ENV['DEV_SCAVENGER_DB_USER'] %>
+  password: <%= ENV['DEV_SCAVENGER_DB_PASS'] %>
