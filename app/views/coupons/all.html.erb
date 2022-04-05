@@ -4,16 +4,18 @@
 <% else %>
   <h1>Coupons</h1>
   <% if @coupons.count.present? %>
-    <table>
-      <tr><th>ID</th><th>coupon</th><th>has been claimed</th></tr>
-      <% @coupons.each do |c| %>
-        <tr>
-          <td><%= c.id %></td>
-          <td><%= c.coupon_code %></td>
-          <td><%= c.is_claimed %></td>
-        </tr>
-      <% end %>
-    </table>
+    <center>
+      <table>
+        <tr><th>ID</th><th>coupon</th><th>has been claimed</th></tr>
+        <% @coupons.each do |c| %>
+          <tr>
+            <td><%= c.id %></td>
+            <td><%= c.coupon_code %></td>
+            <td><%= c.is_claimed %></td>
+          </tr>
+        <% end %>
+      </table>
+    </center>
     <% end %>
   <% end %>
 </div>

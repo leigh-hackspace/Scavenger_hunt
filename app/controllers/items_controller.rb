@@ -5,6 +5,8 @@ class ItemsController < ApplicationController
   def all
     @items = Item.all
     @items = @items.sort_by(&:id)
+    #debugger
+    
   end
 
   def clues
