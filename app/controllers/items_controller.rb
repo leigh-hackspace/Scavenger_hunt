@@ -25,6 +25,12 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.item_uuid = SecureRandom.uuid
+    if @item.is_coupon?
+      c = Coupon.new()
+      c.item_id = @item.item_uuid
+      c.save()
+    end
+    
 
     if @item.save
       redirect_to item_path(@item.item_uuid)
@@ -34,6 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :body, :image, :coupon_code)
+    params.require(:item).permit(:title, :body, :image, :is_coupon)
   end
 end

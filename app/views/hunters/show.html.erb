@@ -12,16 +12,14 @@
           <table>
             <th>Item name</th><th>picture</th><th>points</th>
 
-            <% @hunter.item.each do |i|%>
+            <% @hunter.items.each do |i|%>
               <tr>
                 <td><%= i.title %></td>
                 <td><%= image_tag i.image, class: 'item-image'%></td>
                 <td>10</td>
               </tr>
             <% end %>
-            <% if @hunter.coupon.present? %>
-              <h3><%= @hunter.coupon.code %></h3>
-            <% end %>  
+
           </table>
           <h2>total points <%= score(@hunter) %></h2>
           <% end %>

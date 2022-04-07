@@ -45,8 +45,20 @@ class HuntersController < ApplicationController
 
   def capture
     @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
+    hunter_has_coupon = check_if_hunter_has_coupon(@hunter.items)
+      
     check_valid_session(session[:hunter_session_id], @hunter)
     redirect_to hunter_path(@hunter.hunter_uuid)
+  end
+
+  def check_if_hunter_has_coupon(items)
+    items.each do |item|  
+      @coupon = Coupon.find_by("item_id" => item.item_uuid)
+      if @coupon.exists?
+        return true
+      end
+    end
+    return false
   end
 
   def hunter_params
