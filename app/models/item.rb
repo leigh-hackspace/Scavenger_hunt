@@ -23,6 +23,13 @@ class Item < ApplicationRecord
     return false
   end
 
+  def get_coupon_code
+    if is_coupon
+      @coupon = Coupon.find_by("item_id"=>self.item_uuid)
+      @coupon.coupon_code
+    end
+  end
+
 
   private
 

@@ -15,10 +15,33 @@ class Hunter < ApplicationRecord
     is_admin?
   end
 
-  def coupon_code
+  def score
+    running_score = 0
     self.items.each do |item|
-      if item.is_coupon?
-        @coupon_code = Coupon.find_by("item_id"=>item.uuid).coupon_code
+      unless item.is_coupon?
+        running_score += 10
+      end
+    end
+    return running_score
+  end
+
+  def has_coupon
+    self.items.each do |i|
+      if i.is_coupon
+        return true
+      end
+    end
+    return false
+  end
+
+  def coupon_code
+    unless has_coupon
+      return ""
+    else
+      self.items.each do |item|
+        if item.is_coupon?
+          return @coupon_code = Coupon.find_by("item_id"=>item.item_uuid).coupon_code
+        end
       end
     end
   end
