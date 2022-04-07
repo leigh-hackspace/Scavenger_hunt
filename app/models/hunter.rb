@@ -11,12 +11,17 @@ class Hunter < ApplicationRecord
     Digest::MD5.hexdigest "#{hunter_uuid}+ #{hunter_name}"
   end
 
-  def score
-    items.count * 10
-  end
-
   def check_admin
     is_admin?
+  end
+
+  def coupon_code
+    self.items.each do |item|
+      if item.is_coupon?
+        debugger
+        @coupon_code = Coupon.find_by("item_id"=>item.uuid).coupon_code
+      end
+    end
   end
 
   private

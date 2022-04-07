@@ -13,11 +13,13 @@
             <th>Item name</th><th>picture</th><th>points</th>
 
             <% @hunter.items.each do |i|%>
-              <tr>
-                <td><%= i.title %></td>
-                <td><%= image_tag i.image, class: 'item-image'%></td>
-                <td>10</td>
-              </tr>
+              <% unless i.is_coupon %>
+                <tr>
+                  <td><%= i.title %></td>
+                  <td><%= image_tag i.image, class: 'item-image'%></td>
+                  <td>10</td>
+                </tr>
+              <% end %>
             <% end %>
 
           </table>
