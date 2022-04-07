@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   post '/hunt', to: 'hunters#capture'
 
   get '/createcoupons', to: 'coupons#new'
-  get '/showcoupons', to: 'coupons#all'
+  get '/showcoupons', to: 'coupons#index'
 	## Scoreboard
 	resources :scoreboard, only: :index
   get '/scoreboard', to: 'scoreboard#all', as: 'scoreboard'

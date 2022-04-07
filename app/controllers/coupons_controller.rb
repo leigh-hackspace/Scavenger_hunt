@@ -3,9 +3,8 @@
 # :nodoc:
 class CouponsController < ApplicationController
 
-  def all
-    @coupons = Coupon.all
-    @coupons = @coupons.sort_by(&:id)
+  def index
+    @coupons = Coupon.all.sort_by(&:id)
   end
 
   def show
@@ -26,6 +25,8 @@ class CouponsController < ApplicationController
       render :new
     end
   end
+
+  private
 
   def coupon_params
     params.require(:coupon).permit(:coupon, :is_claimed)
