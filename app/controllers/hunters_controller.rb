@@ -47,7 +47,6 @@ class HuntersController < ApplicationController
     @item = Item.find_by_item_uuid(params[:item_uuid])
 
     if @item.is_coupon?
-      debugger
       unless check_if_hunter_has_coupon(@hunter)
         
         mark_coupon_claimed(@item.item_uuid)
@@ -68,7 +67,7 @@ class HuntersController < ApplicationController
   end
 
   def mark_coupon_claimed(item_uuid)
-    debugger
+
     @coupon = Coupon.find_by("item_id" => item_uuid)
     @coupon.is_claimed = true
     @coupon.save

@@ -8,9 +8,8 @@ module HuntersHelper
       unless item.is_coupon?
         running_score += 10
       end
-      return running_score
     end
-    
+    return running_score
   end
 
   def generate_session_id(hunter)
