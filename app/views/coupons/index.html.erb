@@ -1,0 +1,22 @@
+<div class="page-container">
+<% unless session[:is_admin] %>
+  <% redirect_to root_path %>
+<% else %>
+  <h1>Coupons</h1>
+  <% if @coupons.count.present? %>
+    <center>
+      <table>
+        <tr><th>ID</th><th>coupon</th><th>has been claimed</th><th>Item Link</th></tr>
+        <% @coupons.each do |c| %>
+          <tr>
+            <td><%= c.id %></td>
+            <td><%= c.coupon_code %></td>
+            <td><%= c.is_claimed %></td>
+            <td><%= link_to 'Item Link', root_url + item_path(c.item_id) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </center>
+    <% end %>
+  <% end %>
+</div>

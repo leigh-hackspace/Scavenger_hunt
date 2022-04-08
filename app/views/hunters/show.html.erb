@@ -6,29 +6,54 @@
         <h1><%= @hunter.hunter_name %></h1>
         <% if @hunter.items.count == 0 %>
           <h2>Looks like you haven&apos;t captured any items</h2>
-          <h3>Head for the shed!</h3>
+          <h3>Check the clues page!</h3>
         <% else %>
           <h3> Well done! you have captured the following items </h3>
           <table>
             <th>Item name</th><th>picture</th><th>points</th>
 
-            <% @hunter.item.each do |i|%>
-              <tr>
-                <td><%= i.title %></td>
-                <td><%= image_tag i.image, class: 'item-image'%></td>
-                <td>10</td>
-              </tr>
+            <% @hunter.items.each do |i|%>
+              <% unless i.is_coupon %>
+                <tr>
+                  <td><%= i.title %></td>
+                  <td><%= image_tag i.image, class: 'item-image'%></td>
+                  <td>10</td>
+                </tr>
+              <% end %>
             <% end %>
+
           </table>
           <h2>total points <%= score(@hunter) %></h2>
           <% end %>
+          
+          <% if @hunter.has_coupon %>
+            <table>
+              <tr>
+              <td>COUPON:</td><td><%=@hunter.coupon_code %></td>
+              </tr>
+            </table>
+          <% end %>
+
           <% if @hunter.is_admin? %>
             <h1>Admin</h1> 
             <%= link_to 'Add Item', root_url + 'admin' %>
             <%= link_to 'Show Items', root_url + 'showall' %>
+            <%= link_to 'Show Coupons', root_url + 'showcoupons' %>
+
+            <table>
+            <th>title</th><th>image</th><th>coupon code</th>
+            <% @hunter.items.each do |i|%>            
+              <tr>
+                <td><%= i.title %></td>
+                <td><%= image_tag i.image, class: 'item-image'%></td>
+                <td><%= i.get_coupon_code %></td>
+              </tr>
+            <% end %>
+            </table>
+            
           <% end %>
       <% else %>
-        <%= link_to('Please log in!', root_path + 'login') %>
+        <%= link_to 'Please log in!', root_path + 'login' %>
       <% end %>
     </div>
   </div>
