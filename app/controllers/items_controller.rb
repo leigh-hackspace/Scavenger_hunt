@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
     @items = Item.all
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @items = @items.sort_by(&:id)    
 =======
     @items = @items.sort_by(&:id)
@@ -15,6 +16,9 @@ class ItemsController < ApplicationController
 =======
     @items = @items.sort_by(&:id)    
 >>>>>>> fix coupon logic
+=======
+    @items = @items.sort_by(&:id)    
+>>>>>>> c71a91a67855d4ce1865e7f1dac7831ec1ef53b8
   end
 
   def clues
@@ -35,6 +39,7 @@ class ItemsController < ApplicationController
     @item.item_uuid = SecureRandom.uuid
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
     if @item.is_coupon?
@@ -48,6 +53,9 @@ class ItemsController < ApplicationController
 =======
     
 >>>>>>> fix coupon logic
+=======
+    
+>>>>>>> c71a91a67855d4ce1865e7f1dac7831ec1ef53b8
     if @item.save
       if @item.is_coupon?
         c = Coupon.new()
@@ -63,6 +71,7 @@ class ItemsController < ApplicationController
   def item_params
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     params.require(:item).permit(:title, :body, :image, :is_coupon, :is_claimed_coupon)
 =======
     params.require(:item).permit(:title, :body, :image, :is_coupon)
@@ -70,5 +79,8 @@ class ItemsController < ApplicationController
 =======
     params.require(:item).permit(:title, :body, :image, :is_coupon, :is_claimed_coupon)
 >>>>>>> fix coupon logic
+=======
+    params.require(:item).permit(:title, :body, :image, :is_coupon, :is_claimed_coupon)
+>>>>>>> c71a91a67855d4ce1865e7f1dac7831ec1ef53b8
   end
 end

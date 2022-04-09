@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2022_04_06_221020) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_coupon", default: false
-<<<<<<< HEAD
   end
 
   create_table "coupons", force: :cascade do |t|
@@ -84,8 +83,7 @@ ActiveRecord::Schema.define(version: 2022_04_06_221020) do
     t.string "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-=======
->>>>>>> rework of mechanism for coupons
+
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

@@ -47,16 +47,7 @@ class HuntersController < ApplicationController
     @item = Item.find_by_item_uuid(params[:item_uuid])
 
     if @item.is_coupon?
-<<<<<<< HEAD
-<<<<<<< HEAD
-      unless @hunter.has_coupon
-=======
-      unless check_if_hunter_has_coupon(@hunter)
->>>>>>> Remove debug statements, Move return of running score to correctly reflect score
-=======
-      unless @hunter.has_coupon
->>>>>>> Correct bug where removed repeated code caused an error, Added coupon code to hunter home page
-        
+      unless @hunter.has_coupon        
         mark_coupon_claimed(@item.item_uuid)
       end
     end
