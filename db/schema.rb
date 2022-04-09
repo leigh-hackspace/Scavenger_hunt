@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_05_151504) do
+ActiveRecord::Schema.define(version: 2022_04_06_221020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2022_04_05_151504) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "coupons", force: :cascade do |t|
+    t.string "coupon_code"
+    t.boolean "is_claimed", default: false
+    t.boolean "boolean", default: false
+    t.string "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "hunters", force: :cascade do |t|
     t.string "hunter_name"
     t.datetime "created_at", precision: 6, null: false
@@ -65,6 +74,16 @@ ActiveRecord::Schema.define(version: 2022_04_05_151504) do
     t.string "item_uuid", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_coupon", default: false
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.string "coupon_code"
+    t.boolean "is_claimed" default: false
+    t.string "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

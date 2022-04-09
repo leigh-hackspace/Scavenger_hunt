@@ -4,7 +4,7 @@
 class ItemsController < ApplicationController
   def all
     @items = Item.all
-    @items = @items.sort_by(&:id)
+    @items = @items.sort_by(&:id)    
   end
 
   def clues
@@ -23,8 +23,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.item_uuid = SecureRandom.uuid
-
+    
     if @item.save
+      if @item.is_coupon?
+        c = Coupon.new()
+        c.item_id = @item.item_uuid
+        c.save()
+      end
       redirect_to item_path(@item.item_uuid)
     else
       render :new
@@ -32,6 +37,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :body, :image)
+    params.require(:item).permit(:title, :body, :image, :is_coupon, :is_claimed_coupon)
   end
 end

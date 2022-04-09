@@ -3,7 +3,6 @@
 # :nodoc:
 class ScoreboardController < ApplicationController
   def index
-    @hunters = Hunter.all
-    @hunters = @hunters.sort_by { |h| -h.score }
+    @hunters = Hunter.all.sort_by { |h| -h.score }
   end
 end

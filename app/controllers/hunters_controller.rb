@@ -35,18 +35,56 @@ class HuntersController < ApplicationController
     end
   end
 
-  def check_valid_session(current_session_id, hunter)
+  def check_valid_session(current_session_id, hunter, item)
     return unless current_session_id == hunter.generate_session_id
 
-    @item = Item.find_by_item_uuid(params[:item_uuid])
-    hunter.items << @item unless @hunter.items.include? @item
-    tweet_capture(@hunter.hunter_name, @item.title)
+    hunter.items << @item unless @hunter.items.include? item
+    tweet_capture(@hunter.hunter_name, item.title)
   end
 
   def capture
     @hunter = Hunter.find_by_hunter_uuid(params[:hunter_uuid])
-    check_valid_session(session[:hunter_session_id], @hunter)
-    redirect_to hunter_path(@hunter.hunter_uuid)
+    @item = Item.find_by_item_uuid(params[:item_uuid])
+
+    if @item.is_coupon?
+      unless @hunter.has_coupon        
+        mark_coupon_claimed(@item.item_uuid)
+      end
+    end
+      check_valid_session(session[:hunter_session_id], @hunter, @item)
+      redirect_to hunter_path(@hunter.hunter_uuid)
+    
+  end
+
+  def check_if_hunter_has_coupon(hunter)
+    hunter.items.each do |i|
+      if i.is_coupon
+        return true
+      end
+    end
+    return false
+  end
+
+  def mark_coupon_claimed(item_uuid)
+
+    @coupon = Coupon.find_by("item_id" => item_uuid)
+    @coupon.is_claimed = true
+    @coupon.save
+  end
+
+  def check_if_hunter_has_coupon(hunter)
+    hunter.items.each do |i|
+      if i.is_coupon
+        return true
+      end
+    end
+    return false
+  end
+
+  def mark_coupon_claimed(item_uuid)
+    @coupon = Coupon.find_by("item_id" => item_uuid)
+    @coupon.is_claimed = true
+    @coupon.save
   end
 
   def hunter_params
