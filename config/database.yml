@@ -9,6 +9,7 @@ default: &default
   encoding: unicode
   host: localhost
   pool: 5
+
   #database:
   database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>
   username: <%= ENV['PROD_SCAVENGER_DB_USER'] %>
@@ -20,4 +21,3 @@ development:
   database: <%= ENV['DEV_SCAVENGER_DB_NAME'] %>
   username: <%= ENV['DEV_SCAVENGER_DB_USER'] %>
   password: <%= ENV['DEV_SCAVENGER_DB_PASS'] %>
-
