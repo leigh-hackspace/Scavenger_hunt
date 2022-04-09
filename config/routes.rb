@@ -2,12 +2,12 @@
 
 Rails.application.routes.draw do
   root 'hunters#welcome'
-  get 'hunters/all', to: 'hunters#all'
 
   resources :hunters, param: :hunter_uuid
-  resources :items, param: :item_uuid
-
-  resources :coupons, param: :coupon_id
+  resources :items, param: :item_uuid do
+    resources :captures, only: [:create, :index]
+  end
+  resources :bonus_items, only: [:new, :create]
 
   ##sessions
   get 'login', to: 'sessions#login'
@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
-
-  get '/items', to: 'items#index', as: 'home'
 
   get "/admin", to: "items#new"
   post "/admin", to: "items#create"
@@ -26,16 +24,11 @@ Rails.application.routes.draw do
   get '/lola', to: 'items#all'
   get '/peter', to: 'items#all'
   get '/roger', to: 'items#all'
-  
-  get '/showall', to: 'items#all'
+
   get '/clues', to: 'items#clues', as: 'clues'
 
   get '/wrong', to: 'items#wrong'
-  get '/hunters', to: 'hunters#welcome'
-  post '/hunt', to: 'hunters#capture'
 
-  get '/createcoupons', to: 'coupons#new'
-  get '/showcoupons', to: 'coupons#index'
 	## Scoreboard
 	resources :scoreboard, only: :index
   get '/scoreboard', to: 'scoreboard#all', as: 'scoreboard'

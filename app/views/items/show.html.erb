@@ -1,23 +1,19 @@
-<h2 class="item-capture-title"><%= "Congratulations #{session[:hunter_name]}, you found a item!" %> </h2>
-	<div class="page-container">
-		<div class="item-container-outer">
-			<div class="item-container-inner">
-				<h1><%= @item.title %></h1>
-				<p> <%= @item.body %> </p>
-				<%= image_tag @item.image, class: 'item-image' %>
-				<% if hunter_logged_in? %>
-						<% unless @item.is_claimed_coupon %>
-							<%= button_to 'Click here to capture', root_url + 'hunt?' + {item_uuid: @item.item_uuid, hunter_uuid: session[:hunter_uuid]}.to_param, method: :post %>
-						<% else %>
-							<p>oops this egg has been claimed!</p>
-						  <%=  button_to 'Go Back to Hunter', root_url + 'hunters/' + session[:hunter_uuid], method: :get %>
-						<% end %>
-						</div>
-					</div>
-				<% else %>
-							<p> log in to capture it </p>
-						</div>
-					</div>
-				<% end %>
-	</div>
+<h2 class="item-capture-title">
+  <%= "Congratulations #{session[:hunter_name]}, you found a item!" %>
+</h2>
+
+<div class="page-container">
+  <div class="item-container-outer">
+    <div class="item-container-inner">
+      <h1><%= @item.title %></h1>
+      <p>Bonus Item? <%= @item.is_bonus_item? %></p>
+      <p><%= @item.body %> </p>
+      <%= image_tag @item.image, class: 'item-image' %>
+      <% if hunter_logged_in? %>
+        <%= button_to 'Click here to capture', item_captures_path(@item.item_uuid, hunter_uuid: session[:hunter_uuid]) %>
+      <% else %>
+        <p> log in to capture it </p>
+      <% end %>
+    </div>
+  </div>
 </div>

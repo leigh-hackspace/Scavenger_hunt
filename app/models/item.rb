@@ -5,31 +5,24 @@ class Item < ApplicationRecord
   before_save :generate_item_uuid
   has_one_attached :image
   has_and_belongs_to_many :hunters
-  has_one :coupon
+  scope :counted, -> { where(code: "") }
 
-  def is_coupon
-    @coupon = Coupon.find_by("item_id"=>self.item_uuid)
-    if @coupon
-      return true
-    end
-    return false
+  def is_bonus_item?
+    code.present?
   end
 
-  def is_claimed_coupon
-    if is_coupon
-      @coupon = Coupon.find_by("item_id"=>self.item_uuid)
-      return @coupon.is_claimed?
-    end
-    return false
-  end
+  def capture(hunter)
+    begin
+      if self.is_bonus_item?
+        BonusItem.capture(hunter, self)
+      end
 
-  def get_coupon_code
-    if is_coupon
-      @coupon = Coupon.find_by("item_id"=>self.item_uuid)
-      @coupon.coupon_code
+      hunter.items << self unless hunter.items.include? self
+
+    rescue => e
+      raise e
     end
   end
-
 
   private
 

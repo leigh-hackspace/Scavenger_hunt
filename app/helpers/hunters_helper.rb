@@ -3,13 +3,7 @@
 # :nodoc:
 module HuntersHelper
   def score(hunter)
-    running_score = 0
-    hunter.items.each do |item|
-      unless item.is_coupon?
-        running_score += 10
-      end
-    end
-    return running_score
+    hunter.items.counted.count * 10
   end
 
   def generate_session_id(hunter)

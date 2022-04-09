@@ -4,6 +4,14 @@
 class ApplicationController < ActionController::Base
   before_action :custom_headers
 
+  def check_valid_session(current_session_id, hunter)
+    return unless current_session_id == hunter.generate_session_id
+  end
+
+  def tweet_capture(hunter_name, hunted_name)
+    send_tweet("Looks like #{hunter_name} has just found an item! 🔎#{hunted_name}🔍️  ##{ENV['HUNT_TITLE']}")
+  end
+
   private
 
   def custom_headers
@@ -20,9 +28,5 @@ class ApplicationController < ActionController::Base
       config.access_token_secret =  ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
     client.update(message)
-  end
-
-  def tweet_capture(hunter_name, hunted_name)
-    send_tweet("Looks like #{hunter_name} has just found an item! 🔎#{hunted_name}🔍️  ##{ENV['HUNT_TITLE']}")
   end
 end
