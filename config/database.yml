@@ -9,19 +9,6 @@ default: &default
   encoding: unicode
   host: localhost
   pool: 5
-<<<<<<< HEAD
-  timeout: 5000
-  username: <%= ENV['SCAVENGER_DB_USER'] %>
-  password: <%= ENV['SCAVENGER_DB_PASS'] %>
-
-development:
-  <<: *default
-  database: <%= ENV['SCAVENGER_DB_NAME'] %>
-
-test:
-  <<: *default
-  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
-=======
   #database:
   database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>
   username: <%= ENV['PROD_SCAVENGER_DB_USER'] %>
@@ -33,4 +20,3 @@ development:
   database: <%= ENV['DEV_SCAVENGER_DB_NAME'] %>
   username: <%= ENV['DEV_SCAVENGER_DB_USER'] %>
   password: <%= ENV['DEV_SCAVENGER_DB_PASS'] %>
->>>>>>> c71a91a67855d4ce1865e7f1dac7831ec1ef53b8
