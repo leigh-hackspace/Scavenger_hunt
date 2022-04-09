@@ -20,3 +20,4 @@ development:
   database: <%= ENV['DEV_SCAVENGER_DB_NAME'] %>
   username: <%= ENV['DEV_SCAVENGER_DB_USER'] %>
   password: <%= ENV['DEV_SCAVENGER_DB_PASS'] %>
+
