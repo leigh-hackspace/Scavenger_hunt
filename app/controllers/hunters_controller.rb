@@ -26,6 +26,7 @@ class HuntersController < ApplicationController
     @hunter = Hunter.new(hunter_params)
     if doesnt_exist(hunter_params[:hunter_name])
       if @hunter.save
+        tweet_user_register(@hunter)
         assign_session(session, @hunter)
       else
         render :new

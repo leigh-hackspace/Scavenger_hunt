@@ -8,8 +8,19 @@ class ApplicationController < ActionController::Base
     return unless current_session_id == hunter.generate_session_id
   end
 
-  def tweet_capture(hunter_name, hunted_name)
-    send_tweet("Looks like #{hunter_name} has just found an item! 🔎#{hunted_name}🔍️  ##{ENV['HUNT_TITLE']}")
+  def tweet_capture(hunter, item)
+    unless item.is_bonus_item?
+      if hunter.items.count <= 2
+        send_tweet("Looks like #{hunter.hunter_name} has just found their first item! 🔎#{item.title}🔍️  #EASTEREGGHUNT2022")
+      end
+    else
+      send_tweet("Oh Wow! Looks like #{hunter.hunter_name} has just captured a special bonus item:🔎#{item.title}🔍️! Show the bonus code the staff in the café to receive your bonus!")
+    end
+  end
+
+
+  def tweet_user_register(hunter)
+    send_tweet("Looks like 🔎#{hunter.hunter_name}🔍 has joined the hunt! ")
   end
 
   private
@@ -20,7 +31,6 @@ class ApplicationController < ActionController::Base
 
   def send_tweet(message)
     return unless ActiveModel::Type::Boolean.new.cast(ENV['SEND_TWEET'])
-
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        =  ENV['TWITTER_API_KEY']
       config.consumer_secret     =  ENV['TWITTER_SECRET_KEY']
