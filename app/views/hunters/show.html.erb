@@ -1,50 +1,51 @@
 <div class="content-container">
-      <% if session[:hunter_session_id] == @hunter.generate_session_id %>
-        
-        <h1><%= @hunter.hunter_name %></h1>
-        <% if @hunter.items.counted.count == 0 %>
-          <h2>Looks like you haven&apos;t captured any items</h2>
-          <h3>Check the clues page!</h3>
-        <% else %>
-          <h3> Well done! you have captured the following items </h3>
-          <table style="width:100%;">
-            <th>Item name</th><th>picture</th><th>points</th>
-            
-            <% @hunter.items.counted.each do |item|%>
-              <tr>
-                <td><%= item.title %></td>
-                <td><%= image_tag item.image, class: 'item-image'%></td>
-                <td>10</td>
-              </tr>
-            <% end %>
+  <% if hunter_logged_in? %>
 
-          </table>
-          <h2>total points <%= score(@hunter) %></h2>
-          
-          <% if @hunter.bonus_item.present? %>
-            <hr class="hr-80">
-            <h3>Bonus Item</h3>
-            <p><%= @hunter.bonus_item&.title %><p>
-            <p> code: <%= @hunter.bonus_item&.code%></p>
-          <% else %>
+    <h1><%= @hunter.hunter_name %></h1>
 
-          <% end %>
+    <% if @hunter.items.counted.count == 0 %>
+      <h2>Looks like you haven&apos;t captured any items</h2>
+      <h3>Check the clues page!</h3>
+    <% else %>
+      <h3> Well done! you have captured the following items </h3>
+      <table style="width:100%;">
+        <th>Item name</th><th>picture</th><th>points</th>
 
-
+        <% @hunter.items.counted.each do |item|%>
+          <tr>
+            <td><%= item.title %></td>
+            <td><%= image_tag item.image, class: 'item-image'%></td>
+            <td>10</td>
+          </tr>
         <% end %>
-          <hr class="hr-80">
-          <% if @hunter.is_admin? %>
-            <h1>Admin</h1>
-            <div class="admin_buttons">
-            <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
-            <br>
-            <br>
-            <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
-            <br>
-            <br>
-            <%= link_to 'Show Items', items_path, :class => 'btn' %>
-          <% end %>
-      <% else %>
-        <%= link_to('Please log in!', root_path + 'login') %>
-      <% end %>
-  </div>
+      </table>
+    <% end %>
+
+    <h2>total points <%= score(@hunter) %></h2>
+
+    <% if @hunter.bonus_item.present? %>
+      <hr class="hr-80">
+      <h3>Bonus Item</h3>
+      <p><%= @hunter.bonus_item&.title %><p>
+      <p> code: <%= @hunter.bonus_item&.code %></p>
+    <% end %>
+
+  <% else %>
+
+    <hr class="hr-80">
+    <% if @hunter.is_admin? %>
+      <h1>Admin</h1>
+      <div class="admin_buttons">
+        <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
+        <br>
+        <br>
+        <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
+        <br>
+        <br>
+        <%= link_to 'Show Items', items_path, :class => 'btn' %>
+      </div>
+    <% else %>
+      <%= link_to('Please log in!', root_path + 'login') %>
+    <% end %>
+  <% end %>
+</div>
