@@ -29,8 +29,9 @@
 
     @media only screen and (max-width: 768px) {
     display: grid;
-    background-size: contain;
-    height: 145px;
+    background-size: cover;
+    height: 170px;
+    width: 97%;
 
      }
     }
@@ -43,9 +44,14 @@
     background-color: rgb(150, 167, 166);
     box-shadow: 1px 1px 1px 1px;
     border-radius: 15px 15px 15px 15px;
-    padding-left: 15px ;
+    padding: 0px 15px ;
     color: black;
+    width: 89%;
     }
+
+.hunter-content p {
+
+}
 
 .footer {
      display: grid;

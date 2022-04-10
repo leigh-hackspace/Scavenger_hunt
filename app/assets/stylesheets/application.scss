@@ -13,18 +13,25 @@
  *= require_tree .
  *= require_self
  *= require navbar
+ *= require main
+ *= require score
+ *= require hunters
+ *= require items
+
 $color-60 : #21d190;
 $color-30 : #f6d327;
 $color-10 : #f2cf07;
 */
 body {
-    background-color: rgb(105, 105, 105);;
+    background-image: repeating-linear-gradient(45deg, #acd4c7 0px, #acd4c7 10px, #e6eed2c5 10px, #e6eed2c5 20px);
+    /*
+    background-color: rgb(124, 203, 255);;*/
 }
 
 .hr-80{
     width: 90%;
-    background: linear-gradient(0.25turn, #5f5f5e, #3f87a6, #5f5f5e  );
-    height: 2px;
+    background: linear-gradient(0.25turn, #5f5f5e, #f4f6f7, #5f5f5e  );
+    height: 1px;
 }
 
 .page-grid {
@@ -57,15 +64,17 @@ body {
 .span-row-5{
     grid-row: span 5 / auto;
     @media only screen and (max-width: 768px) {
-    }}
+    }
+}
 
 .page-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
     grid-column: 1 / 5;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
-    background-color: #21d190;
+    background-color: rgba(199, 237, 150, 0.562);
+    outline: black 1px solid;
     padding: 5%;
     border-radius: 2px 2px 2px 2px;
 
@@ -74,6 +83,7 @@ body {
         display: grid;
         grid-column: span 1 / 5 ;
         grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-gap: 10px;
         padding: 5%;
         border-radius: 10px 10px 10px 10px;
@@ -81,20 +91,55 @@ body {
 }
 
 .content-container {
-    background-color: #6d6d6d;
+    background-color: #a5d4d1;
     margin: 20px;
-    
     box-shadow: 1px 1px 1px 1px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
 
     @media only screen and (max-width: 768px) {
-
+        border-radius: 10px 10px 10px 10px;
+        padding: 10px;
+        margin: 10px;
+    
     }
 }
 
-table, td, tr {
-    border: 1px solid;
+.content-container h1,h2,h3,p{
+    text-align: center;
+    text-transform: uppercase;
 }
 
 td {
     padding: 10px
 }
+
+.item-table{
+    background-color: antiquewhite;
+}
+
+.clues-table{
+    width: 100%;
+    outline: black 1px;
+}
+
+.clue-text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border: black 1px;
+    background-color: hsla(174, 16%, 49%, 0.411);
+    width: 800px;
+
+        @media only screen and (max-width: 768px) {
+        width: 300px;
+    }
+}
+
+.clue-text-captured {
+    background-color: #4a8a85;
+}
+
+table, td, tr {
+}
+

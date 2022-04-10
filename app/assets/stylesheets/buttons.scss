@@ -10,13 +10,21 @@
 .btn {
   text-align: center;
   text-transform: uppercase;
-  background: grey;
+  background: rgb(193, 247, 196);
   outline: black 1px solid;
   box-shadow: 1px 1px 1px 1px;
   border-radius: 15px 15px 15px 15px;
   padding: 10px;
-  margin-left: 20px;
-  font-size: 1.5rem;
+  margin: 20px;
+  font-size: 1rem;
+}
+
+.admin_buttons {
+  display: inline-flex;
+  margin-left: 20%;
+  @media only screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 }
 
 .color-1 {

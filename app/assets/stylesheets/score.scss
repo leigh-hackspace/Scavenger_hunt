@@ -3,12 +3,14 @@
     grid-column: span 4 / auto;
     text-transform: uppercase;
     text-align: center;
-    background-color: rgb(190, 126, 250);
-    outline: solid 1px black;
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 0px 0px 50px 50px;
     padding: 10px 0px;
     margin: 10px 0px;
+}
+
+.score-table{
+    width:100%;
+    padding: 0 10px 20px 10px;
 }
 
 .score-header h1 {
@@ -18,13 +20,13 @@
 .team-name {
     text-align: center;
     text-transform: uppercase;
-    background-color: rgb(172, 212, 199);
+    background-color: rgb(138, 165, 156);
     border-radius: 7.5px 0px 0px 7.5px;
 }
 
 .team-score {
     text-align: center;
     text-transform: uppercase;
-    background-color: #e6eed1c5;
+    background-color: #e6eed2c5;
     border-radius: 0px 7.5px 7.5px 0px;
 }

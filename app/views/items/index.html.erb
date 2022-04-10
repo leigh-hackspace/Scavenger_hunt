@@ -2,7 +2,7 @@
 	<h1>You&apos;re not supposed to be here!</h1>
 <% else %>
 	<h1>Items:</h1>
-	<table>
+	<table class="item-table">
 	<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Is Bonus</th><th>Debug Link</th><th>QR Code</th></tr>
 		<% @items.each do |item| %>
 			<tr>
@@ -12,13 +12,13 @@
 				<td><%= item.body %></td>
 				<td><%= item.is_bonus_item? %></td>
 				<td><a href=<%= item_path(item.item_uuid) %>>view item</a></td>
-				<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "black")%></td>
+				<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "black", fill: "ffffff")%></td>
 			</tr>
 		<% end %>
 	</table>
 
 
   <p>Welcome page:</p>
-  <%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "E49948")%>
+  <%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "black", fill: "ffffff")%>
 
 <% end %>
