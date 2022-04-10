@@ -1,12 +1,15 @@
-    <div class="page-container">
-<h1>Clues</h1>
-<table>
-<tr><th>ID</th><th>Clue</th></tr>
-	<% @items.each do |item| %>
-		<tr>    
-			<td><%= item.id %></td>
-			<td><%= item.body %></td>
-		</tr>
-	<% end %>
-</table>
-</divgt>
+<div class="page-container">
+  <h1>Clues</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Clue</th>
+    </tr>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= item.body %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
