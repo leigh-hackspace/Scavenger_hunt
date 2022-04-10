@@ -2,10 +2,10 @@
 
 # :nodoc:
 class Hunter < ApplicationRecord
-  before_save :generate_hunter_uuid
+  before_create :generate_hunter_uuid
   has_secure_password
   has_and_belongs_to_many :items
-  has_many :coupons
+  belongs_to :bonus_item, class_name: "Item", foreign_key: "bonus_item_id", optional: true
 
   def generate_session_id
     Digest::MD5.hexdigest "#{hunter_uuid}+ #{hunter_name}"
@@ -17,10 +17,8 @@ class Hunter < ApplicationRecord
 
   def score
     running_score = 0
-    self.items.each do |item|
-      unless item.is_coupon?
-        running_score += 10
-      end
+    self.items.counted.each do |item|
+      running_score += 10
     end
     return running_score
   end

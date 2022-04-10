@@ -1,23 +1,17 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
   pool: 5
-
-  #database:
-  database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['PROD_SCAVENGER_DB_USER'] %>
-  password: <%= ENV['PROD_SCAVENGER_DB_PASS'] %>
   timeout: 5000
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
+  password: <%= ENV['SCAVENGER_DB_PASS'] %>
 
 development:
   <<: *default
-  database: <%= ENV['DEV_SCAVENGER_DB_NAME'] %>
-  username: <%= ENV['DEV_SCAVENGER_DB_USER'] %>
-  password: <%= ENV['DEV_SCAVENGER_DB_PASS'] %>
+  database: <%= ENV['SCAVENGER_DB_NAME'] %>
+
+test:
+  <<: *default
+  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
+

@@ -4,7 +4,7 @@
     <div class="hunter-container-inner">
       <% if session[:hunter_session_id] == @hunter.generate_session_id %>
         <h1><%= @hunter.hunter_name %></h1>
-        <% if @hunter.items.count == 0 %>
+        <% if @hunter.items.counted.count == 0 %>
           <h2>Looks like you haven&apos;t captured any items</h2>
           <h3>Check the clues page!</h3>
         <% else %>
@@ -12,49 +12,31 @@
           <table>
             <th>Item name</th><th>picture</th><th>points</th>
 
-            <% @hunter.items.each do |i|%>
-              <% unless i.is_coupon %>
-                <tr>
-                  <td><%= i.title %></td>
-                  <td><%= image_tag i.image, class: 'item-image'%></td>
-                  <td>10</td>
-                </tr>
-              <% end %>
+            <% @hunter.items.counted.each do |item|%>
+              <tr>
+                <td><%= item.title %></td>
+                <td><%= image_tag item.image, class: 'item-image'%></td>
+                <td>10</td>
+              </tr>
             <% end %>
 
           </table>
           <h2>total points <%= score(@hunter) %></h2>
-          <% end %>
-          
-          <% if @hunter.has_coupon %>
-            <table>
-              <tr>
-              <td>COUPON:</td><td><%=@hunter.coupon_code %></td>
-              </tr>
-            </table>
-          <% end %>
+          <hr>
+          <h3>Bonus Item</h3>
+          <%= @hunter.bonus_item&.title %> | code: <%= @hunter.bonus_item&.code %>
 
-          <% if @hunter.is_admin? %>
-            <h1>Admin</h1> 
-            <%= link_to 'Add Item', root_url + 'admin' %>
-            <%= link_to 'Show Items', root_url + 'showall' %>
-            <%= link_to 'Show Coupons', root_url + 'showcoupons' %>
-
-            <table>
-            <th>title</th><th>image</th><th>coupon code</th>
-            <% @hunter.items.each do |i|%>            
-              <tr>
-                <td><%= i.title %></td>
-                <td><%= image_tag i.image, class: 'item-image'%></td>
-                <td><%= i.get_coupon_code %></td>
-              </tr>
-            <% end %>
-            </table>
-            
-          <% end %>
+        <% end %>
+        <% if @hunter.is_admin? %>
+          <h1>Admin</h1>
+          <%= link_to 'Add Item', root_url + 'admin' %> |
+          <%= link_to 'Add Bonus Item', new_bonus_item_path %> |
+          <%= link_to 'Show Items', items_path %>
+        <% end %>
       <% else %>
         <%= link_to 'Please log in!', root_path + 'login' %>
       <% end %>
     </div>
   </div>
 </div>
+

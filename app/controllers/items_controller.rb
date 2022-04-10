@@ -2,9 +2,9 @@
 
 # :nodoc:
 class ItemsController < ApplicationController
-  def all
+  def index
     @items = Item.all
-    @items = @items.sort_by(&:id)    
+    @items = @items.sort_by(&:id)
   end
 
   def clues
@@ -21,22 +21,23 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    define_instance
     @item.item_uuid = SecureRandom.uuid
-    
+
     if @item.save
-      if @item.is_coupon?
-        c = Coupon.new()
-        c.item_id = @item.item_uuid
-        c.save()
-      end
       redirect_to item_path(@item.item_uuid)
     else
       render :new
     end
   end
 
-  def item_params
-    params.require(:item).permit(:title, :body, :image, :is_coupon, :is_claimed_coupon)
+  private
+
+  def permitted_params
+    params.require(:item).permit(:title, :body, :image)
+  end
+
+  def define_instance
+    @item = Item.new(permitted_params)
   end
 end

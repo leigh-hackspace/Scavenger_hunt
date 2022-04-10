@@ -1,0 +1,21 @@
+<%# <% unless session[:is_admin] %1> %>
+  <h1> Someone&apos;s nosey! </h1>
+  <%# <% else %1> %>
+  <h1>New Item<h1>
+  <%= simple_form_for item do |form| %>
+  <div>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </div><br />
+  <div>
+    <%= form.label :body %><br />
+    <%= form.text_field :body %>
+  </div><br />
+  <div>
+     <%= form.input :image, as: :file, label: 'Image of Item'%>
+  </div><br />
+  <div>
+    <%= form.submit %>
+  </div>
+  <%# <% end %1> %>
+<% end %>
