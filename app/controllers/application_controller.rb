@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
         send_tweet("Looks like #{hunter.hunter_name} has just found their first item! 🔎#{item.title}🔍️  #EASTEREGGHUNT2022")
       end
     else
-      send_tweet("Oh Wow! Looks like #{hunter.hunter_name} has just captured a special bonus item:🔎#{item.title}🔍️! Show the bonus code the staff in the café to receive your bonus!")
+      send_tweet("Oh Wow! Looks like #{hunter.hunter_name} has just captured a special bonus item:🔎#{item.title}🔍️! Show the bonus code the staff @CafeCaffeina to receive your bonus!")
     end
   end
 
