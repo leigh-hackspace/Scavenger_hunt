@@ -30,9 +30,9 @@
       <p> code: <%= @hunter.bonus_item&.code %></p>
     <% end %>
 
-  <% else %>
 
     <hr class="hr-80">
+
     <% if @hunter.is_admin? %>
       <h1>Admin</h1>
       <div class="admin_buttons">
@@ -44,8 +44,9 @@
         <br>
         <%= link_to 'Show Items', items_path, :class => 'btn' %>
       </div>
-    <% else %>
-      <%= link_to('Please log in!', root_path + 'login') %>
     <% end %>
+
+  <% else %>
+    <%= link_to('Please log in!', root_path + 'login') %>
   <% end %>
 </div>
