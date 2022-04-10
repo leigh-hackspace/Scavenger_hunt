@@ -6,7 +6,7 @@ class CapturesController < ApplicationController
       @item = Item.find_by_item_uuid(params[:item_item_uuid])
 
       @item.capture(@hunter)
-      tweet_capture(@hunter, @item.title)
+      tweet_capture(@hunter, @item)
 
       redirect_to item_captures_path(@item, message: true)
     rescue => e
