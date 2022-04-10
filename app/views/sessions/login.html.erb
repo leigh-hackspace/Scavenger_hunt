@@ -1,16 +1,18 @@
-<div class="page-container">
+<div class="content-container">
   <% if session[:hunter_uuid].present? %>
     <script type="text/javascript">
       window.location.replace("<%=root_url + hunter_path(session[:hunter_uuid])%>")
     </script>
   <% else %>
+  <div class="login-form">
     <h2>Log in if you&apos;re an existing user</h2>
-    <%= form_tag '/login' do %>
-      Username: <%= text_field_tag :hunter_name %><br />
-      Password: <%= password_field_tag %><br />
-      <%= submit_tag "Log in" %>
-    <% end %>
-  
+    <br>
+      <%= form_tag '/login' do %>
+        Username: <%= text_field_tag :hunter_name %><br>
+        Password: <%= password_field_tag %>
+        <hr>
+        <%= submit_tag "Log in" ,class: 'btn'; %>
+      <% end %>
+    </div>
   <% end %>
-
 </div>

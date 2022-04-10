@@ -15,9 +15,18 @@
   </head>
 
   <body>
-    <div class="container-grid ">
-      <%= render 'shared/navbar' %>
-    </div>
-      <%= yield %>
+
+<div class="page-grid">
+  <div class="span-col-5"><%= render 'shared/navbar' %></div>
+  <div class="span-row-6"></div>
+  <div class="span-col-3 span-row-5"><%= yield %></div>
+  <div class="span-row-6"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
   </body>
 </html>
