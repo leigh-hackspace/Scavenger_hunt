@@ -50,13 +50,13 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
 .container {
     background-color: $rgba-primary-1;
     padding: 25px 0;
-  
+
     @media screen and (max-width: 992px) {
       width: 100%;
       margin: 0;
       padding: 0;
     }
-  
+
     .mobile-container {
       max-width: 720px;
       background-color: rgba-secondary-1-0;
@@ -65,7 +65,7 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
       border: 1px solid;
       padding: 10px;
       box-shadow: 5px 10px $rgba-secondary-2-0;
-  
+
       @media screen and (max-width: 996px) {
         width: 100%;
         background-color: #5c069b;
@@ -76,24 +76,24 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
       }
     }
   }
-  
+
   #center {
     text-align: center;
   }
-  
+
   .small {
     font-size: 0.75rem;
     line-height: 1;
   }
-  
+
   .image-banner {
     margin: 2%;
     width: 95%;
   }
-  
+
   .nav-bar {
     text-align: center;
-  
+
     @media screen and (max-width: 996px) {
       display: block;
       text-align: center;
@@ -106,15 +106,15 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
       border: none;
       border-radius: 25px 25px 0px 0px;
     }
-  
+
   }
-  
+
   #grass {
     width: 80%;
     background-image: "/assets/grass.png";
     color: green;
   }
-  
+
   body {
     background-color: rgb(37, 37, 37);
     color: rgba(228, 153, 72, 1);
@@ -125,31 +125,31 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     padding: 0px 5%;
     margin: auto;
   }
-  
+
   .spooky-header {
     .h1 {
       text-align: center;
       font-size: 2rem;
     }
   }
-  
+
   .spooky-text {
     padding: 0 10px;
-  
+
     #orange {
       color: #e49948;
       font-size: 2rem;
-  
+
       @media screen and (max-width: 992px) {
         font-size: 1rem;
         padding: 0px 5px;
         text-align: center;
       }
-  
+
       #green {
         color: #b8da45;
         font-size: 2rem;
-  
+
         @media screen and (max-width: 992px) {
           font-size: 1rem;
           padding: 0px 5px;
@@ -158,43 +158,38 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
       }
     }
   }
-  
+
   .spooky-qr {
     color: color-primary-3;
   }
-  
-    
+
+
   .item-capture-title {
     text-align: center;
     line-height: 1.5;
   }
-  
-  .page-container {
-    margin: 0px 25%;
-    padding: 15% 0px;
-    text-align: center;
-  }
-  
+
+
   .item-container-outer {
     background-color: #bbee09;
     border-radius: 15px 50px;
     padding: 25px 10px;
     box-shadow: 12px 8px #703799;
   }
-  
+
   .item-container-inner {
     color: red;
   }
-  
+
   .item-image {
     height: 125px;
     width: 125px;
   }
-  
+
   .nav {
     display: block;
   }
-  
+
   .nav_bar_button {
     background-color: rgb(201, 202, 195);
     border-radius: 25px 25px 0px 0px;
@@ -210,17 +205,17 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     text-transform: uppercase;
     border: 1px solid;
     box-shadow: 5px -1px;
-  
+
     @media screen and (max-width: 992px) {
       font-size: 0.75rem;
       padding: 10px 7px;
     }
   }
-  
+
   .nav_bar_button:hover {
     background-color: grey;
   }
-  
+
   .item_button {
     background-color: rgb(201, 202, 195);
     border: none;
@@ -234,12 +229,12 @@ $rgba-secondary-2-4: rgba( 20,234, 76,1);
     margin: 4px 2px;
     cursor: pointer;
     min-width: 40px;
-  
+
     @media screen and (max-width: 992px) {
       font-size: 0.75rem;
     }
   }
-  
+
   .scoreboard {
     text-align:center;
     }

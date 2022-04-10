@@ -1,12 +1,14 @@
 .nav-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-column: 2 / 5;
+  padding: 10px 0px;
 
   @media only screen and (max-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-column: 1 / 4 ;
+    padding: 10px 0px;
   }
 }
 
@@ -17,7 +19,7 @@
   grid-gap: 5px;
   text-align: center;
   text-transform: Uppercase;
-  background: gray; 
+  background: gray;
   outline: black 1px solid;
   box-shadow: 1px 1px 1px 1px;
   border-radius: 15px 15px 15px 15px;
@@ -26,16 +28,16 @@
   @media only screen and (max-width: 768px) {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
-    font-size: 0.5rem;
+    font-size: 1.0rem;
   }
 }
 
 .btn-grid:hover {
-  background: rgb(152, 204, 150); 
+  background: rgb(152, 204, 150);
   box-shadow: 1px 1px 1px 1px;
 }
 
 .btn-grid:active {
-  background: rgb(150, 204, 201); 
+  background: rgb(150, 204, 201);
   box-shadow: 1px 1px 1px 1px;
 }

@@ -1,4 +1,4 @@
-<div class="nav-grid">
+<div class="nav-grid" style="margin-top:10px;">
 
     <div class="btn-grid">
         <div class="span-col-2"></div>
@@ -37,16 +37,6 @@
         <div class="span-col-2"></div>
     </div>
 
-   <div class="btn-grid">
-        <div class="span-col-2"></div>
-        <div class="span-col-2">
-            <%= link_to register_path do %>
-                <p>register</p>
-            <% end %>
-        </div>
-        <div class="span-col-2"></div>
-    </div>
-
     <% if session[:hunter_session_id].present? %>
       <div class="btn-grid">
         <div class="span-col-2"></div>
@@ -69,7 +59,8 @@
         </div>
         <div class="span-col-2"></div>
       </div>
-    
+
     <% end %>
+    
 
 </div>

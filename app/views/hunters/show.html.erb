@@ -1,7 +1,3 @@
-<div class="page-container color-60">
-  <h2 class="Hunter-title">Welcome Hunter! </h2>
-  <div class="hunter-container-outer">
-    <div class="hunter-container-inner">
       <% if session[:hunter_session_id] == @hunter.generate_session_id %>
         <h1><%= @hunter.hunter_name %></h1>
         <% if @hunter.items.counted.count == 0 %>
@@ -11,7 +7,7 @@
           <h3> Well done! you have captured the following items </h3>
           <table>
             <th>Item name</th><th>picture</th><th>points</th>
-
+            
             <% @hunter.items.counted.each do |item|%>
               <tr>
                 <td><%= item.title %></td>
@@ -22,21 +18,22 @@
 
           </table>
           <h2>total points <%= score(@hunter) %></h2>
-          <hr>
+          <hr class="hr-80">
           <h3>Bonus Item</h3>
-          <%= @hunter.bonus_item&.title %> | code: <%= @hunter.bonus_item&.code %>
-
+          <%= @hunter.bonus_item&.title %> | code: <%= @hunter.bonus_item&.code%>    
+        
         <% end %>
-        <% if @hunter.is_admin? %>
-          <h1>Admin</h1>
-          <%= link_to 'Add Item', root_url + 'admin' %> |
-          <%= link_to 'Add Bonus Item', new_bonus_item_path %> |
-          <%= link_to 'Show Items', items_path %>
-        <% end %>
+          <hr class="hr-80">
+          <% if @hunter.is_admin? %>
+            <h1>Admin</h1>
+            <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
+            <br>
+            <br>
+            <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
+            <br>
+            <br>
+            <%= link_to 'Show Items', items_path, :class => 'btn' %>
+          <% end %>
       <% else %>
-        <%= link_to 'Please log in!', root_path + 'login' %>
+        <%= link_to('Please log in!', root_path + 'login') %>
       <% end %>
-    </div>
-  </div>
-</div>
-

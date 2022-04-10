@@ -13,93 +13,88 @@
  *= require_tree .
  *= require_self
  *= require navbar
- *= require main
- *= require clue
- *= require score
- *= require hunters
- *= require tables
- *= require items
+$color-60 : #21d190;
+$color-30 : #f6d327;
+$color-10 : #f2cf07;
+*/
+body {
+    background-color: rgb(105, 105, 105);;
+}
 
-/* Container */
+.hr-80{
+    width: 90%;
+    background: linear-gradient(0.25turn, #5f5f5e, #3f87a6, #5f5f5e  );
+    height: 2px;
+}
 
-.container-grid {
-    display:grid;
+.page-grid {
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
 
+    grid-gap: 10px;
+}
+
+.span-col-5{
+    grid-column: span 5 / auto;
     @media only screen and (max-width: 768px) {
-        display: grid;
-        grid-template-columns: 5%, 90%, 5%;
-        grid-gap: 10px;
     }
 }
-.span-row-3{grid-row: span 3 / auto;}
 
-
-/* Body Css  */
-
-.hunt-text {
-    outline: 1px blue solid;
+.span-col-3{
+    grid-column: span 3 / auto;
+    @media only screen and (max-width: 768px) {
+        grid-column: span 5/ auto;
+    }
 }
 
-
-/* Move to Items scss */
-
-.item-capture-title {
-    text-align: center;
-    line-height: 1.5;
+.span-row-6{
+    grid-row: span 6 / auto;
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 }
+
+.span-row-5{
+    grid-row: span 5 / auto;
+    @media only screen and (max-width: 768px) {
+    }}
 
 .page-container {
-        grid-column: span 2 / auto;
-        outline: solid 1px black;
-        grid-column: 2 / 5;
-        background-color: rgb(150, 167, 166);
-        box-shadow: 1px 1px 1px 1px;
-        border-radius: 15px 15px 15px 15px;
-        padding-left: 15px ;
-        margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column: 1 / 5;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    background-color: #21d190;
+    padding: 5%;
+    border-radius: 2px 2px 2px 2px;
 
-    
+
     @media only screen and (max-width: 768px) {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        background-color: #703799;
+        grid-column: span 1 / 5 ;
+        grid-template-columns: repeat(5, 1fr);
         grid-gap: 10px;
-        text-align: center;
-        color: black;
-        }
-}
-
-.item-container-outer {
-    background-color: #bbee09;
-    border-radius: 15px 50px;
-    padding: 25px 10px;
-    box-shadow: 12px 8px #703799;
-}
-
-.item_button {
-    background-color: rgb(201, 202, 195);
-    border: none;
-    border-radius: 15px 15px 15px 15px;
-    color: rgb(255, 255, 255);
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 2rem;
-    margin: 4px 2px;
-    cursor: pointer;
-    min-width: 40px;
-    @media only screen and (max-width: 768px) {
-        font-size: 0.75rem;
+        padding: 5%;
+        border-radius: 10px 10px 10px 10px;
     }
 }
 
-.scoreboard {
-    text-align: center;
+.content-container {
+    background-color: #6d6d6d;
+    margin: 20px;
+    
+    box-shadow: 1px 1px 1px 1px;
+
+    @media only screen and (max-width: 768px) {
+
+    }
 }
 
-table, th,td{
-  border: 2px solid;
+table, td, tr {
+    border: 1px solid;
+}
+
+td {
+    padding: 10px
 }
