@@ -1,0 +1,20 @@
+<div class="content-container">
+  <h2 class="item-capture-title">
+    <%= "Congratulations #{session[:hunter_name]}, you found a item!" %>
+    <br>
+  </h2>
+
+  <div class="item-container-outer">
+    <div class="item-container-inner">
+      <h1><%= @item.title %></h1>
+      <p>Bonus Item? <%= @item.is_bonus_item? %></p>
+      <p><%= @item.body %> </p>
+      <%= image_tag @item.image, class: 'item-image' %>
+      <% if hunter_logged_in? %>
+        <%= button_to 'Click here to capture', item_captures_path(@item.item_uuid, hunter_uuid: session[:hunter_uuid]) %>
+      <% else %>
+        <p> log in to capture it </p>
+      <% end %>
+    </div>
+  </div>
+</div>

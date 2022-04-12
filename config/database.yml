@@ -1,37 +1,28 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
-#  adapter: sqlite3
   adapter: postgresql
   encoding: unicode
-  username: spookyuser
-  database: spookydb
-  password: <%= ENV['SPOOKY_DB_PASS'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  pool: 5
   timeout: 5000
+  username: <%= ENV['SCAVENGER_DB_USER'] %>
+  password: <%= ENV['SCAVENGER_DB_PASS'] %>
 
 development:
   <<: *default
-  database: spookydb
-  username: spookyuser
-  password: <%= ENV['SPOOKY_DB_PASS'] %>
+  database: <%= ENV['SCAVENGER_DB_NAME'] %>
 
-#  database: db/test.sqlite3
+test:
+  <<: *default
+  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
+#test:
+#  <<: *default
+#  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
 
-production:
-  <<: *default
-#   database: db/test.sqlite3
-  database: spookydb
-  username: spookyuser
-  password: <%= ENV['SPOOKY_DB_PASS'] %>
+#production:
+#  <<: *default
+#  database: <%= ENV['PROD_SCAVENGER_DB_NAME'] %>

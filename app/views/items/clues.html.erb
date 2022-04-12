@@ -1,0 +1,25 @@
+<div class="content-container">
+  <h1>Clues</h1>
+  <hr class="hr-80">
+  <table class="clue-table">
+    <% if session[:hunter_uuid] %>
+      <% @items.each do |item| %>
+        <% unless item.is_bonus_item? %>
+          <% unless @hunter.items.include? item %>
+            <tr>
+              <td class="clue-text"><%= item.body %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% else %>
+    <% @items.each do |item| %>
+      <% unless item.is_bonus_item? %>
+        <tr>
+          <td class="clue-text"><%= item.body %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    <% end %>
+  </table>
+</div>

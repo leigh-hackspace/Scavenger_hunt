@@ -1,39 +1,35 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-	root "hunters#welcome"
-	get "hunters/all", to: "hunters#all"
+  root 'hunters#welcome'
 
-	resources :hunters, param: :hunter_uuid
-	resources :ghosts, param: :ghost_uuid
+  resources :hunters, param: :hunter_uuid
+  resources :items, param: :item_uuid do
+    resources :captures, only: [:create, :index]
+  end
+  resources :bonus_items, only: [:new, :create]
 
-	##sessions
-	get "login", to: "sessions#login"
-	get "register", to: "sessions#new", as: "register"
-  	post "/login", to: "sessions#create"
-  	post "/logout", to: "sessions#destroy"
-	get  "/logout", to: "sessions#destroy"
+  ##sessions
+  get 'login', to: 'sessions#login'
+  get 'register', to: 'sessions#new', as: 'register'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
-	get "/ghosts", to: "ghosts#index"
+  get "/admin", to: "items#new"
+  post "/admin", to: "items#create"
 
+  ##easter eggs
+  get '/bugs', to: 'items#all'
+  get '/lola', to: 'items#all'
+  get '/peter', to: 'items#all'
+  get '/roger', to: 'items#all'
 
-#	get "/h4d3s", to: "ghosts#new"
-#	post "/h4d3s", to: "ghosts#create"
+  get '/clues', to: 'items#clues', as: 'clues'
 
-	## ghostbusters show all available ghosts
-	get "/egon", to: "ghosts#all"
-	get "/peter", to: "ghosts#all"
-	get "/raymond", to: "ghosts#all"
-	get "/winston", to: "ghosts#all"
-	get "/pacman", to: "ghosts#all"
-	get "/wrong", to: "ghosts#wrong"
+  get '/wrong', to: 'items#wrong'
 
-	get "/hunters", to: "hunters#welcome"
-	post "/hunt", to: "hunters#capture"
-	
-
-
-	## Scoreboard 
+	## Scoreboard
 	resources :scoreboard, only: :index
-
-	get "/scoreboard", to: "scoreboard#all", as: 'scoreboard'
-
+  get '/scoreboard', to: 'scoreboard#all', as: 'scoreboard'
 end

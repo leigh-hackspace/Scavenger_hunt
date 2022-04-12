@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# :nodoc:
 module HuntersHelper
   def score(hunter)
-    hunter.ghosts.count * 10
+    hunter.items.counted.count * 10
   end
 
   def generate_session_id(hunter)

@@ -1,17 +1,19 @@
-<div class="scoreboard">
-    <h2 class="hunter-title">Hunters Scoreboard</h2>
-    <p>Hunters will be listed here</p>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Current Score</th>
-        </tr>
-        <% @hunters.each do |hunt| %>
-            <tr>
-                <td><%= hunt.hunter_name %></td>
-                <td><%= score(hunt) %></td>
-            </tr>
-            <% end %>
-    </table>
+<div class="content-container">
+  <div class="score-header">
+    <h2>scores</h2>
+    <hr class="hr-80">
+  </div>
+  
+  <table class="score-table">
+    <tr>
+      <th>Name</th>
+      <th>Current Score</th>
+    </tr>
+    <% @hunters.each do |hunt| %>
+      <tr>
+        <td class="team-name"><%= hunt.hunter_name %></td>
+        <td class="team-score"><%= score(hunt) %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>

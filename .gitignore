@@ -25,7 +25,7 @@ config/master.key
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
 
-# dotenv
+# Dotenv
 # TODO Comment out this rule if environment variables can be committed
 .env
 
@@ -64,3 +64,5 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore uploaded files in development
+storage/
+.DS_Store

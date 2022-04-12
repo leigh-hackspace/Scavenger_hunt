@@ -1,30 +1,53 @@
-<div class="page-container">
-  <h2 class="Hunter-title">Welcome Hunter! </h2>
-  <div class="hunter-container-outer">
-    <div class="hunter-container-inner">
-      <% if session[:hunter_session_id] == @hunter.generate_session_id %>
-        <h1><%= @hunter.hunter_name %></h1>
-        <% if @hunter.ghosts.count == 0 %>
-          <h2>Looks like you haven&apos;t captured any ghosts</h2>
-          <h3>Head for the shed!</h3>
-        <% else %>
-          <h3> Well done! you have captured the following ghosts </h3>
-          <table>
-            <th>Ghost name</th><th>picture</th><th>points</th>
-            <% @hunter.ghosts.each do |g|%>  
-              <tr>
-                <td><%= g.title %></td>
-                <td><%= image_tag g.image, class: 'ghost-image'%></td>
-                <td>10</td>
-              </tr>
-            <% end %>
-          </table>
-          <h2>total points <%= score(@hunter) %></h2>
-          <% end %>
-      <% else %>
-        <%= link_to('Please log in!', root_path + 'login') %>
-      <% end %>
-      
-    </div>
-  </div>
+<div class="content-container">
+  <% if hunter_logged_in? %>
+    
+    <% if @hunter.is_admin? %>
+      <h1>Admin</h1>
+      <div class="admin_buttons">
+        <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
+        <br>
+        <br>
+        <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
+        <br>
+        <br>
+        <%= link_to 'Show Items', items_path, :class => 'btn' %>
+      </div>
+    <% end %>
+    <hr class="hr-80">
+
+    <h1><%= @hunter.hunter_name %></h1>
+
+    <% if @hunter.items.counted.count == 0 %>
+      <h2>Looks like you haven&apos;t captured any items</h2>
+      <h3>Check the clues page!</h3>
+    <% else %>
+      <h3> Well done! you have captured the following items </h3>
+      <table style="width:100%;">
+        <th>Item name</th><th>picture</th><th>points</th>
+
+        <% @hunter.items.counted.each do |item|%>
+          <tr>
+            <td><%= item.title %></td>
+            <td><%= image_tag item.image, class: 'item-image'%></td>
+            <td>10</td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
+    <h2>total points <%= score(@hunter) %></h2>
+
+    <% if @hunter.bonus_item.present? %>
+      <hr class="hr-80">
+      <h3>Bonus Item</h3>
+      <p><%= @hunter.bonus_item&.title %><p>
+      <p> code: <%= @hunter.bonus_item&.code %></p>
+    <% end %>
+
+
+
+
+  <% else %>
+    <%= link_to('Please log in!', root_path + 'login') %>
+  <% end %>
 </div>

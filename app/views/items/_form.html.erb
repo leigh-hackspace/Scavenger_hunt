@@ -1,0 +1,10 @@
+<% if current_user.is_admin? %>
+  <%= simple_form_for item do |f| %>
+    <%= f.input :title %><br />
+    <%= f.input :body %>
+    <%= f.input :image, as: :file, label: 'Image of Item'%>
+    <%= f.submit %>
+  <% end %>
+<% else %>
+  <h1>Someone&apos;s nosey!</h1>
+<% end %>

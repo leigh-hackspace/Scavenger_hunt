@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SpookyHunt</title>
+    <title>Scavenger Hunt!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,21 +12,21 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
-  <div class="container">
-    <div class="mobile-container">
-        <div class="nav-bar">
-          <%= link_to "Home", root_path,        class: 'grave_button' %>
-          <%= link_to "Login", login_path,      class: 'grave_button' %>
-          <%= link_to "Signup", register_path,  class: 'grave_button' %>
-          <%= link_to "Score", scoreboard_path, class: 'grave_button' %>
-     </div>
-     <hr id="grass">
-      <%= yield %>
-    </div>
-  </div>
+
+<div class="page-grid">
+  <div class="span-col-5"><%= render 'shared/navbar' %></div>
+  <div class="span-row-6"></div>
+  <div class="span-col-3 span-row-5"><%= yield %></div>
+  <div class="span-row-6"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
   </body>
 </html>

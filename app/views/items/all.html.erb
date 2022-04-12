@@ -1,0 +1,27 @@
+<% unless session[:is_admin] %>
+	<h1>You&apos;re not supposed to be here!</h1>
+<% else %>
+	<h1>Items:</h1>
+	<table>
+	<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Coupon</th><th>Debug Link</th><th>QR Code</th></tr>
+		<% @items.each do |item| %>
+			<tr>
+				<td><%= item.id %></td>
+				<% if ENV["SCAVENGER_ENV_NAME"] != 'PROD' %>
+       				<td><% image_tag 'place_holder/50x50_item.png' %><td>
+    			<% else %>
+				  <td><%= image_tag item.image, class: "item-image" %></td>
+				<% end %>
+				<td><%= item.title %></td>
+				<td><%= item.body %></td>
+				<td><%= item.is_coupon %></td>
+				<td><a href=<%= item_path(item.item_uuid) %>>view item</a></td>
+				<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "black")%></td>
+			</tr>
+		<% end %>
+	</table>
+
+<hr class="hr-80">
+<p>Welcome page:</p>
+<%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "black")%>
+<% end %>

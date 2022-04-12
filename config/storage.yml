@@ -13,8 +13,8 @@ amazon:
 #   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   access_key_id: <%= ENV["AWS_ACCESS_KEY"] %>
   secret_access_key: <%= ENV["AWS_SECRET_KEY"] %>
-  region: eu-west-2
-  bucket: spookyhunt
+  region: <%= ENV["AWS_REGION"] %> #eu-west-2
+  bucket: <%= ENV["AWS_BUCKET"] %> #lhs-scavenger-hunt
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
