@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   def clues
     @items = Item.all
     @items = @items.sort_by(&:id)
+    @hunter = Hunter.find_by(:hunter_uuid => session[:hunter_uuid])
   end
 
   def show
