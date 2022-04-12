@@ -1,5 +1,19 @@
 <div class="content-container">
   <% if hunter_logged_in? %>
+    
+    <% if @hunter.is_admin? %>
+      <h1>Admin</h1>
+      <div class="admin_buttons">
+        <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
+        <br>
+        <br>
+        <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
+        <br>
+        <br>
+        <%= link_to 'Show Items', items_path, :class => 'btn' %>
+      </div>
+    <% end %>
+    <hr class="hr-80">
 
     <h1><%= @hunter.hunter_name %></h1>
 
@@ -31,20 +45,7 @@
     <% end %>
 
 
-    <hr class="hr-80">
 
-    <% if @hunter.is_admin? %>
-      <h1>Admin</h1>
-      <div class="admin_buttons">
-        <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
-        <br>
-        <br>
-        <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
-        <br>
-        <br>
-        <%= link_to 'Show Items', items_path, :class => 'btn' %>
-      </div>
-    <% end %>
 
   <% else %>
     <%= link_to('Please log in!', root_path + 'login') %>
