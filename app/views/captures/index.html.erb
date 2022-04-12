@@ -1,12 +1,24 @@
-<% if params[:message] == "true" %>
+<h1>Hello World </h1>
+
+<% if params[:message] == "1" %>
+  This bonus item has already been claimed!
+<% end %>
+
+<% if params[:message] == "2" %>
+  You've already claimed a bonus item! One per person
+<% end %>
+
+<% if params[:message] == "3" %>
+  You've already collected this egg!
+<% end %>
+
+<% if params[:message] == "4" %>
   Captured!
 <% end %>
 
-<% if params[:message] == "already" %>
-  You already have a bonus item!
+<% if params[:message] == "5" %>
+  We don't know what to do
 <% end %>
 
-<% if params[:message] == "claimed" %>
-  This bonus item has already been claimed!
-<% end %>
 You can now close this browser window
+
