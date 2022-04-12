@@ -24,6 +24,8 @@ $color-10 : #f2cf07;
 */
 body {
     background-image: repeating-linear-gradient(45deg, #acd4c7 0px, #acd4c7 10px, #e6eed2c5 10px, #e6eed2c5 20px);
+    background-attachment:fixed;
+
     /*
     background-color: rgb(124, 203, 255);;*/
 }
