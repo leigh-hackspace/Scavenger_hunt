@@ -6,14 +6,6 @@ class BonusItem < Item
     Item.where.not(code: "")
   end
 
-  def self.capture(hunter, item)
-    begin
-      raise "already" if hunter.bonus_item.present?
-      raise "claimed" if item.hunters.present?
-      hunter.update(bonus_item: item)
-    end
-  end
-
   private
 
   def generate_code
