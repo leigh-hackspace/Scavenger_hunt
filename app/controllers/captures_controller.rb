@@ -6,6 +6,10 @@ class CapturesController < ApplicationController
 
     status = @item.capture(@hunter)
     result = Status.decide(status)
+    
+    if result == 4  
+      tweet_capture(@hunter, @item)
+    end
 
     redirect_to item_captures_path(@item, message: result)
   end

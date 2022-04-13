@@ -20,10 +20,10 @@ Rails.application.routes.draw do
   post "/admin", to: "items#create"
 
   ##easter eggs
-  get '/bugs', to: 'items#all'
-  get '/lola', to: 'items#all'
-  get '/peter', to: 'items#all'
-  get '/roger', to: 'items#all'
+  get '/bugs', to: 'items#index'
+  get '/lola', to: 'items#index'
+  get '/peter', to: 'items#index'
+  get '/roger', to: 'items#index'
 
   get '/clues', to: 'items#clues', as: 'clues'
 
