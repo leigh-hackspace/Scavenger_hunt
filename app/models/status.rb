@@ -17,7 +17,6 @@ class Status
       3
     when :success
       4
-      tweet_capture(@hunter, @item)
     else
       5
     end
