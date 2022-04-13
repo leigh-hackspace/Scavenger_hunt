@@ -17,8 +17,12 @@
 		<% end %>
 	</table>
 
-
-  <p>Welcome page:</p>
-  <%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "black", fill: "ffffff")%>
-
+  <hr class="hr-80">
+	<br>
+	<br>
+	<center>
+	<table class="item-table">
+		<tr><td><p>Welcome page:</p></td><td><%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "black", fill: "ffffff")%></td></tr>
+		<tr><td><p>Register page:</p></td><td><%=render inline: RQRCode::QRCode.new(register_url).as_svg(module_size: 3,color: "black", fill: "ffffff")%></td></tr>
+	</center>
 <% end %>
