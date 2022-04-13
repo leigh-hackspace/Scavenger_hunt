@@ -8,10 +8,8 @@ class ApplicationController < ActionController::Base
     return unless current_session_id == hunter.generate_session_id
   end
 
-
-
   def tweet_user_register(hunter)
-    send_tweet("Looks like 🔎#{hunter.hunter_name}🔍 has joined the hunt! ")
+    Tweet.tweet("Looks like 🔎#{hunter.hunter_name}🔍 has joined the hunt! ")
   end
 
   private
