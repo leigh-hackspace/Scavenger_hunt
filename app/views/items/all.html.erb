@@ -21,7 +21,11 @@
 		<% end %>
 	</table>
 
-<hr class="hr-80">
+<br />
+<br />
 <p>Welcome page:</p>
 <%=render inline: RQRCode::QRCode.new(root_url).as_svg(module_size: 3,color: "black")%>
+
+<p>register page:</p>
+<%=render inline: RQRCode::QRCode.new(register_url).as_svg(module_size: 3,color: "black")%>
 <% end %>
