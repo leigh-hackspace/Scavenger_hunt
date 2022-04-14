@@ -1,0 +1,20 @@
+.captures-container {
+  margin-top: 40px;
+  padding-top: 30px;
+  background-color: pink;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.gif-container {
+  clear: both;
+
+  img {
+    border-radius: 10px;
+    display: block;
+    max-height: 200px;
+    margin: auto;
+    width: 90%;
+    padding-bottom: 60px;
+  }
+}
