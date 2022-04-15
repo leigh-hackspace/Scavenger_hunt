@@ -7,6 +7,11 @@ class ItemsController < ApplicationController
     @items = @items.sort_by(&:id)
   end
 
+  def coupons
+    @items = Item.all
+    @items = @items.sort_by(&:id)
+  end
+
   def clues
     @items = Item.all
     @items = @items.sort_by(&:id)

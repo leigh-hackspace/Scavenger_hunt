@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/peter', to: 'items#index'
   get '/roger', to: 'items#index'
 
+  get '/coupons', to: 'items#coupons', as: 'coupons'
+
   get '/clues', to: 'items#clues', as: 'clues'
 
   get '/wrong', to: 'items#wrong'

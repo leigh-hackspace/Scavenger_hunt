@@ -1,0 +1,18 @@
+<% unless session[:is_admin] %>
+	<h1>You&apos;re not supposed to be here!</h1>
+<% else %>
+  <div class="content-container">
+		<center>
+			<table>
+			<tr><th>Coupons</th></tr>
+				<% @items.each do |item| %>
+					<% if item.is_bonus_item? %>
+						<tr>
+							<td><%= item.code %></td>
+						</tr>
+					<% end %>
+				<% end %>
+			</table>
+		</center>
+	</div>
+<% end %>
