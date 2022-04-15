@@ -1,24 +1,33 @@
-<h1>Hello World </h1>
+<div class="captures-container">
+    <% if params[:message] == "1" %>
+      <h2>This bonus item has already been claimed!</h2>
+    <% end %>
 
-<% if params[:message] == "1" %>
-  This bonus item has already been claimed!
-<% end %>
+    <% if params[:message] == "2" %>
+      <h2>You've already claimed a bonus item! One per person</h2>
+    <% end %>
 
-<% if params[:message] == "2" %>
-  You've already claimed a bonus item! One per person
-<% end %>
+    <% if params[:message] == "3" %>
+      <h2>You've already collected this egg!</h2>
+    <% end %>
 
-<% if params[:message] == "3" %>
-  You've already collected this egg!
-<% end %>
+    <% if params[:message] == "4" %>
+      <%= javascript_pack_tag "confetti_stuff" %>
+      <h2>Captured!</h2>
 
-<% if params[:message] == "4" %>
-  Captured!
-<% end %>
+      <div class="gif-container">
+        <%= image_tag show_random_gif, alt: "Congrats!" %>
+      </div>
+    <% end %>
 
-<% if params[:message] == "5" %>
-  We don't know what to do
-<% end %>
+    <% if params[:message] == "5" %>
+      <h2> Erm... we don't know what to do</h2>
+    <% end %>
 
-You can now close this browser window
+    <script>
+      setTimeout(function(){
+        window.location.replace("<%= scoreboard_path %>");
+      },5000);
+    </script>
+</div>
 
