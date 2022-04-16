@@ -4,10 +4,12 @@
     <br>
   </h2>
 
-  <div class="item-container-outer">
-    <div class="item-container-inner">
+  <% if @item.is_bonus_item? %>
+    <div class="item-container-outer-bonus">
+  <% else %>
+    <div class="item-container-outer">
+  <% end %>
       <h1><%= @item.title %></h1>
-      <p>Bonus Item: <%= @item.is_bonus_item? %></p>
       <p><%= @item.body %> </p>
       <center>
       <% if hunter_logged_in? %>
