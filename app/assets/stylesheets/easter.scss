@@ -1,33 +1,11 @@
-/*/
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require navbar
- *= require main
- *= require score
- *= require hunters
- *= require items
- *= require captures
-
-$color-60 : #21d190;
-$color-30 : #f6d327;
-$color-10 : #f2cf07;
-*/
-
+/*
 body {
-    background-color: rgb(0, 118, 0);
-}
+    background-image: repeating-linear-gradient(45deg, #acd4c7 0px, #acd4c7 10px, #e6eed2c5 10px, #e6eed2c5 20px);
+    background-attachment:fixed;
 
+    
+    background-color: rgb(124, 203, 255);;
+}
 
 .hr-80{
     width: 90%;
@@ -37,31 +15,32 @@ body {
 
 .page-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
     grid-gap: 10px;
 }
 
-.span-col-5 {
+.span-col-5{
     grid-column: span 5 / auto;
     @media only screen and (max-width: 768px) {
     }
 }
 
-.span-col-3 {
+.span-col-3{
     grid-column: span 3 / auto;
     @media only screen and (max-width: 768px) {
         grid-column: span 5/ auto;
     }
 }
 
-.span-row-6 {
+.span-row-6{
     grid-row: span 6 / auto;
     @media only screen and (max-width: 768px) {
         display: none;
     }
 }
 
-.span-row-5 {
+.span-row-5{
     grid-row: span 5 / auto;
     @media only screen and (max-width: 768px) {
     }
@@ -74,11 +53,9 @@ body {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
     background-color: rgba(199, 237, 150, 0.562);
+    outline: black 1px solid;
     padding: 5%;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -khtml-border-radius: 2px;
-    border-radius: 2px;
+    border-radius: 2px 2px 2px 2px;
 
 
     @media only screen and (max-width: 768px) {
@@ -88,10 +65,7 @@ body {
         grid-template-rows: repeat(3, 1fr);
         grid-gap: 10px;
         padding: 5%;
-        -webkit-border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -khtml-border-radius: 10px ;
-        border-radius: 10px ;
+        border-radius: 10px 10px 10px 10px;
     }
 }
 
@@ -100,18 +74,13 @@ body {
     margin: 20px;
     box-shadow: 1px 1px 1px 1px;
     padding: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 10px 10px 10px 10px;
 
     @media only screen and (max-width: 768px) {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -khtml-border-radius: 10px;
-        border-radius: 10px;
+        border-radius: 10px 10px 10px 10px;
         padding: 10px;
         margin: 10px;
+    
     }
 }
 
@@ -119,8 +88,8 @@ body {
     text-align: center;
 }
 
-tr {
-    padding: 10px;
+td {
+    padding: 10px
 }
 
 .item-table{
@@ -131,21 +100,9 @@ tr {
     width: 80%;
 }
 
-.clue-table{
+.clues-table{
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 5px;
-
-    tbody {
-        margin: 15px 0px;
-    }
-
-    tr { 
-        display: table-row;
-    }
-
-    td {outline: 1px solid black;
-    }
+    outline: black 1px;
 }
 
 .clue-text {
@@ -157,7 +114,6 @@ tr {
 
         @media only screen and (max-width: 768px) {
         width: 300px;
-
     }
 }
 
@@ -167,6 +123,7 @@ tr {
 
 table, td, tr {
     padding: 2px;
-    margin: 5px 0px;
     margin: auto;
 }
+
+*/

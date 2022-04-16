@@ -1,0 +1,9 @@
+<% if session[:hunter_session_id].present? %>
+  <%= link_to logout_path do %>
+    <p class="card-text">logout</p>
+  <% end %>
+<% else %>
+  <%= link_to login_path do %>
+    <p class="card-text">login</p>
+  <% end %>
+<% end %>
