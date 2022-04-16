@@ -16,7 +16,19 @@
     <hr class="hr-80">
 
     <h1><%= @hunter.hunter_name %></h1>
-
+    <% if @hunter.bonus_item.present? %>
+      <hr class="hr-80">
+      <h3>Bonus Item</h3>
+      <p>Oh cool, you have a bonus item!</p>
+      <table>
+        <th>Name</th><th>Code</th>
+        <tr>
+          <td><%= @hunter.bonus_item&.title %></td>
+          <td><%= @hunter.bonus_item&.code %></td>
+        </tr>
+      </table>
+      <hr class="hr-80">
+    <% end %>
     <% if @hunter.items.counted.count == 0 %>
       <h2>Looks like you haven&apos;t captured any items</h2>
       <h3>Check the clues page!</h3>
@@ -36,13 +48,6 @@
     <% end %>
 
     <h2>total points <%= score(@hunter) %></h2>
-
-    <% if @hunter.bonus_item.present? %>
-      <hr class="hr-80">
-      <h3>Bonus Item</h3>
-      <p><%= @hunter.bonus_item&.title %><p>
-      <p> code: <%= @hunter.bonus_item&.code %></p>
-    <% end %>
 
 
 
