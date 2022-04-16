@@ -10,12 +10,14 @@
       <p>Bonus Item: <%= @item.is_bonus_item? %></p>
       <p><%= @item.body %> </p>
       <center>
+      <% if hunter_logged_in? %>
+        <%= button_to 'Click here to capture', item_captures_path(@item.item_uuid, hunter_uuid: session[:hunter_uuid]) %>
+      <% else %>
+        <p> log in to capture it </p>
+      <% end %>
+      <br> 
+      <br>
         <%= image_tag @item.image, class: 'item-image' %>
-        <% if hunter_logged_in? %>
-          <%= button_to 'Click here to capture', item_captures_path(@item.item_uuid, hunter_uuid: session[:hunter_uuid]) %>
-        <% else %>
-          <p> log in to capture it </p>
-        <% end %>
       </center>
     </div>
   </div>
