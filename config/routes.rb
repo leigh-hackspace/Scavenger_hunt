@@ -34,4 +34,5 @@ Rails.application.routes.draw do
 	## Scoreboard
 	resources :scoreboard, only: :index
   get '/scoreboard', to: 'scoreboard#all', as: 'scoreboard'
+  get '/winner', to: 'scoreboard#winner', as: 'winner'
 end
