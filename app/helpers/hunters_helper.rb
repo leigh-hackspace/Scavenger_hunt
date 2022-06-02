@@ -16,7 +16,7 @@ module HuntersHelper
     high_score = high_score(hunters)
     hunters.each do |hunt|
       if hunt.score == high_score
-        winners.store(i, hunt.hunter_name)
+        winners.store(i, hunt.hunter_name + ":" + hunt.email)
         i = i+1
       end
     end

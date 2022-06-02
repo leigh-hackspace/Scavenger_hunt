@@ -23,13 +23,16 @@ $color-60 : #21d190;
 $color-30 : #f6d327;
 $color-10 : #f2cf07;
 */
+.none {
+    display: none;
+}
 
 body {
     background-color: rgb(0, 118, 0);
 }
 
 
-.hr-80{
+.hr-80 {
     width: 90%;
     background: linear-gradient(0.25turn, #5f5f5e, #f4f6f7, #5f5f5e  );
     height: 1px;

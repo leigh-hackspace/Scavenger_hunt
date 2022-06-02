@@ -23,7 +23,11 @@ class Hunter < ApplicationRecord
     return running_score
   end
 
+  attr_accessor :confirm_email, :confirmed_email
+
   private
+
+
 
   def generate_hunter_uuid
     self.hunter_uuid = SecureRandom.uuid

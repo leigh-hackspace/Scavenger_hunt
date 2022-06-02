@@ -23,21 +23,34 @@ class HuntersController < ApplicationController
   end
 
   def create
-    @hunter = Hunter.new(hunter_params)
-    if doesnt_exist(hunter_params[:hunter_name])
-      if @hunter.save
-        tweet_user_register(@hunter)
-        assign_session(session, @hunter)
-      else
-        render :new
-      end
+    unless hunter_params[:confirmed_email].empty?
+      message = "bye bye bot"
+      redirect_to root_path, notice: message
     else
-      redirect_to "#{root_path}register", message: 'User already exists!'
+      if emails_match
+        @hunter = Hunter.new(hunter_params)
+        if doesnt_exist(hunter_params[:hunter_name])
+          if @hunter.save
+            tweet_user_register(@hunter)
+            assign_session(session, @hunter)
+          else
+            render :new
+          end
+        else
+          redirect_to "#{root_path}register", message: 'User already exists!'
+        end
+      else
+        redirect_to "#{root_path}register", message: 'Emails do not match!'
+      end
     end
   end
 
+  def emails_match
+    hunter_params[:email] == hunter_params[:confirm_email]
+  end
+
   def hunter_params
-    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password, :item_uuid)
+    params.require(:hunter).permit(:hunter_name, :hunter_uuid, :password, :item_uuid, :email, :confirm_email, :confirmed_email)
   end
 
   def doesnt_exist(hunter_name)
