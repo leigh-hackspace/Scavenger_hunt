@@ -34,13 +34,14 @@
 }
 
 .hunter-content {
-  background-color: rgb(150, 167, 166);
-  box-shadow: 1px 1px 1px 1px;
+  background-color: #6f807f;
+  box-shadow: 1px 1px 1px 1px white;
   border-radius: 15px 15px 15px 15px;
-  padding: 0px 15px;
-  color: black;
+  padding: 15px 15px;
+  color: rgb(255, 255, 255);
   width: auto;
   margin: 10px 0px;
+
 
   @media only screen and (max-width: 768px) {
     display: grid;
