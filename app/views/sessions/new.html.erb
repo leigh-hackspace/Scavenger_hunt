@@ -5,7 +5,7 @@
     <%= f.input :hunter_name, label: 'Please enter a username' %>
     <%= f.input :email, label: 'Email (this will be used to notify you if you win)' %>
     <%= f.input :confirm_email, label: 'Confirm Email' %>
-    <%= f.input :confirmed_email, label: 'Leave Blank' %>
+    <%= f.input :confirmed_email, label: 'Leave Blank' , class: 'none' %>
     <%= f.input :password, label: 'Password' %>
     <%= f.submit "Create Account" %>
   <% end %>
