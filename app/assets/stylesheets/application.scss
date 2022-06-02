@@ -173,3 +173,15 @@ table, td, tr {
     margin: 5px 0px;
     margin: auto;
 }
+
+.alert-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: #fff;
+  top: 0;
+  padding: 10px;
+  z-index: 1;
+  border-bottom: 1px solid;
+}
