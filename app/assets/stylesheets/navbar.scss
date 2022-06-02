@@ -39,10 +39,15 @@
   border-radius: 10px;
 
   @media only screen and (max-width: 768px) {
-    width: 22%;
+    width: 21%;
     height: 100px;
     margin: 0px 5px;
   }
+}
+
+.card-section {
+  height: 30%;
+  padding: 0px 0px;
 }
 
 .outer-card {
@@ -80,10 +85,9 @@
   grid-column: span 2 / auto;
   font-size: 0.85rem;  
     @media only screen and (max-width: 768px){
-      margin: 10px 0px 0px 3px;
+      margin-top: 15px;
       padding: 0px;
       font-size: 0.5rem;
-      align-items: center;
       text-align: center;
     }
 }
@@ -107,7 +111,7 @@
   transform: rotate(-180deg);
 
   @media only screen and (max-width: 768px){
-    margin: -8px -45px 0 0;
+    margin: -3px -50px 0 0;
     font-size: 0.5rem;
   }
 }
