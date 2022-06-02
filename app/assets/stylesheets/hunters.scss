@@ -1,66 +1,51 @@
 .hunter-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-    height: 100%;
-    padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+  padding-top: 10px;
 
-    @media only screen and (max-width: 768px) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-column: 1 / 4 ;
-    }
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1 / 4;
+  }
 }
 
 .hunter-header {
-    display: grid;
-    grid-column: span 5 / auto;
-    outline: solid 1px black;
-    background-color: #d85e5e;
-    height: auto;
-    grid-column: 2 / 5;
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 15px 15px 15px 15px;
-    background: url(asset_path("easter/egg-banner.jpg"));
-    background-size: cover;
-    height: 250px;
-    width: auto;
-    background-repeat: no-repeat;
-
-    @media only screen and (max-width: 768px) {
-    display: grid;
+  background-color: #d85e5e;
+  height: auto;
+  box-shadow: 1px 1px 1px 1px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+  background: url(asset_path("jubilee/banner.jpg"));
+  background-size: cover;
+  height: 350px;
+  margin: 10px 0px;
+  width: auto;
+  background-repeat: no-repeat;
+  @media only screen and (max-width: 768px) {
     background-size: cover;
     height: 170px;
     width: 97%;
-
-     }
-    }
-
-.hunter-content {
-    display: grid;
-    grid-column: span 2 / auto;
-    outline: solid 1px black;
-    grid-column: 2 / 5;
-    background-color: rgb(150, 167, 166);
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 15px 15px 15px 15px;
-    padding: 0px 15px ;
-    color: black;
-    width: 89%;
-    }
-
-.hunter-content p {
-
+  }
 }
 
-.footer {
-     display: grid;
-    grid-column: span 5 / auto;
-    outline: solid 1px black;
-    background-color: #d85e5e;
-    height: 75px;
-    grid-column: 2 / 5;
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 15px 15px 15px 15px;
-    padding-left: 15px;
- }
+.hunter-content {
+  background-color: rgb(150, 167, 166);
+  box-shadow: 1px 1px 1px 1px;
+  border-radius: 15px 15px 15px 15px;
+  padding: 0px 15px;
+  color: black;
+  width: auto;
+  margin: 10px 0px;
+
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    background-size: cover;
+    height: auto;
+    width: 97%;
+  }
+}

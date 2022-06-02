@@ -13,7 +13,10 @@
   background: rgb(193, 247, 196);
   outline: black 1px solid;
   box-shadow: 1px 1px 1px 1px;
-  border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
   padding: 10px;
   margin: 20px;
   font-size: 1rem;

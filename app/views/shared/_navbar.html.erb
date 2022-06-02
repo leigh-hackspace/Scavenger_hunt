@@ -1,36 +1,29 @@
-<div class="egg-box">
-  <div class="egg-btn rtl pastel-purple">
-      <% if session[:hunter_session_id].present? %>
-        <%= link_to root_path + "hunters/" + session['hunter_uuid'] do %>
-        <p class="ltr-text-hunter">hunter</p>
-        <% end %>
-      <% else %>
-        <%= link_to root_path do %>
-            <p class="ltr-text-home">home</p>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="egg-btn ltr pastel-yellow">
-      <%= link_to scoreboard_path do %>
-          <p class="rtl-text-scores">scores</p>
-      <% end %>
-    </div>
+<div class="row align-items-center" style="margin: 10px 0px;">
+    <div class="board container-sm">
 
-      <div class="egg-btn rtl pastel-blue">
-        <%= link_to clues_path do %>
-            <p class="ltr-text-clue">clues</p>
-        <% end %>
-    </div>
-    
-    <div class="egg-btn ltr pastel-green">
-    <% if session[:hunter_session_id].present? %>
-      <%= link_to logout_path do %>
-        <p class="rtl-text-logout">logout</p>
-      <% end %>
-    <% else %>
-        <%= link_to login_path do %>
-          <p class="rtl-text-login">login</p>
-        <% end %>
-    <% end %>
-    </div>
+      <div class="card">
+        <div class="card-section top-left-corner black"><p>A<br>&#9824;</p></div>
+        <div class="card-section card-text"><%= render 'shared/buttons/navbar/home' %></div>
+        <div class="card-section bottom-right-corner black"><p>A<br>&#9824;</p></div>
+      </div>
+
+      <div class="card">
+        <div class="card-section top-left-corner black"><p>A<br>&#9827;</p></div>
+        <div class="card-section card-text"><%= render 'shared/buttons/navbar/scores' %></div>
+        <div class="card-section bottom-right-corner black"><p>A<br>&#9827;</p></div>
+      </div>
+
+      <div class="card">
+        <div class="card-section top-left-corner red"><p>A<br>&#9829;</p></div>
+        <div class="card-section card-text"><%= render 'shared/buttons/navbar/clues' %></div>
+        <div class="card-section bottom-right-corner red"><p>A<br>&#9829;</p></div>
+      </div>
+
+      <div class="card">
+        <div class="card-section top-left-corner red"><p>A<br>&#9830;</p></div>
+        <div class="card-section card-text"><%= render 'shared/buttons/navbar/login' %></div>
+        <div class="card-section bottom-right-corner red"><p>A<br>&#9830;</p></div>
+      </div>   
+
+  </div>
 </div>

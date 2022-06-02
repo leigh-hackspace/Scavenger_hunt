@@ -23,15 +23,15 @@ $color-60 : #21d190;
 $color-30 : #f6d327;
 $color-10 : #f2cf07;
 */
-body {
-    background-image: repeating-linear-gradient(45deg, #acd4c7 0px, #acd4c7 10px, #e6eed2c5 10px, #e6eed2c5 20px);
-    background-attachment:fixed;
-
-    /*
-    background-color: rgb(124, 203, 255);;*/
+.none {
+    display: none;
 }
 
-.hr-80{
+body {
+    background-color: rgb(0, 118, 0);
+}
+.hr-80 {
+    padding: 0px 20px;
     width: 90%;
     background: linear-gradient(0.25turn, #5f5f5e, #f4f6f7, #5f5f5e  );
     height: 1px;
@@ -39,32 +39,31 @@ body {
 
 .page-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
 }
 
-.span-col-5{
+.span-col-5 {
     grid-column: span 5 / auto;
     @media only screen and (max-width: 768px) {
     }
 }
 
-.span-col-3{
+.span-col-3 {
     grid-column: span 3 / auto;
     @media only screen and (max-width: 768px) {
         grid-column: span 5/ auto;
     }
 }
 
-.span-row-6{
+.span-row-6 {
     grid-row: span 6 / auto;
     @media only screen and (max-width: 768px) {
         display: none;
     }
 }
 
-.span-row-5{
+.span-row-5 {
     grid-row: span 5 / auto;
     @media only screen and (max-width: 768px) {
     }
@@ -77,9 +76,11 @@ body {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
     background-color: rgba(199, 237, 150, 0.562);
-    outline: black 1px solid;
     padding: 5%;
-    border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
 
 
     @media only screen and (max-width: 768px) {
@@ -89,7 +90,10 @@ body {
         grid-template-rows: repeat(3, 1fr);
         grid-gap: 10px;
         padding: 5%;
-        border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -khtml-border-radius: 10px ;
+        border-radius: 10px ;
     }
 }
 
@@ -98,13 +102,18 @@ body {
     margin: 20px;
     box-shadow: 1px 1px 1px 1px;
     padding: 10px;
-    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
 
     @media only screen and (max-width: 768px) {
-        border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        border-radius: 10px;
         padding: 10px;
         margin: 10px;
-    
     }
 }
 
@@ -112,8 +121,8 @@ body {
     text-align: center;
 }
 
-td {
-    padding: 10px
+tr {
+    padding: 10px;
 }
 
 .item-table{
@@ -124,9 +133,21 @@ td {
     width: 80%;
 }
 
-.clues-table{
+.clue-table{
     width: 100%;
-    outline: black 1px;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+
+    tbody {
+        margin: 15px 0px;
+    }
+
+    tr { 
+        display: table-row;
+    }
+
+    td {outline: 1px solid black;
+    }
 }
 
 .clue-text {
@@ -138,6 +159,7 @@ td {
 
         @media only screen and (max-width: 768px) {
         width: 300px;
+
     }
 }
 
@@ -147,6 +169,6 @@ td {
 
 table, td, tr {
     padding: 2px;
+    margin: 5px 0px;
     margin: auto;
 }
-

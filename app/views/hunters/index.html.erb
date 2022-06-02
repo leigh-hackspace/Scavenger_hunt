@@ -1,16 +1,6 @@
 <div class="content-container">
-
-<h1>Scoreboard</h1>
-
-<table>
-  <tr><th>Hunter ID</th><th>Name</th><th>Current Score:</th></tr>
-  <% @hunters.each do |hunt| %>
-    <tr>
-       <td><%= hunt.id %></td>
-       <td><%= hunt.hunter_name %></td>
-       <td><%= hunt.hunter_uuid %></td>
-       <td><%= hunt.score %></td>
-    </tr>
-  <% end %>
-</table>
+<% if hunter_logged_in? %>
+  <h1>oops you shouldn&apos;t have got here!!</h1>
+  <%= link_to 'back to hunter', root_url+ 'hunters/' +session[:hunter_uuid], :class => 'btn' %>
+<% end %>
 </div>
