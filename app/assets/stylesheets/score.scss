@@ -9,6 +9,8 @@
 }
 
 .score-table{
+    border-collapse: separate;
+    border-spacing: 0 5px;
     width:100%;
     padding: 0 10px 20px 10px;
 }
@@ -30,3 +32,30 @@
     background-color: #e6eed2c5;
     border-radius: 0px 7.5px 7.5px 0px;
 }
+
+
+  .card-back-inner {
+    transform: rotate(90deg);
+    margin-left: 40%;
+    box-shadow: 2px 2px 2px 2px;
+    background:url(asset_path("jubilee/card-back.png"));
+    background-color: grey;
+    background-size:cover;
+
+    }
+  
+  
+    
+  .ltr-text-clue{
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    stroke: 1px white;
+    transform: rotate(-90deg);
+    translate: 5px 45px;
+    
+      @media only screen and (max-width: 768px) {
+        font-size: 1.52rem;
+        transform: rotate(-90deg);
+        translate: 16px 32px;
+      }
+    }
