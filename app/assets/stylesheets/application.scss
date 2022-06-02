@@ -186,4 +186,10 @@ table, td, tr {
   padding: 10px;
   z-index: 1;
   border-bottom: 1px solid;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.alert-box.fade{
+    opacity: 0;
 }

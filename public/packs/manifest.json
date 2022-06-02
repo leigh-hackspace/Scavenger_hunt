@@ -1,15 +1,15 @@
 {
-  "application.js": "/packs/js/application-be412d64645010827f4e.js",
-  "application.js.map": "/packs/js/application-be412d64645010827f4e.js.map",
+  "application.js": "/packs/js/application-176cc1f2782fef999346.js",
+  "application.js.map": "/packs/js/application-176cc1f2782fef999346.js.map",
   "confetti_stuff.js": "/packs/js/confetti_stuff-8987ef25dc33638673a6.js",
   "confetti_stuff.js.map": "/packs/js/confetti_stuff-8987ef25dc33638673a6.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-be412d64645010827f4e.js"
+        "/packs/js/application-176cc1f2782fef999346.js"
       ],
       "js.map": [
-        "/packs/js/application-be412d64645010827f4e.js.map"
+        "/packs/js/application-176cc1f2782fef999346.js.map"
       ]
     },
     "confetti_stuff": {
