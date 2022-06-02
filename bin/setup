@@ -41,6 +41,11 @@ FileUtils.chdir APP_ROOT do
    end
 
   puts "\n== Preparing database =="
+  puts "#{ENV['CO_NAME']}"
+  puts "#{ENV['SCAVENGER_DB_USER']}"
+  puts "#{ENV['SCAVENGER_DB_NAME']}"
+  puts "#{ENV['SCAVENGER_DB_PASS']}"
+
   system! 'bin/rails db:prepare'
 
   puts "\n== Removing old logs and tempfiles =="
