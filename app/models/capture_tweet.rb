@@ -34,7 +34,7 @@ class CaptureTweet
 
   def item_tweet
     if hunter.items.count <= 2
-      Tweet.tweet("Looks like #{hunter.hunter_name} has just found their first item! 👑#{item.title}👑  #JubileehHunt2022")
+      Tweet.tweet("Looks like #{hunter.hunter_name} has just found their first item! 👑#{item.title}👑  #JubileeHunt2022")
     end
   end
 end
