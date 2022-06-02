@@ -3,10 +3,15 @@
 
   <%= simple_form_for @hunter do |f| %>
     <%= f.input :hunter_name, label: 'Please enter a username' %>
+<<<<<<< HEAD
     <%= f.input :email, label: 'Email (this will be used to notify you if you win)' %>
     <%= f.input :confirm_email, label: 'Confirm Email' %>
     <%= f.input :confirmed_email, label: 'Leave Blank' %>
     <%= f.input :password, label: 'Password' %>
     <%= f.submit "Create Account" %>
+=======
+    <%= f.input :password, label: 'Password', class: 'none' %>
+    <%= f.submit "Create Account"%>
+>>>>>>> ba020ddd (more snaging fixes)
   <% end %>
 </div>

@@ -2,19 +2,7 @@
   <% if hunter_logged_in? %>
     
     <% if @hunter.is_admin? %>
-      <h1>Admin</h1>
-      <div class="admin_buttons">
-        <%= link_to 'Add Item', root_url + 'admin', :class => 'btn' %>
-        <br>
-        <br>
-        <%= link_to 'Bonus Item', new_bonus_item_path, :class => 'btn'%>
-        <br>
-        <br>
-        <%= link_to 'Show Items', items_path, :class => 'btn' %>
-        <br>
-        <br>
-        <%= link_to 'Select a winner!', winner_path, :class => 'btn' %>
-      </div>
+     <%= render 'shared/buttons/admin/buttons' %>
     <% end %>
     <hr class="hr-80">
 

@@ -4,16 +4,16 @@
 
 .board {
   background-color: #1e5d1e;
-  outline: 3px white solid;
+  border: 3px solid white;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -khtml-border-radius: 15px;
   border-radius: 15px;
-  padding: 10px 0px 10px 20%;
+  padding: 10px 0px 10px 12%;
 
   @media only screen and (max-width: 768px){
-    margin: 15px 0px 0px 0px;
-    padding: 10px 15px 10px 15px;
+    margin-top: 15px;
+    padding: 10px 15px ;
   }
 }
 
@@ -29,7 +29,7 @@
 .card {
   
   margin: 0px 15px;
-  width: 100px;
+  width: 110px;
   height: 150px;
   float: left;
   background-color: #fff;
@@ -40,7 +40,7 @@
 
   @media only screen and (max-width: 768px) {
     width: 21%;
-    height: 100px;
+    height: 110px;
     margin: 0px 5px;
   }
 }
@@ -84,6 +84,7 @@
 .card-text {
   grid-column: span 2 / auto;
   font-size: 0.85rem;  
+  margin: 20px 0px 0px 0px;
     @media only screen and (max-width: 768px){
       margin-top: 15px;
       padding: 0px;
@@ -95,7 +96,7 @@
 .top-left-corner {
   margin-left: 5px;
 
-  p{
+  p {
   text-align: left;
   font-size: 1rem;
   margin: 0px 0px 0px 0px;
@@ -106,7 +107,7 @@
 }
 
 .bottom-right-corner {
-  margin: -70px -75px 0 0;
+  margin: 5px -75px 0 0;
   text-align: left;
   transform: rotate(-180deg);
 
