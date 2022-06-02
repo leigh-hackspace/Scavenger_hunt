@@ -29,12 +29,12 @@ class CaptureTweet
   end
 
   def bonus_tweet
-    Tweet.tweet("Oh Wow! Looks like #{hunter.hunter_name} has just captured a special bonus item:🔎#{item.title}🔍️! Show the bonus code the staff @CafeCaffeina to receive your bonus!")
+    Tweet.tweet("Oh Wow! Looks like #{hunter.hunter_name} has just captured a special bonus item:👑#{item.title}👑! Show the bonus code the staff @CafeCaffeina to receive your bonus!")
   end
 
   def item_tweet
     if hunter.items.count <= 2
-      Tweet.tweet("Looks like #{hunter.hunter_name} has just found their first item! 🔎#{item.title}🔍️  #EASTEREGGHUNT2022")
+      Tweet.tweet("Looks like #{hunter.hunter_name} has just found their first item! 👑#{item.title}👑  #JubileehHunt2022")
     end
   end
 end
