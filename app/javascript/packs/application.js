@@ -11,3 +11,16 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+window.addEventListener("turbolinks:load", () => {
+  hideAlert();
+});
+
+function hideAlert() {
+  const notification = document.querySelector('.alert-box')
+  if (notification) {
+    setInterval(function() {
+      notification.classList.add('fade');
+    }, 3000);
+  }
+}
