@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV['SCAVENGER_HOST'] %>
+  host: <%= ENV['SCAVENGER_DB_HOST'] %>
   pool: 5
   timeout: 5000
   username: <%= ENV['SCAVENGER_DB_USER'] %>
