@@ -1,41 +1,35 @@
 .machine {
-  outline: 5px solid brown;
-  background-color: black;
+<<<<<<< HEAD
+  margin-top: 15px;
+  padding: 5px 0px;
+  outline: 3px solid brown;
+  background-color: rgb(65, 62, 62);
   display: flex;
+  align-items: center;
   text-align: center;
+  border-radius: 5px;
 }
 
 .wheel {
-  height: 150px;
-  width: 150px;
-  padding: 5px 5px 5px 5px;
+  height: 100px;
+  width: 20%;
+  margin: 0px 2.5%;
+  padding: 2.5px;
   background-color: grey;
   border-radius: 50% 50% 50% 50%;
 }
 
-.outer {
-  height: 90%;
-  width: 90%;
-  margin: 2px 2px 2px 2px;
-}
-
-.inner {
-  padding: 5px;
-  height: 90%;
-  width: 90%;
-  background-color: brown;
-}
-
 .dial {
-  height: 80%;
-  width: 80%;
+  height: 98%;
+  width: 98%;
   margin-left: 5%;
   margin-top: 5%;
-  background-color: white; 
-} 
+  background-color: white;
+}
 
 .dial-text {
-  padding-top: 10px;    
+  font-size: 1.2rem;
+  padding-top: 10px;
   }
 
 .green {
@@ -52,4 +46,47 @@
 
 .blue {
   background-color: blue;
+=======
+  height: 150px;
+  margin-top :10px; 
+  outline: 5px solid brown;
+  border-radius: 15px;
+  background-color: black;
+  display: flex;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.wheel-1 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 10px brown,
+   0px 0px 0px 20px green;
+   background-color: white;
+  width: 75px;
+  height: 75px;
+  margin: 1.75rem 2.5em;
+  font-size: 1rem;
+}
+
+.wheel-2 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 10px brown,
+   0px 0px 0px 20px blue;
+   background-color: white;
+  width: 75px;
+  height: 75px;
+  margin: 1.75rem 2.5em;
+  font-size: 1rem;
+}
+
+.wheel-3 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 10px brown,
+   0px 0px 0px 20px yellow;
+   background-color: white;
+  width: 75px;
+  height: 75px;
+  margin: 1.75rem 2.5em;
+  font-size: 1rem;
+>>>>>>> ac77b4ac (fix issues boting site and start style changes)
 }
