@@ -1,0 +1,38 @@
+# frozen_string_literal: true
+
+# :nodoc:
+class CipherItemsController < ApplicationController
+  def index
+    @cipheritems = CipherItem.all
+  end
+
+  def show
+    @ciperitem = CipherItem.find_by_item_uuid(params[:item_uuid])
+  end
+
+  def new
+    @cipheritem = CipherItem.new
+  end
+
+  def create
+    define_instance
+    @cipheritem.item_uuid = SecureRandom.uuid
+    @cipheritem.rotation = rand(1..25)
+    @cipheritem.set_cipher_text(params[:cipher_item][:clear_text])
+    if @cipheritem.save
+      redirect_to cipher_items_path(@cipheritem.item_uuid)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def permitted_params
+    params.require(:cipher_item).permit(:clear_text)
+  end
+
+  def define_instance
+    @cipheritem = CipherItem.new(permitted_params)
+  end
+end
