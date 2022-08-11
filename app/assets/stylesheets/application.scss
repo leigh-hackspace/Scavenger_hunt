@@ -24,8 +24,6 @@ $color-30 : #f6d327;
 $color-10 : #f2cf07;
 */
 
-
-
 .none {
     display: none;
 }
@@ -33,6 +31,7 @@ $color-10 : #f2cf07;
 body {
     background-image: radial-gradient( rgb(3, 160, 3), rgb(1, 112, 10));
 }
+
 .hr-80 {
     padding: 0px 20px;
     width: 90%;
@@ -82,6 +81,7 @@ body {
 
 
 .page-container {
+    border:1.5px solid brown;
     display: grid;
     grid-column: 1 / 5;
     grid-template-columns: repeat(5, 1fr);
@@ -203,3 +203,4 @@ table, td, tr {
 .alert-box.fade{
     opacity: 0;
 }
+
