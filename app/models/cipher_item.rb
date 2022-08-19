@@ -14,12 +14,14 @@ class CipherItem < ApplicationRecord
   def rotate_text(plain_text, r)
     alpha = Array('a'..'z')
     upper = Array('A'..'Z')
-    symbol = { ";" =>";", "." => ".", "," => ",", ":" => ":", "!" => "!", "<" => "<", ">" => ">" } # we want to keep these the same
+    symbol = { ";" =>";", "." => ".", "," => ",", ":" => ":", "!" => "!", "<" => "<", ">" => ">", "'" => "'" } # we want to keep these the same
+    numbers = Array(0..9)
     r = r.to_i
     encrypter = Hash[alpha.zip(alpha.rotate(r))]
     upper_encrypter = Hash[upper.zip(upper.rotate(r))]
     encrypter.merge!(upper_encrypter)
     encrypter.merge!(Hash[symbol])
+    encrypter.merge!(Hash[number])
     plain_text.chars().map { |c| encrypter.fetch(c, " ") }.join
   end
 

@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2022_11_26_142625) do
+end
+
+ActiveRecord::Schema.define(version: 2022_08_10_210929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(version: 2022_11_26_142625) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+
   create_table "cipher_items", force: :cascade do |t|
     t.string "cipher_text", default: ""
     t.string "clear_text", default: ""
@@ -51,6 +55,7 @@ ActiveRecord::Schema.define(version: 2022_11_26_142625) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
 
   create_table "hunters", force: :cascade do |t|
     t.string "hunter_name"

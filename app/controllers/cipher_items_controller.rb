@@ -14,6 +14,7 @@ class CipherItemsController < ApplicationController
     @cipheritem = CipherItem.new
   end
 
+<<<<<<< HEAD
   def clues
     @cipheritems = CipherItem.all
   end
@@ -22,6 +23,12 @@ class CipherItemsController < ApplicationController
     define_instance
     @cipheritem.item_uuid = SecureRandom.uuid
     @cipheritem.rotation = 2 #rand(1..25) # i know xD 
+=======
+  def create
+    define_instance
+    @cipheritem.item_uuid = SecureRandom.uuid
+    @cipheritem.rotation = rand(1..25)
+>>>>>>> Add cipher item for cryptic hunt
     @cipheritem.set_cipher_text(params[:cipher_item][:clear_text])
     if @cipheritem.save
       redirect_to cipher_items_path(@cipheritem.item_uuid)

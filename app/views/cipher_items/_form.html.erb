@@ -1,7 +1,6 @@
 <% if current_user.is_admin? %>
-  <%= simple_form_for cipher_item do |f| %>
-    <%= f.input :title %><br />
-    <%= f.input :body %>
+  <%= simple_form_for cipheritem do |f| %>
+    <%= f.input :clear_text %>
     <%= f.submit %>
   <% end %>
 <% else %>
