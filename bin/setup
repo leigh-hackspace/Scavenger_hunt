@@ -37,11 +37,16 @@ FileUtils.chdir APP_ROOT do
   db = gets.chomp.downcase
   if db == "y"
     puts "\n== Setup database =="
-    puts `docker run --rm -d --name  #{ENV['CONTAINER_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']} -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres`
-    # `docker run --rm -d --name  #{ENV['CONTAINER_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']} -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres`
-   end
+    puts "docker run --rm -d --name  #{ENV['CONTAINER_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']} -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres"
+    system! "docker run --rm -d --name  #{ENV['CO_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']} -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres"
+  end
 
   puts "\n== Preparing database =="
+  puts "#{ENV['CONTAINER_NAME']}"
+  puts "#{ENV['SCAVENGER_DB_USER']}"
+  puts "#{ENV['SCAVENGER_DB_NAME']}"
+  puts "#{ENV['SCAVENGER_DB_PASS']}"
+
   system! 'bin/rails db:prepare'
 
   puts "\n== Removing old logs and tempfiles =="

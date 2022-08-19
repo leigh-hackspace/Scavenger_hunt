@@ -1,6 +1,7 @@
 # README
 
-Scavanger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture these objects, theQR codes  will be hidden and players will have to find and scan them! 
+Scavanger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture 
+these objects, theQR codes  will be hidden and players will have to find and scan them! 
 
 ### ToDo List
 
