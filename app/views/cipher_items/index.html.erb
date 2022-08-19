@@ -1,3 +1,4 @@
+<div class="content-container">
 <% unless current_user.is_admin? %>
 	<h1>You&apos;re not supposed to be here!</h1>
 <% else %>
@@ -24,3 +25,4 @@
 		<tr><td><p>Register page:</p></td><td><%=render inline: RQRCode::QRCode.new(register_url).as_svg(module_size: 3,color: "black", fill: "ffffff")%></td></tr>
 	</center>
 <% end %>
+</div>
