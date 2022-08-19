@@ -1,55 +1,60 @@
 .machine {
-  outline: 5px solid brown;
+  height: auto;
+  width: 90%;
+  margin: 10px 15px; 
+  outline: 3px solid brown;
+  border-radius: 15px;
   background-color: black;
   display: flex;
   text-align: center;
+  padding: 10px 0px;
 }
 
 .wheel {
-  height: 150px;
-  width: 150px;
-  padding: 5px 5px 5px 5px;
+  height: 50px;
+  width: 50px;
+  margin: 0px 2.5%;
+  padding: 2.5px;
   background-color: grey;
   border-radius: 50% 50% 50% 50%;
 }
 
-.outer {
-  height: 90%;
-  width: 90%;
-  margin: 2px 2px 2px 2px;
-}
-
-.inner {
-  padding: 5px;
-  height: 90%;
-  width: 90%;
-  background-color: brown;
-}
-
-.dial {
-  height: 80%;
-  width: 80%;
-  margin-left: 5%;
-  margin-top: 5%;
-  background-color: white; 
-} 
-
 .dial-text {
-  padding-top: 10px;    
+  font-size: 0.5rem;
+  padding-top: 10px;
   }
 
-.green {
-  background-color: green;
+.w-1 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px red,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
 
-.yellow {
-  background-color: yellow;
+.w-2 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px blue,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
 
-.red {
-  background-color: red;
+.w-3 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px yellow,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
+  }
+
+.w-4 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px green,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
 
-.blue {
-  background-color: blue;
+.w-5 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px white,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
