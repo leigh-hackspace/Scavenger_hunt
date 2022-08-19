@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'adler';
+  src: url(asset_path('Adler.ttf'));
+}
+
 .hunter-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -59,6 +64,10 @@ h1 {
   color: black;
   width: auto;
   margin: 10px 0px;
+  p,h2 {
+    font-family: adler;
+  }
+
 
 
   @media only screen and (max-width: 768px) {

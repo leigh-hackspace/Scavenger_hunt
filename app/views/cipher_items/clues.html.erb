@@ -1,0 +1,14 @@
+<div class="content-container">
+  <h1>Clues</h1>
+  <hr class="hr-80">
+  <table class="clue-table">
+    <% @cipheritems.each do |item| %>
+      <tr>
+        <% if session[:hunter_uuid] %>
+          <td class="clue-text"><%= item.clear_text %></td>
+        <% end %>
+        <td class="clue-text"><%= item.cipher_text %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
