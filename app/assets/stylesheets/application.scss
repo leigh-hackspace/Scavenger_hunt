@@ -67,6 +67,7 @@ body {
 }
 
 .page-container {
+    border:1.5px solid brown;
     display: grid;
     grid-column: 1 / 5;
     grid-template-columns: repeat(5, 1fr);
@@ -94,20 +95,15 @@ body {
 }
 
 .content-container {
-    background-color: #a5d4d1;
+    background: url(asset_path("crypto/crinkled_paper.webp"));
+    background-color: #fffea7;
+    border: 1.5px solid brown;
     margin: 20px;
     box-shadow: 1px 1px 1px 1px;
     padding: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+
 
     @media only screen and (max-width: 768px) {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -khtml-border-radius: 10px;
-        border-radius: 10px;
         padding: 10px;
         margin: 10px;
     }
@@ -123,6 +119,8 @@ tr {
 
 .item-table{
     background-color: antiquewhite;
+    outline: 1px solid black;
+    padding: 5px 0px;
 }
 
 .item-image{
