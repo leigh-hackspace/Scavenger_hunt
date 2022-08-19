@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :captures, only: [:create, :index]
   end
   resources :bonus_items, only: [:new, :create]
+  resources :cipher_items, only:[:new, :create, :show, :index]
 
   ##sessions
   get 'login', to: 'sessions#login'
