@@ -1,149 +1,60 @@
-.nav-bar {
-  margin: 10px 30px 10px 30px;
-}
-
-.board {
-  background-color: #1e5d1e;
-  border: 3px solid white;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -khtml-border-radius: 15px;
+.machine {
+  height: auto;
+  width: 90%;
+  margin: 10px 15px; 
+  outline: 3px solid brown;
   border-radius: 15px;
-  padding: 10px 0px 10px 12%;
+  background-color: black;
+  display: flex;
+  text-align: center;
+  padding: 10px 0px;
+}
 
-  @media only screen and (max-width: 768px){
-    margin-top: 15px;
-    padding: 10px 15px ;
+.wheel {
+  height: 50px;
+  width: 50px;
+  margin: 0px 2.5%;
+  padding: 2.5px;
+  background-color: grey;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.dial-text {
+  font-size: 0.5rem;
+  padding-top: 10px;
   }
+
+.w-1 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px red,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
 
-.red {
-  color: red;
+.w-2 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px blue,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
 
-.black {
-  color: black;
-}
-
-
-.card {
-  
-  margin: 0px 15px;
-  width: 110px;
-  height: 150px;
-  float: left;
-  background-color: #fff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-
-  @media only screen and (max-width: 768px) {
-    width: 21%;
-    height: 110px;
-    margin: 0px 5px;
+.w-3 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px yellow,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
   }
+
+.w-4 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px green,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
 
-.card-section {
-  height: 30%;
-  padding: 0px 0px;
+.w-5 {
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px white,
+  0px 0px 0px 5px brown;
+  background-color: rgb(121, 54, 54);
 }
-
-.outer-card {
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  -khtml-border-radius: 1px;
-  padding: 0px;
-  @media only screen and (max-width: 768px){
-    padding: 0px;
-    margin: 0px;
-  }
-}
-
-.inner-card {
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  margin-top: 10%;
-  padding: 0px 0%;
-
-  @media only screen and (max-width: 768px){
-    grid-gap: 0px;
-    height: 45px;
-    width: auto;
-    margin: 0px;
-    padding: 0px;
-  }
-}
-
-.card-text {
-  grid-column: span 2 / auto;
-  font-size: 0.85rem;  
-  margin: 20px 0px 0px 0px;
-    @media only screen and (max-width: 768px){
-      margin-top: 15px;
-      padding: 0px;
-      font-size: 0.5rem;
-      text-align: center;
-    }
-}
-
-.top-left-corner {
-  margin-left: 5px;
-
-  p {
-  text-align: left;
-  font-size: 1rem;
-  margin: 0px 0px 0px 0px;
-    @media only screen and (max-width: 768px){
-      font-size: 0.5rem;
-  }
-}
-}
-
-.bottom-right-corner {
-  margin: 5px -75px 0 0;
-  text-align: left;
-  transform: rotate(-180deg);
-
-  @media only screen and (max-width: 768px){
-    margin: -3px -50px 0 0;
-    font-size: 0.5rem;
-  }
-}
-
-
-.outer-card-back {
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  padding: 0px;
-  @media only screen and (max-width: 768px){
-    padding: 0px;
-  }
-}
-
-.inner-card-back {
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  margin-top: 10%;
-  padding: 0px 25%;
-
-  @media only screen and (max-width: 768px){
-    grid-gap: 0px;
-    height: 45px;
-    width: 50px;
-    margin: 10px 0 0 10px;
-  }
-}
-
-

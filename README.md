@@ -42,3 +42,8 @@ source ~/.bashrc
 ```
 
 Once `bundle install` has finished, run `rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
+
+
+echo "" > /var/lib/postgresql/data/pg_hba.conf
+echo "local   all             all                                     trust" >> /var/lib/postgresql/data/pg_hba.conf
+echo "host    all             all             127.0.0.1/32            trust" >> /var/lib/postgresql/data/pg_hba.conf
