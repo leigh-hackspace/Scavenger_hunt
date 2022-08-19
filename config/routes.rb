@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   get '/coupons', to: 'items#coupons', as: 'coupons'
 
-  get '/clues', to: 'items#clues', as: 'clues'
+  get '/clues', to: 'cipher_items#clues', as: 'clues'
 
   get '/wrong', to: 'items#wrong'
 

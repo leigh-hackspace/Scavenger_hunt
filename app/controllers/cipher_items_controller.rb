@@ -14,6 +14,10 @@ class CipherItemsController < ApplicationController
     @cipheritem = CipherItem.new
   end
 
+  def clues
+    @cipheritems = CipherItem.all
+  end
+
   def create
     define_instance
     @cipheritem.item_uuid = SecureRandom.uuid
