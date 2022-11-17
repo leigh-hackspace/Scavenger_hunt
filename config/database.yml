@@ -13,7 +13,7 @@ development:
 
 test:
   <<: *default
-  database: <%= ENV['TEST_SCAVENGER_DB_NAME'] %>
+  database: <%= ENV['SCAVENGER_DB_NAME'] %>
 
 
 # Warning: The database defined as "test" will be erased and

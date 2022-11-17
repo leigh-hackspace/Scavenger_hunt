@@ -27,13 +27,9 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
   source ~/.bashrc
 ```
 
-## Starting the app
-Once `bundle install` has finished, run `rails s -b 0.0.0.0` in your command line to run the webserver on localhost  (http://localhost:3000)
+Once `bundle install` has finished, run `rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
 
-### ToDo List
 
-- [ ] Create small mobile CSS
-- [ ] Create "theme generator"
-
-### Issues
-If you have any issues when running the app please submit an issue ticket
+echo "" > /var/lib/postgresql/data/pg_hba.conf
+echo "local   all             all                                     trust" >> /var/lib/postgresql/data/pg_hba.conf
+echo "host    all             all             127.0.0.1/32            trust" >> /var/lib/postgresql/data/pg_hba.conf

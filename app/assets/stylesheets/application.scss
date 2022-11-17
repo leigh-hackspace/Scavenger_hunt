@@ -28,7 +28,8 @@ $color-10 : #f2cf07;
 }
 
 body {
-    background-color: rgb(0, 118, 0);
+
+    background-color: rgb(72, 56, 56);
 }
 .hr-80 {
     padding: 0px 20px;
@@ -70,6 +71,7 @@ body {
 }
 
 .page-container {
+    border:1.5px solid brown;
     display: grid;
     grid-column: 1 / 5;
     grid-template-columns: repeat(5, 1fr);
@@ -81,7 +83,6 @@ body {
     -moz-border-radius: 2px;
     -khtml-border-radius: 2px;
     border-radius: 2px;
-
 
     @media only screen and (max-width: 768px) {
         display: grid;
@@ -98,20 +99,15 @@ body {
 }
 
 .content-container {
-    background-color: #a5d4d1;
+    background: url(asset_path("crypto/crinkled_paper.webp"));
+    background-color: #fffea7;
+    border: 1.5px solid brown;
     margin: 20px;
     box-shadow: 1px 1px 1px 1px;
     padding: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+
 
     @media only screen and (max-width: 768px) {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -khtml-border-radius: 10px;
-        border-radius: 10px;
         padding: 10px;
         margin: 10px;
     }
@@ -127,13 +123,14 @@ tr {
 
 .item-table{
     background-color: antiquewhite;
+    outline: 1px solid black;
+    padding: 5px 0px;
 }
 
 .item-image{
     width: 80%;
     margin: 10px 10%;
     border-radius: 15px;
-    
 }
 
 .clue-table{
@@ -145,7 +142,7 @@ tr {
         margin: 15px 0px;
     }
 
-    tr { 
+    tr {
         display: table-row;
     }
 

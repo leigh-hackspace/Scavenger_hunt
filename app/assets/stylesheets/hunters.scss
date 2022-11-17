@@ -20,12 +20,15 @@
   -moz-border-radius: 15px;
   -khtml-border-radius: 15px;
   border-radius: 15px;
-  background: url(asset_path("jubilee/banner.jpg"));
+  background: url(asset_path("crypto/banner.jpg"));
+  background-size: cover;
+  border: 1.5px solid brown;
   background-size: cover;
   height: 450px;
   margin: 10px 0px;
   width: auto;
   background-repeat: no-repeat;
+
   @media only screen and (max-width: 768px) {
     background-size: cover;
     height: 170px;
@@ -34,11 +37,10 @@
 }
 
 .hunter-content {
-  background-color: #849c9a;
-  box-shadow: 1px 1px 1px 1px white;
-  border-radius: 15px 15px 15px 15px;
+  background: url(asset_path("crypto/crinkled_paper.webp"));
+  border: 1.5px solid brown;
   padding: 15px 15px;
-  color: rgb(255, 255, 255);
+  color: black;
   width: auto;
   margin: 10px 0px;
 
