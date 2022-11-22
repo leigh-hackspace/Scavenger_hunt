@@ -37,8 +37,8 @@ FileUtils.chdir APP_ROOT do
   db = gets.chomp.downcase
   if db == "y"
     puts "\n== Setup database =="
-    `docker run --rm -d --name  #{ENV['CO_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']} -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres`
-   end
+    `docker run --rm -d --name  #{ENV['CO_NAME']} -p 5432:5432 -e POSTGRES_PASSWORD=#{ENV['SCAVENGER_DB_PASS']} -e POSTGRES_HOST_AUTH_METHOD=#{ENV['AUTH_METHOD']} -e POSTGRES_USER=#{ENV['SCAVENGER_DB_USER']} -v $HOME/docker/volumes/#{ENV['SCAVENGER_DB_NAME']}:/var/lib/postgresql/data postgres`
+  end
 
   puts "\n== Preparing database =="
   system! 'bin/rails db:prepare'

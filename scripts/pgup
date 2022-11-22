@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm  -d --name $1 -p 5432:5432 -e POSTGRES_PASSWORD=hunter2 -e POSTGRES_USER=$2 -v $HOME/docker/volumes/$1:/var/lib/postgresql/data postgres

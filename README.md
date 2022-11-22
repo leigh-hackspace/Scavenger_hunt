@@ -12,6 +12,11 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
 - In the terminal run ``` Docker pull postgres ``` to get the latest postgres image
 - In the terminal run ``` bin/setup ``` to set up the app
 
+## 
+
+## MAC
+- brew install libpq docker
+
 ## Running rspec tests
 `bundle exec rspec`
 
@@ -27,9 +32,14 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
   source ~/.bashrc
 ```
 
-Once `bundle install` has finished, run `rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
+Once `bundle install` has finished, run 
+
+copy and rename the env-example and ammend the values to be your own
+
+then run `bin/setup` this will create and configure the data
 
 
-echo "" > /var/lib/postgresql/data/pg_hba.conf
-echo "local   all             all                                     trust" >> /var/lib/postgresql/data/pg_hba.conf
-echo "host    all             all             127.0.0.1/32            trust" >> /var/lib/postgresql/data/pg_hba.conf
+
+`rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
+
+

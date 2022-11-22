@@ -20,11 +20,9 @@
   -moz-border-radius: 15px;
   -khtml-border-radius: 15px;
   border-radius: 15px;
-  background: url(asset_path("crypto/banner.jpg"));
+  background: url(asset_path("standard/banner.jpg"));
   background-size: cover;
-  border: 1.5px solid brown;
-  background-size: cover;
-  height: 450px;
+  height: 300px;
   margin: 10px 0px;
   width: auto;
   background-repeat: no-repeat;
@@ -34,11 +32,29 @@
     height: 170px;
     width: 97%;
   }
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 15%;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    padding-top: 20%;
+    margin: 0 2.5px;
+  }
+}
+
 }
 
 .hunter-content {
   background: url(asset_path("crypto/crinkled_paper.webp"));
-  border: 1.5px solid brown;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
   padding: 15px 15px;
   color: black;
   width: auto;
