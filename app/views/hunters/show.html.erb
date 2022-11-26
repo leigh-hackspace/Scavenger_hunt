@@ -4,6 +4,7 @@
     <% if @hunter.is_admin? %>
      <%= render 'shared/buttons/admin/buttons' %>
     <% end %>
+
     <hr class="hr-80">
 
     <h1><%= @hunter.hunter_name %></h1>
@@ -31,7 +32,8 @@
         <% @hunter.items.counted.each do |item|%>
           <tr>
             <td><%= item.title %></td>
-            <td><%= image_tag item.image, class: 'item-image'%></td>
+            <td><%= item.image ||= '/images/standard/50X50_item.png' %></td>
+            <td><%= %></td>
             <td>10</td>
           </tr>
         <% end %>
