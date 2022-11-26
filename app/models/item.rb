@@ -15,10 +15,6 @@ class Item < ApplicationRecord
     image.present?
   end
 
-  def is_encrypted_item?
-    cipher_text.present?
-  end
-
   def capture(hunter)
     Capture.the_item(hunter: hunter, item: self)
   end
