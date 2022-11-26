@@ -11,6 +11,10 @@ class Item < ApplicationRecord
     code.present?
   end
 
+  def has_image?
+    image.present?
+  end
+
   def is_encrypted_item?
     cipher_text.present?
   end

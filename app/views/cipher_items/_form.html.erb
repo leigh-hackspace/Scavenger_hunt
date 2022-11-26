@@ -1,5 +1,5 @@
 <% if current_user.is_admin? %>
-  <%= simple_form_for cipheritem do |f| %>
+  <%= simple_form_for item do |f| %>
     <%= f.input :clear_text %>
     <%= f.submit %>
   <% end %>

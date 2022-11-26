@@ -5,10 +5,12 @@
 	<table>
 	<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Coupon</th><th>Debug Link</th><th>QR Code</th></tr>
 		<% @items.each do |item| %>
+		puts @items
 			<tr>
 				<td><%= item.id %></td>
+				binding.pry
 				<% if ENV["SCAVENGER_ENV_NAME"] != 'PROD' %>
-       				<td><% image_tag 'place_holder/50x50_item.png' %><td>
+				  <td><%= image_tag '/standard/50X50_item.png' %><td>
     			<% else %>
 				  <td><%= image_tag item.image, class: "item-image" %></td>
 				<% end %>

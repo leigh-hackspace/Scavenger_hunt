@@ -31,7 +31,8 @@
         <% @hunter.items.counted.each do |item|%>
           <tr>
             <td><%= item.title %></td>
-            <td><%= image_tag item.image, class: 'item-image'%></td>
+            binding.pry
+            <td><%= image_tag item.has_image>, class: 'item-image'%></td>
             <td>10</td>
           </tr>
         <% end %>
