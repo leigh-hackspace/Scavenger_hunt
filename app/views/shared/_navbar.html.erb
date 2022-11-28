@@ -1,10 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0 0 15px 15px;">
-  <div class="container">
-    <div class="d-flex flex-row justify-content ctr">
-      <button class="btn btn-outline-success" type="button">Home</button>
-      <button class="btn btn-outline-success" type="button">Scores</button>
-      <button class="btn btn-outline-success" type="button">Clues</button>
-      <button class="btn btn-outline-success" type="button">Login</button>
+<div class="row align-items-center">
+  <div class="machine col-xs-2">
+    <div class="col-xs-2"></div>
+
+    <div class="wheel w-1 col-xs-2">
+      <div class="dial-text" style="padding-top:18px"><%= render 'shared/buttons/navbar/home' %></div>
     </div>
+             
+    <div class="wheel w-2 col-xs-2">
+      <div class="dial-text"><%= render 'shared/buttons/navbar/clues' %></div>
+    </div>
+        
+    <div class="wheel w-4 col-xs-2">
+      <div class="dial-text" style="padding-top:18px"x><%= render 'shared/buttons/navbar/scores' %></div>
+    </div>
+
+    <div class="wheel w-5 col-xs-2">
+      <div class="dial-text" style="padding-top:18px"><%= render 'shared/buttons/navbar/login' %></div>
+    </div>
+
+    <div class="col-xs-2"></div>
+
   </div>
-</nav>
+</div>
