@@ -13,7 +13,7 @@
       <p><%= @item.body %> </p>
       <center>
       <% if hunter_logged_in? %>
-        <%= button_to 'Click here to capture', item_captures_path(@item.item_uuid, hunter_uuid: session[:hunter_uuid]) %>
+        <%= button_to 'Click here to capture', item_captures_path(@item.item_uuid, hunter_uuid: session[:hunter_uuid]),class: 'button' %>
       <% else %>
         <p> log in to capture it </p>
       <% end %>

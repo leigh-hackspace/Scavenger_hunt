@@ -1,8 +1,0 @@
-<% if current_user.is_admin? %>
-  <%= simple_form_for item do |f| %>
-    <%= f.input :clear_text %>
-    <%= f.submit %>
-  <% end %>
-<% else %>
-  <h1>Someone&apos;s nosey!</h1>
-<% end %>
