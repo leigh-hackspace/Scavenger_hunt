@@ -29,7 +29,7 @@ $color-10 : #f2cf07;
 
 body {
 
-    background-color: rgb(72, 56, 56);
+    background-color: #8bbce8;
 }
 .hr-80 {
     padding: 0px 20px;
@@ -107,8 +107,12 @@ body {
 }
 
 .content-container {
-    background: url(asset_path("crypto/crinkled_paper.webp"));
+    background: url(asset_path("reindeer_roundup/fill_bg.jpg"));
     background-color: #fffea7;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -khtml-border-radius: 10px ;
+    border-radius: 10px ;
     border: 1.5px solid brown;
     margin: 20px;
     box-shadow: 1px 1px 1px 1px;

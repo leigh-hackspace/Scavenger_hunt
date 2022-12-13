@@ -1,3 +1,4 @@
+
 # README
 
 Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture these objects, theQR codes will be hidden and players will have to find and scan them! 
@@ -41,5 +42,14 @@ then run `bin/setup` this will create and configure the data
 
 
 `rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
+
+---
+### Contibutors
+
+#### [ponix4k](https://github.com/ponix4k)
+[![trophy](https://github-profile-trophy.vercel.app/?username=ponix4k&theme=onedark&row=2&column=3)](https://github.com/ryo-ma/github-profile-trophy)
+
+#### [phyushin](https://github.com/phyushin)
+[![trophy](https://github-profile-trophy.vercel.app/?username=phyushin&theme=onedark&row=2&column=3)](https://github.com/ryo-ma/github-profile-trophy)
 
 
