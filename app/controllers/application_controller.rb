@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def tweet_user_register(hunter)
-    Tweet.tweet("Looks like 👑#{hunter.hunter_name}👑 has joined the hunt! ")
+    Tweet.tweet("Looks like ❄️☃️#{hunter.hunter_name}☃️❄️ has joined the hunt! ")
   end
 
   private
