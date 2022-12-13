@@ -23,13 +23,15 @@ $color-60 : #21d190;
 $color-30 : #f6d327;
 $color-10 : #f2cf07;
 */
+
+
+
 .none {
     display: none;
 }
 
 body {
-
-    background-color: #8bbce8;
+    background-image: radial-gradient( rgb(3, 160, 3), rgb(1, 112, 10));
 }
 .hr-80 {
     padding: 0px 20px;
@@ -107,8 +109,7 @@ body {
 }
 
 .content-container {
-    background: url(asset_path("reindeer_roundup/fill_bg.jpg"));
-    background-color: #fffea7;
+    background-color: #8bbce8;
     -webkit-border-radius: 10px ;
     -moz-border-radius: 10px ;
     -khtml-border-radius: 10px ;
