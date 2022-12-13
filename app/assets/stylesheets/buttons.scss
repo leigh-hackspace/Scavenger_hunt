@@ -2,8 +2,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
 
+@font-face {
+	font-family: 'nouvelle-vague';
+	src: url('nouvelle-vague.ttf');
+ }
+
+* {
+	font-family: 'nouvelle-vague';
+}
 
 body {
+  font-family: 'nouvelle-vague';
   margin-top: 15px;
   padding: 0;
 
@@ -71,24 +80,6 @@ body {
 .button:focus {
 	outline: none; /*FF*/
 }
-<<<<<<< HEAD
-
-.color-3 {
-background-color: #f2cf07;
-background-image: linear-gradient(315deg, #f2cf07 0%, #55d284 74%);
-}
-
-.color-4 {
-background-color: #fff000;
-background-image: linear-gradient(315deg, #fff000 0%, #ed008c 74%);
-}
-
-.color-5 {
-background-color: #ebf928;
-background-image: linear-gradient(315deg, #ebf928 0%, #d425b5 74%);
-}
-
-=======
 .button:active {
 	box-shadow:
 		inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
@@ -101,4 +92,3 @@ background-image: linear-gradient(315deg, #ebf928 0%, #d425b5 74%);
 	     -o-transition: 50ms linear;
 	        transition: 50ms linear;
 }
->>>>>>> 113718c4 (Style changes and bug fixes)
