@@ -4,6 +4,7 @@
   <table class="clue-table">
     <% if session[:hunter_uuid] %>
       <% @items.each do |item| %>
+      <%= puts item %>
         <% unless item.is_bonus_item? %>
           <% unless @hunter.items.include? item %>
             <tr>
