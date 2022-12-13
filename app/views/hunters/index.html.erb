@@ -1,6 +1,6 @@
 <div class="content-container">
 <% if hunter_logged_in? %>
   <h1>oops you shouldn&apos;t have got here!!</h1>
-  <%= link_to 'back to hunter', root_url+ 'hunters/' +session[:hunter_uuid], :class => 'btn' %>
+  <%= link_to 'back to hunter', root_url+ 'hunters/' +session[:hunter_uuid], :class => 'button' %>
 <% end %>
 </div>

@@ -19,6 +19,16 @@
       "js.map": [
         "/packs/js/confetti_stuff-8987ef25dc33638673a6.js.map"
       ]
+    },
+    "snowfall": {
+      "js": [
+        "/packs/js/snowfall-e82630369f17c114b73c.js"
+      ],
+      "js.map": [
+        "/packs/js/snowfall-e82630369f17c114b73c.js.map"
+      ]
     }
-  }
+  },
+  "snowfall.js": "/packs/js/snowfall-e82630369f17c114b73c.js",
+  "snowfall.js.map": "/packs/js/snowfall-e82630369f17c114b73c.js.map"
 }
