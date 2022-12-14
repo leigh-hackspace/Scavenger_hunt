@@ -18,6 +18,7 @@
  *= require hunters
  *= require items
  *= require captures
+ *= require sessions
 
 $color-60 : #21d190;
 $color-30 : #f6d327;
@@ -29,6 +30,7 @@ $color-10 : #f2cf07;
 }
 
 body {
+
     background-image: radial-gradient( rgb(3, 160, 3), rgb(1, 112, 10));
 }
 

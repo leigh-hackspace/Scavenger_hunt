@@ -2,11 +2,11 @@
   <h1>New User Page</h1>
 
   <%= simple_form_for @hunter do |f| %>
-    <%= f.input :hunter_name, label: 'Please enter a username' %>
-    <%= f.input :email, label: 'Email (this will be used to notify you if you win)' %>
-    <%= f.input :confirm_email, label: 'Confirm Email' %>
+    <%= f.input :hunter_name, label: 'Please enter a username', input_html: { class: 'clear_input'} %>
+    <%= f.input :email, label: 'Email (this will be used to notify you if you win)', input_html: { class: 'clear_input'} %>
+    <%= f.input :confirm_email, label: 'Confirm Email', input_html: { class: 'clear_input'} %>
     <%= f.input :confirmed_email, label: 'Leave Blank' , class: 'none' %>
-    <%= f.input :password, label: 'Password' %>
-    <%= f.submit "Create Account" %>
+    <%= f.input :password, label: 'Password', input_html: { class: 'clear_input'} %>
+    <%= f.submit "Create Account", class: 'button' %>
   <% end %>
 </div>
