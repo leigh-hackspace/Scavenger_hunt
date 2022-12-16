@@ -11,13 +11,8 @@ class Item < ApplicationRecord
     code.present?
   end
 
-<<<<<<< HEAD
   def has_image?
     image.present?
-=======
-  def is_encrypted_item?
-    cipher_text.present?
->>>>>>> Add cipher item for cryptic hunt
   end
 
   def capture(hunter)

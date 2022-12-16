@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_11_26_142625) do
 end
 
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_210929) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+<<<<<<< HEAD
 
   create_table "cipher_items", force: :cascade do |t|
     t.string "cipher_text", default: ""
@@ -57,6 +59,8 @@ ActiveRecord::Schema.define(version: 2022_08_10_210929) do
   end
 
 
+=======
+>>>>>>> c80a7cf14a1afc91949f8d3152e00232c9e51f99
   create_table "hunters", force: :cascade do |t|
     t.string "hunter_name"
     t.datetime "created_at", precision: 6, null: false
