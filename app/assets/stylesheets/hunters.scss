@@ -68,6 +68,7 @@ h1 {
   margin: 10px 0px;
   p,h2 {
     font-family: adler;
+    font-weight: bold;
   }
 
 
@@ -77,5 +78,9 @@ h1 {
     background-size: cover;
     height: auto;
     width: 97%;
+    p,h2 {
+      font-family: adler;
+      font-weight: bold;
   }
+}
 }

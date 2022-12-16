@@ -2,18 +2,17 @@
 	<h1>You&apos;re not supposed to be here!</h1>
 <% else %>
 	<h1>Items:</h1>
-	<table class="item-table">
-	<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Is Bonus</th><th>Debug Link</th><th>QR Code</th></tr>
+	<table class="item-table" style="text-align:center;">
+	<tr style="text-align:center;padding: 10px 0px;"><th>Image</th><th>Name</th><th>Is Bonus</th><th>Debug Link</th><th>QR Code</th></tr>
 		<% @items.each do |item| %>
 			<tr>
-				<td><%= item.id %></td>
 				<td><%= image_tag item.image, class: "item-image" if item.image.present? %></td>
 				<td><%= item.title %></td>
-				<td><%= item.body %></td>
 				<td><%= item.is_bonus_item? %></td>
 				<td><a href=<%= item_path(item.item_uuid) %>>view item</a></td>
 				<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "black", fill: "ffffff")%></td>
 			</tr>
+			<tr><td>&nbsp;</td></tr>
 		<% end %>
 	</table>
 

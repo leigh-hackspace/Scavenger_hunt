@@ -3,19 +3,16 @@
 <% else %>
 	<h1>Items:</h1>
 	<table>
-	<tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Coupon</th><th>Debug Link</th><th>QR Code</th></tr>
+	<tr><th>Image</th><th>Name</th><th>Coupon</th><th>Debug Link</th><th>QR Code</th></tr>
 		<% @items.each do |item| %>
 		puts @items
 			<tr>
-				<td><%= item.id %></td>
-				binding.pry
 				<% if ENV["SCAVENGER_ENV_NAME"] != 'PROD' %>
 				  <td><%= image_tag '/standard/50X50_item.png' %><td>
     			<% else %>
 				  <td><%= image_tag item.image, class: "item-image" %></td>
 				<% end %>
 				<td><%= item.title %></td>
-				<td><%= item.body %></td>
 				<td><%= item.is_coupon %></td>
 				<td><a href=<%= item_path(item.item_uuid) %>>view item</a></td>
 				<td><%=render inline: RQRCode::QRCode.new(root_url + item_path(item.item_uuid)).as_svg(module_size: 3,color: "black")%></td>
