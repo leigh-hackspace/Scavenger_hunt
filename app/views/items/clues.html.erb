@@ -8,17 +8,25 @@
         <% unless item.is_bonus_item? %>
           <% unless @hunter.items.include? item %>
             <tr>
+              <td class="clue-header"><%= item.title %></td>
+            </tr>
+            <tr>
               <td class="clue-text"><%= item.body %></td>
             </tr>
+            <tr></tr>
           <% end %>
         <% end %>
       <% end %>
     <% else %>
     <% @items.each do |item| %>
       <% unless item.is_bonus_item? %>
-        <tr>
-          <td class="clue-text"><%= item.body %></td>
-        </tr>
+            <tr>
+              <td class="clue-header"><%= item.title %></td>
+            </tr>
+            <tr>
+              <td class="clue-text"><%= item.body %></td>
+            </tr>
+            <tr></tr>
       <% end %>
     <% end %>
     <% end %>

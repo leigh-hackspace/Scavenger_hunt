@@ -20,15 +20,15 @@
         "/packs/js/confetti_stuff-8987ef25dc33638673a6.js.map"
       ]
     },
-    "snowfall": {
+    "snow": {
       "js": [
-        "/packs/js/snowfall-e82630369f17c114b73c.js"
+        "/packs/js/snow-1fdee6b2f0c247aa9288.js"
       ],
       "js.map": [
-        "/packs/js/snowfall-e82630369f17c114b73c.js.map"
+        "/packs/js/snow-1fdee6b2f0c247aa9288.js.map"
       ]
     }
   },
-  "snowfall.js": "/packs/js/snowfall-e82630369f17c114b73c.js",
-  "snowfall.js.map": "/packs/js/snowfall-e82630369f17c114b73c.js.map"
+  "snow.js": "/packs/js/snow-1fdee6b2f0c247aa9288.js",
+  "snow.js.map": "/packs/js/snow-1fdee6b2f0c247aa9288.js.map"
 }

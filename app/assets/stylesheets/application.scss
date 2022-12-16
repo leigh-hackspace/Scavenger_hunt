@@ -165,10 +165,31 @@ tr {
     }
 }
 
+.clue-header {
+    text-align: center;
+    font-size: 1rem;
+    border: black 1px;
+    border-radius: 7px 7px 0px 0px;
+    -webkit-border-radius: 7px 7px 0px 0px;
+    -moz-border-radius: 7px 7px 0px 0px;
+    -khtml-border-radius: 7px 7px 0px 0px;
+    width: 800px;
+
+        @media only screen and (max-width: 768px) {
+        width: 300px;
+
+    }
+}
+
+
 .clue-text {
     text-align: center;
     font-size: 0.75rem;
     border: black 1px;
+    border-radius: 0px 0px 7px 7px;
+    -webkit-border-radius: 0px 0px 7px 7px;
+    -moz-border-radius: 0px 0px 7px 7px;
+    -khtml-border-radius: 0px 0px 7px 7px;
     background-color: hsla(174, 16%, 49%, 0.411);
     width: 800px;
 
