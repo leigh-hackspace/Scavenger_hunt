@@ -79,11 +79,7 @@ GEM
       aws-sigv4 (~> 1.4)
     aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
-<<<<<<< HEAD
     bcrypt (3.1.18)
-=======
-    bcrypt (3.1.17)
->>>>>>> Add cipher item for cryptic hunt
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -355,11 +351,8 @@ DEPENDENCIES
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   better_errors (~> 2.9, >= 2.9.1)
-<<<<<<< HEAD
   binding.repl (~> 3.0)
   binding_of_caller (~> 1.0)
-=======
->>>>>>> Add cipher item for cryptic hunt
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
