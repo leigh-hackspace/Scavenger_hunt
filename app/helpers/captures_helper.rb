@@ -1,12 +1,9 @@
 module CapturesHelper
   def show_random_gif
     gifs = %w{
-      https://media.giphy.com/media/11a9K7FLvTD9Kw/giphy.gif
-      https://giphy.com/clips/duranduran-party-duran-anniverary-n6zAk3JSJaux51PhNm
-      https://media.giphy.com/media/gaHgUZwYnyYb6/giphy.gif
-      https://media.giphy.com/media/VDBc9ThWsIbwfmcvPs/giphy.gif
-      https://media.giphy.com/media/Y2ho8NVsFTNSYnKmGV/giphy-downsized-large.gif
-
+      https://media.giphy.com/media/9JrvLb0fnrn7k1ZjhX/giphy.gif
+      https://media.giphy.com/media/5dZYGvxrjfthsL9xdN/giphy.gif
+      https://media.giphy.com/media/bxJRigovhEPhC/giphy.gif
     }
 
     gifs[rand(gifs.length)]
