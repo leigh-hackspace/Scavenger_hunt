@@ -1,22 +1,21 @@
 
 # README
 
-Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture these objects, theQR codes will be hidden and players will have to find and scan them! 
+Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR codes of "Objects" using phone cameras which will capture these objects, the QR codes will be hidden and players will have to find and scan them! 
 
 
-# Installation
+## Installation
 
-- Install Ruby (we recommend using [rbenv](https://github.com/rbenv/rbenv))
-- Install Docker (instructions to install docker can befound [here](https://docs.docker.com/get-docker/))
+- Install Ruby (we recommend using [rbenv][1])
+- Install Docker (instructions to install docker can befound [here])
+- Install libpq `sudo apt-get install libpq-dev` or `brew install libpq docker` on mac
 - Clone The Repo 
 - Copy and modify the '.env-example' file to '.env' 
 - In the terminal run ``` Docker pull postgres ``` to get the latest postgres image
+- Install npm `sudo apt-get install npm`
+- Install yarn `sudo npm install --global yarn`
 - In the terminal run ``` bin/setup ``` to set up the app
 
-## 
-
-## MAC
-- brew install libpq docker
 
 ## Running rspec tests
 `bundle exec rspec`
@@ -24,7 +23,7 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
 ## Configuring S3 Storage
 ---
 
-```
+```bash
   echo "export AWS_ACCESS_KEY={accesskey}" >> ~/.bashrc
   echo "export AWS_SECRET_KEY={secretkey}" >> ~/.bashrc
   echo "export AWS_REGION={region}" >> ~/.bashrc
@@ -33,15 +32,11 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
   source ~/.bashrc
 ```
 
-Once `bundle install` has finished, run 
-
-copy and rename the env-example and ammend the values to be your own
-
+## Running server
+Once `bundle install` has finished, copy and rename the env-example and amend the values to be your own
 then run `bin/setup` this will create and configure the data
 
-
-
-`rails -s` in your command line to run the webserver on localhost  (http://localhost:3000)
+Enter `bin/rails s` in your command line to run the webserver on localhost  (http://localhost:3000)
 
 ---
 ### Contibutors
@@ -53,3 +48,5 @@ then run `bin/setup` this will create and configure the data
 [![trophy](https://github-profile-trophy.vercel.app/?username=phyushin&theme=onedark&row=2&column=3)](https://github.com/ryo-ma/github-profile-trophy)
 
 
+[1]: https://github.com/rbenv/rbenv
+[2]: https://docs.docker.com/get-docker/
