@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   private
 
   def custom_headers
-    response.set_header('X-Clacks-Overhead', 'GNU Terry Pratchett')
+    response.set_header('X-Clacks-Overhead', 'GNU Terry Pratchett, Keefa Amadeus Carter')
   end
 end
