@@ -13,6 +13,7 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
 - Clone The Repo 
 - Copy and modify the '.env-example' file to '.env' 
 - In the terminal run ``` Docker pull postgres ``` to get the latest postgres image
+  - If you get an error in MacOS here - open the docker app first and try again
 - Install npm `sudo apt-get install npm`
 - Install yarn `sudo npm install --global yarn`
 - In the terminal run ``` bin/setup ``` to set up the app
