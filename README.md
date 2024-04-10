@@ -9,12 +9,14 @@ Scavenger_hunt is a Capture the Flag (CTF) game where players have to scan QR co
 - Install Ruby (we recommend using [rbenv][1])
 - Install Docker (instructions to install docker can befound [here])
 - Install libpq `sudo apt-get install libpq-dev` or `brew install libpq docker` on mac
+- Install postgres via brew `brew install postgres`
 - Clone The Repo 
 - Copy and modify the '.env-example' file to '.env' 
 - In the terminal run ``` Docker pull postgres ``` to get the latest postgres image
 - Install npm `sudo apt-get install npm`
 - Install yarn `sudo npm install --global yarn`
 - In the terminal run ``` bin/setup ``` to set up the app
+- If you get errors in spring `spring stop` and add the following env var`export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES`
 
 
 ## Running rspec tests
